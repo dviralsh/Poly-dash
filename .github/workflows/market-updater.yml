@@ -5,6 +5,12 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch:
 
+# --- THIS IS THE FIX ---
+# Grant write permissions to the GITHUB_TOKEN
+permissions:
+  contents: write
+# --- END OF FIX ---
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,14 +32,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      # --- NEW DEBUGGING STEP ---
-      # 4. List all files in the directory
+      # 4. List files (for debugging, can be removed later)
       - name: List files in workspace
         run: ls -R
 
-      # 5. Runs the python script to generate data.json
+      # 5. Runs the python script
       - name: Run Python script
-        # We now use the full path variable to be safer
         run: python $GITHUB_WORKSPACE/update_markets.py
 
       # 6. Commits the new data.json file back to the repository
