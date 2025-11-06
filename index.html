@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middle East Market Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        #last-updated {
+            text-align: center;
+            font-style: italic;
+            color: #606770;
+            margin-bottom: 20px;
+        }
+        .market-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        .market-card {
+            background-color: #ffffff;
+            border: 1px solid #dddfe2;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .market-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .market-question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #050505;
+            margin-bottom: 15px;
+        }
+        .market-stats {
+            font-size: 0.9rem;
+            color: #606770;
+            margin-bottom: 15px;
+        }
+        .market-stats span {
+            font-weight: 600;
+            color: #333;
+        }
+        .market-answers {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+        .market-answers li {
+            background-color: #f0f2f5;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .market-link {
+            display: inline-block;
+            font-weight: 600;
+            color: #0866ff;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .market-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Middle East Market Dashboard</h1>
+    <p id="last-updated">Loading data...</p>
+    <div id="market-container" class="market-container">
+        </div>
+
+    <script>
+        // Function to fetch and display the market data
+        async function fetchAndDisplayMarkets() {
+            const container = document.getElementById('market-container');
+            const lastUpdatedElem = document.getElementById('last-updated');
+            
+            try {
+                // Add a cache-busting query parameter
+                const cacheBuster = new Date().getTime();
+                const response = await fetch(`data.json?t=${cacheBuster}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const markets = await response.json();
+                
+                // Clear old data
+                container.innerHTML = ''; 
+                
+                if (markets.length === 0) {
+                    container.innerHTML = "<p>No matching markets found.</p>";
+                }
+
+                // Loop through the sorted markets and create HTML
+                markets.forEach((market, index) => {
+                    const marketCard = document.createElement('div');
+                    marketCard.className = 'market-card';
+
+                    // Format answers
+                    let answersHtml = '';
+                    if (market.answers && market.answers.length > 0) {
+                        market.answers.forEach(answer => {
+                            answersHtml += `<li>${answer}</li>`;
+                        });
+                    } else {
+                        answersHtml = '<li>Prices not available.</li>';
+                    }
+
+                    marketCard.innerHTML = `
+                        <div class="market-question">#${index + 1}: ${market.question}</div>
+                        <div class="market-stats">
+                            24h Volume: <span>$${market.volume_24hr.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span> | 
+                            Total Liquidity: <span>$${market.liquidity.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                        </div>
+                        <ul class="market-answers">
+                            ${answersHtml}
+                        </ul>
+                        <a href="${market.url}" target="_blank" rel="noopener noreferrer" class="market-link">Trade on Polymarket &rarr;</a>
+                    `;
+                    container.appendChild(marketCard);
+                });
+
+                // Update timestamp
+                lastUpdatedElem.textContent = `Last updated: ${new Date().toLocaleString()}`;
+                
+            } catch (error) {
+                console.error("Failed to fetch market data:", error);
+                container.innerHTML = "<p>Error loading market data. Please try refreshing.</p>";
+                lastUpdatedElem.textContent = "Error loading data.";
+            }
+        }
+
+        // --- Main execution ---
+        
+        // 1. Fetch data immediately on page load
+        fetchAndDisplayMarkets();
+
+        // 2. Set an interval to auto-refresh the data every 15 minutes
+        // (This matches the GitHub Action schedule)
+        setInterval(fetchAndDisplayMarkets, 15 * 60 * 1000); 
+    </script>
+
+</body>
+</html>
