@@ -1,20 +1,16 @@
 name: Update Market Data
 
-# Controls when the action will run.
-# Runs on a schedule (every 15 minutes)
 on:
   schedule:
     - cron: '*/15 * * * *'
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # 1. Checks-out your repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -30,17 +26,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      # 4. Runs the python script to generate data.json
-      - name: Run Python script
-        run: python update_markets.py
+      # --- NEW DEBUGGING STEP ---
+      # 4. List all files in the directory
+      - name: List files in workspace
+        run: ls -R
 
-      # 5. Commits the new data.json file back to the repository
+      # 5. Runs the python script to generate data.json
+      - name: Run Python script
+        # We now use the full path variable to be safer
+        run: python $GITHUB_WORKSPACE/update_markets.py
+
+      # 6. Commits the new data.json file back to the repository
       - name: Commit data.json
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "BOT: Auto-update market data"
           file_pattern: data.json
-          # Optional: Add commit user/email
           commit_user_name: Market Data Bot
           commit_user_email: bot@github.com
           commit_author: Market Data Bot <bot@github.com>
