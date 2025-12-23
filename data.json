@@ -3,7 +3,7 @@
     "id": "631279",
     "question": "Will Saudi Aramco be the second-largest company in the world by market cap on December 31?",
     "volume_24hr": 1199450.2349999999,
-    "liquidity": 16613.56592,
+    "liquidity": 16473.28057,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -13,8 +13,8 @@
   {
     "id": "558972",
     "question": "Will Saudi Arabia win the 2026 FIFA World Cup?",
-    "volume_24hr": 362334.746,
-    "liquidity": 186942.10304,
+    "volume_24hr": 422378.72799999994,
+    "liquidity": 186896.05703,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -24,19 +24,19 @@
   {
     "id": "975022",
     "question": "US strike on Syria by December 31?",
-    "volume_24hr": 43759.883680000006,
-    "liquidity": 13070.1814,
+    "volume_24hr": 71666.31569700001,
+    "liquidity": 12970.0387,
     "answers": [
       "Yes: $0.42 (42%)",
-      "No: $0.57 (57%)"
+      "No: $0.58 (58%)"
     ],
     "url": "https://polymarket.com/market/us-strike-on-syria-by-december-31-426"
   },
   {
     "id": "572480",
     "question": "Will Trump nominate Stephen Miran as the next Fed chair?",
-    "volume_24hr": 42244.16708300001,
-    "liquidity": 57006.15436,
+    "volume_24hr": 54345.40775,
+    "liquidity": 57375.58961,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -44,21 +44,21 @@
     "url": "https://polymarket.com/market/will-trump-nominate-stephen-miran-as-the-next-fed-chair"
   },
   {
-    "id": "516716",
-    "question": "Khamenei out as Supreme Leader of Iran in 2025?",
-    "volume_24hr": 41721.33713700002,
-    "liquidity": 36797.14479,
+    "id": "555770",
+    "question": "Israel strikes Iran before 2026?",
+    "volume_24hr": 37949.01086899999,
+    "liquidity": 18356.05605,
     "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
     ],
-    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-in-2025"
+    "url": "https://polymarket.com/market/israel-strikes-iran-before-2026"
   },
   {
     "id": "558971",
     "question": "Will Qatar win the 2026 FIFA World Cup?",
-    "volume_24hr": 37910.837,
-    "liquidity": 230526.88195,
+    "volume_24hr": 37759.002,
+    "liquidity": 230522.65194,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -66,43 +66,65 @@
     "url": "https://polymarket.com/market/will-qatar-win-the-2026-fifa-world-cup"
   },
   {
-    "id": "566910",
-    "question": "Israel x Iran ceasefire broken by December 31?",
-    "volume_24hr": 29717.690787,
-    "liquidity": 14987.82603,
-    "answers": [
-      "Yes: $0.03 (2%)",
-      "No: $0.97 (98%)"
-    ],
-    "url": "https://polymarket.com/market/israel-x-iran-ceasefire-broken-by-december-31-374"
-  },
-  {
-    "id": "555770",
-    "question": "Israel strikes Iran before 2026?",
-    "volume_24hr": 24418.69948,
-    "liquidity": 23192.92007,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/israel-strikes-iran-before-2026"
-  },
-  {
     "id": "971325",
     "question": "Will Israel strike Gaza on December 22?",
-    "volume_24hr": 19556.468019,
-    "liquidity": 2133.99381,
+    "volume_24hr": 31361.926209000005,
+    "liquidity": 2294.04973,
     "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.96 (96%)"
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
     ],
     "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-22"
   },
   {
+    "id": "516716",
+    "question": "Khamenei out as Supreme Leader of Iran in 2025?",
+    "volume_24hr": 27148.774845,
+    "liquidity": 36730.83602,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-in-2025"
+  },
+  {
+    "id": "919375",
+    "question": "Will Israel strike Lebanon on December 20?",
+    "volume_24hr": 22671.006897999996,
+    "liquidity": 7579.35094,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-20"
+  },
+  {
+    "id": "566910",
+    "question": "Israel x Iran ceasefire broken by December 31?",
+    "volume_24hr": 19157.45571,
+    "liquidity": 13912.35321,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/israel-x-iran-ceasefire-broken-by-december-31-374"
+  },
+  {
+    "id": "519695",
+    "question": "Will Iran close the Strait of Hormuz in 2025?",
+    "volume_24hr": 16842.460870000003,
+    "liquidity": 43729.58023,
+    "answers": [
+      "Yes: $0.01 (0%)",
+      "No: $0.99 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-iran-close-the-strait-of-hormuz-in-2025"
+  },
+  {
     "id": "558959",
     "question": "Will Iran win the 2026 FIFA World Cup?",
-    "volume_24hr": 18679.358666,
-    "liquidity": 204245.00511,
+    "volume_24hr": 15844.375666,
+    "liquidity": 204338.93011,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -112,8 +134,8 @@
   {
     "id": "516846",
     "question": "Will Saudi Aramco be the largest company in the world by market cap on December 31?",
-    "volume_24hr": 18158.936999999998,
-    "liquidity": 278873.37093,
+    "volume_24hr": 15227.540000000003,
+    "liquidity": 280001.97724,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -121,10 +143,21 @@
     "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-december-31"
   },
   {
+    "id": "682706",
+    "question": "Will Naftali Bennett be the next Prime Minister of Israel?",
+    "volume_24hr": 14856.764704,
+    "liquidity": 5222.2819,
+    "answers": [
+      "Yes: $0.34 (34%)",
+      "No: $0.67 (66%)"
+    ],
+    "url": "https://polymarket.com/market/will-naftali-bennett-be-the-next-prime-minister-of-israel"
+  },
+  {
     "id": "664748",
     "question": "Israel x Hamas ceasefire cancelled by March 31, 2026?",
-    "volume_24hr": 14213.559429,
-    "liquidity": 2278.5938,
+    "volume_24hr": 14191.337208,
+    "liquidity": 2306.6632,
     "answers": [
       "Yes: $0.15 (16%)",
       "No: $0.84 (84%)"
@@ -134,118 +167,19 @@
   {
     "id": "791705",
     "question": "Israel strikes Iran by March 31, 2026?",
-    "volume_24hr": 11988.808081999998,
-    "liquidity": 9011.2309,
+    "volume_24hr": 12859.940758000002,
+    "liquidity": 8778.2433,
     "answers": [
-      "Yes: $0.30 (30%)",
-      "No: $0.69 (70%)"
+      "Yes: $0.29 (30%)",
+      "No: $0.70 (70%)"
     ],
     "url": "https://polymarket.com/market/israel-strikes-iran-by-march-31-2026"
   },
   {
-    "id": "567688",
-    "question": "Netanyahu out by end of 2026?",
-    "volume_24hr": 11455.722538,
-    "liquidity": 16132.1952,
-    "answers": [
-      "Yes: $0.57 (57%)",
-      "No: $0.42 (42%)"
-    ],
-    "url": "https://polymarket.com/market/netanyahu-out-before-2027"
-  },
-  {
-    "id": "919375",
-    "question": "Will Israel strike Lebanon on December 20?",
-    "volume_24hr": 11121.875372999997,
-    "liquidity": 6824.66514,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-20"
-  },
-  {
-    "id": "666696",
-    "question": "Israel x Iran ceasefire broken by March 31, 2026?",
-    "volume_24hr": 11082.382147,
-    "liquidity": 39759.8439,
-    "answers": [
-      "Yes: $0.28 (28%)",
-      "No: $0.72 (72%)"
-    ],
-    "url": "https://polymarket.com/market/israel-x-iran-ceasefire-broken-by-march-31-2026"
-  },
-  {
-    "id": "682706",
-    "question": "Will Naftali Bennett be the next Prime Minister of Israel?",
-    "volume_24hr": 9687.714284,
-    "liquidity": 5207.4992,
-    "answers": [
-      "Yes: $0.34 (34%)",
-      "No: $0.67 (66%)"
-    ],
-    "url": "https://polymarket.com/market/will-naftali-bennett-be-the-next-prime-minister-of-israel"
-  },
-  {
-    "id": "520579",
-    "question": "Israel and Saudi Arabia normalize relations in 2025?",
-    "volume_24hr": 7202.236333,
-    "liquidity": 302420.68359,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/israel-and-saudi-arabia-normalize-relations-in-2025"
-  },
-  {
-    "id": "553610",
-    "question": "Will the Iranian regime survive U.S. military strikes?",
-    "volume_24hr": 6546.565613,
-    "liquidity": 22818.98475,
-    "answers": [
-      "Yes: $0.99 (99%)",
-      "No: $0.01 (1%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-iranian-regime-survive-us-military-strikes"
-  },
-  {
-    "id": "964904",
-    "question": "Will Saudi Aramco be the largest company in the world by market cap on January 31?",
-    "volume_24hr": 5591.233999999999,
-    "liquidity": 17451.16677,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-january-31"
-  },
-  {
-    "id": "629776",
-    "question": "Israel x Hamas Ceasefire Phase II by December 31?",
-    "volume_24hr": 5262.638844,
-    "liquidity": 17119.42251,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-december-31-521"
-  },
-  {
-    "id": "578169",
-    "question": "Will Zelenskyy and Putin meet next in Saudi Arabia?",
-    "volume_24hr": 4222.56,
-    "liquidity": 36952.25292,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-trump-and-putin-meet-next-in-saudi-arabia"
-  },
-  {
     "id": "677274",
     "question": "Israel and Syria normalize relations by June 30, 2026?",
-    "volume_24hr": 3769.0,
-    "liquidity": 3792.4137,
+    "volume_24hr": 8643.0,
+    "liquidity": 4181.6237,
     "answers": [
       "Yes: $0.20 (20%)",
       "No: $0.80 (80%)"
@@ -253,21 +187,65 @@
     "url": "https://polymarket.com/market/israel-and-syria-normalize-relations-by-june-30-2026"
   },
   {
-    "id": "682705",
-    "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
-    "volume_24hr": 3721.3940879999996,
-    "liquidity": 8408.2059,
+    "id": "553610",
+    "question": "Will the Iranian regime survive U.S. military strikes?",
+    "volume_24hr": 6738.8456129999995,
+    "liquidity": 22768.19335,
     "answers": [
-      "Yes: $0.53 (52%)",
-      "No: $0.47 (48%)"
+      "Yes: $0.99 (99%)",
+      "No: $0.01 (1%)"
     ],
-    "url": "https://polymarket.com/market/will-benjamin-netanyahu-be-the-next-prime-minister-of-israel"
+    "url": "https://polymarket.com/market/will-the-iranian-regime-survive-us-military-strikes"
+  },
+  {
+    "id": "567688",
+    "question": "Netanyahu out by end of 2026?",
+    "volume_24hr": 6360.831874999999,
+    "liquidity": 16196.933,
+    "answers": [
+      "Yes: $0.56 (56%)",
+      "No: $0.45 (44%)"
+    ],
+    "url": "https://polymarket.com/market/netanyahu-out-before-2027"
+  },
+  {
+    "id": "666696",
+    "question": "Israel x Iran ceasefire broken by March 31, 2026?",
+    "volume_24hr": 6308.143162000001,
+    "liquidity": 39495.8707,
+    "answers": [
+      "Yes: $0.28 (28%)",
+      "No: $0.72 (72%)"
+    ],
+    "url": "https://polymarket.com/market/israel-x-iran-ceasefire-broken-by-march-31-2026"
+  },
+  {
+    "id": "964904",
+    "question": "Will Saudi Aramco be the largest company in the world by market cap on January 31?",
+    "volume_24hr": 6166.1795,
+    "liquidity": 19552.85763,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-january-31"
+  },
+  {
+    "id": "994900",
+    "question": "Israel strikes Iran by January 31, 2026?",
+    "volume_24hr": 6164.99446,
+    "liquidity": 13842.3656,
+    "answers": [
+      "Yes: $0.13 (13%)",
+      "No: $0.87 (87%)"
+    ],
+    "url": "https://polymarket.com/market/israel-strikes-iran-by-january-31-2026"
   },
   {
     "id": "516721",
     "question": "Netanyahu out by 2025?",
-    "volume_24hr": 3185.276942,
-    "liquidity": 19837.51312,
+    "volume_24hr": 5088.71698,
+    "liquidity": 19927.70588,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -275,153 +253,10 @@
     "url": "https://polymarket.com/market/netanyahu-out-in-2025-492"
   },
   {
-    "id": "705592",
-    "question": "Will Israel strike 1 country in December 2025?",
-    "volume_24hr": 2602.254764,
-    "liquidity": 2299.6729,
-    "answers": [
-      "Yes: $0.81 (82%)",
-      "No: $0.18 (18%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-1-country-in-december-2025"
-  },
-  {
-    "id": "971312",
-    "question": "Will Israel strike Lebanon on December 23?",
-    "volume_24hr": 2532.7436599999996,
-    "liquidity": 1702.2121,
-    "answers": [
-      "Yes: $0.38 (38%)",
-      "No: $0.62 (62%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-23"
-  },
-  {
-    "id": "578168",
-    "question": "Will Zelenskyy and Putin meet next in Qatar / UAE?",
-    "volume_24hr": 2509.81,
-    "liquidity": 39213.23673,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-trump-and-putin-meet-next-in-qatar-uae"
-  },
-  {
-    "id": "604675",
-    "question": "Israeli parliament dissolved by March 31?",
-    "volume_24hr": 2328.0,
-    "liquidity": 1076.7253,
-    "answers": [
-      "Yes: $0.17 (18%)",
-      "No: $0.82 (82%)"
-    ],
-    "url": "https://polymarket.com/market/israeli-parliament-dissolved-by-march-31"
-  },
-  {
-    "id": "519695",
-    "question": "Will Iran close the Strait of Hormuz in 2025?",
-    "volume_24hr": 2281.767,
-    "liquidity": 43626.13433,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-iran-close-the-strait-of-hormuz-in-2025"
-  },
-  {
-    "id": "916732",
-    "question": "Khamenei out as Supreme Leader of Iran by March 31?",
-    "volume_24hr": 2195.295422,
-    "liquidity": 1928.9533,
-    "answers": [
-      "Yes: $0.10 (10%)",
-      "No: $0.90 (90%)"
-    ],
-    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-by-march-31"
-  },
-  {
-    "id": "699296",
-    "question": "Will Israel strike Greater Beirut by December 31?",
-    "volume_24hr": 2114.78,
-    "liquidity": 1028.8356,
-    "answers": [
-      "Yes: $0.25 (25%)",
-      "No: $0.75 (75%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-greater-beirut-by-december-31-699"
-  },
-  {
-    "id": "553374",
-    "question": "Will the Iranian regime fall in 2025?",
-    "volume_24hr": 1967.9018049999997,
-    "liquidity": 29173.3258,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-in-2025"
-  },
-  {
-    "id": "677314",
-    "question": "Israel and Indonesia normalize relations by June 30, 2026?",
-    "volume_24hr": 1945.0,
-    "liquidity": 2211.1004,
-    "answers": [
-      "Yes: $0.18 (18%)",
-      "No: $0.81 (82%)"
-    ],
-    "url": "https://polymarket.com/market/israel-and-indonesia-normalize-relations-by-june-30-2026"
-  },
-  {
-    "id": "791703",
-    "question": "Israel strikes Iran by June 30, 2026?",
-    "volume_24hr": 1902.8162090000003,
-    "liquidity": 4794.1003,
-    "answers": [
-      "Yes: $0.39 (39%)",
-      "No: $0.61 (61%)"
-    ],
-    "url": "https://polymarket.com/market/israel-strikes-iran-by-june-30-2026"
-  },
-  {
-    "id": "964992",
-    "question": "Will Saudi Aramco be the second-largest company in the world by market cap on January 31?",
-    "volume_24hr": 1706.0249999999999,
-    "liquidity": 2468.98238,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-second-largest-company-in-the-world-by-market-cap-on-january-31"
-  },
-  {
-    "id": "566096",
-    "question": "Will Hezbollah disarm in 2025?",
-    "volume_24hr": 1613.354146,
-    "liquidity": 14920.55449,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-hezbollah-to-disarm-before-in-2025"
-  },
-  {
-    "id": "677273",
-    "question": "Israel and Syria normalize relations by December 31, 2026?",
-    "volume_24hr": 1324.0,
-    "liquidity": 569.2536,
-    "answers": [
-      "Yes: $0.32 (32%)",
-      "No: $0.68 (68%)"
-    ],
-    "url": "https://polymarket.com/market/israel-and-syria-normalize-relations-by-december-31-2026-166"
-  },
-  {
     "id": "678343",
     "question": "Will Netanyahu be pardoned in 2025?",
-    "volume_24hr": 1235.889015,
-    "liquidity": 5376.46925,
+    "volume_24hr": 4690.300000000001,
+    "liquidity": 5590.48414,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
@@ -429,208 +264,87 @@
     "url": "https://polymarket.com/market/will-netanyahu-be-pardoned-in-2025"
   },
   {
-    "id": "556126",
-    "question": "Another US military action against Iran before 2026?",
-    "volume_24hr": 1221.0678930000001,
-    "liquidity": 11026.31374,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/another-us-military-action-against-iran-before-2026"
-  },
-  {
-    "id": "581752",
-    "question": "Will Trump announce Stephen Miran to replace Lisa Cook?",
-    "volume_24hr": 1124.0,
-    "liquidity": 5864.18161,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-trump-announce-stephen-miran-to-replace-lisa-cook"
-  },
-  {
-    "id": "958442",
-    "question": "Will the Iranian regime fall by March 31?",
-    "volume_24hr": 1042.906355,
-    "liquidity": 9651.98488,
-    "answers": [
-      "Yes: $0.07 (7%)",
-      "No: $0.93 (93%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-by-march-31"
-  },
-  {
-    "id": "701423",
-    "question": "Will Saudi Aramco be the third-largest company in the world by market cap on December 31?",
-    "volume_24hr": 1000.0,
-    "liquidity": 13874.11274,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-third-largest-company-in-the-world-by-market-cap-on-december-31"
-  },
-  {
-    "id": "654433",
-    "question": "Mahmoud Abbas out as Palestinian President by December 31?",
-    "volume_24hr": 923.6590969999999,
-    "liquidity": 7139.15923,
+    "id": "629776",
+    "question": "Israel x Hamas Ceasefire Phase II by December 31?",
+    "volume_24hr": 4590.220829,
+    "liquidity": 15951.82624,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
     ],
-    "url": "https://polymarket.com/market/mahmoud-abbas-out-as-palestinian-president-by-december-31"
+    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-december-31-521"
   },
   {
-    "id": "682710",
-    "question": "Will Avigdor Lieberman be the next Prime Minister of Israel?",
-    "volume_24hr": 800.41,
-    "liquidity": 4748.90984,
+    "id": "699296",
+    "question": "Will Israel strike Greater Beirut by December 31?",
+    "volume_24hr": 4347.061031,
+    "liquidity": 992.6869,
     "answers": [
-      "Yes: $0.03 (3%)",
-      "No: $0.97 (97%)"
+      "Yes: $0.28 (28%)",
+      "No: $0.71 (72%)"
     ],
-    "url": "https://polymarket.com/market/will-avigdor-lieberman-be-the-next-prime-minister-of-israel"
+    "url": "https://polymarket.com/market/will-israel-strike-greater-beirut-by-december-31-699"
   },
   {
-    "id": "971330",
-    "question": "Will Israel strike Gaza on December 23?",
-    "volume_24hr": 791.4423039999999,
-    "liquidity": 1655.7878,
+    "id": "676715",
+    "question": "Will Saudi Aramco be the largest company in the world by market cap on March 31?",
+    "volume_24hr": 4324.153498999999,
+    "liquidity": 21315.05461,
     "answers": [
-      "Yes: $0.41 (40%)",
-      "No: $0.59 (60%)"
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-23"
+    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-march-31"
   },
   {
-    "id": "957644",
-    "question": "Israel x Hamas Ceasefire Phase II by January 31?",
-    "volume_24hr": 787.1189320000001,
-    "liquidity": 273.6132,
+    "id": "682705",
+    "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+    "volume_24hr": 4079.165159,
+    "liquidity": 8738.295,
     "answers": [
-      "Yes: $0.39 (38%)",
-      "No: $0.61 (62%)"
+      "Yes: $0.53 (52%)",
+      "No: $0.47 (48%)"
     ],
-    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-january-31"
+    "url": "https://polymarket.com/market/will-benjamin-netanyahu-be-the-next-prime-minister-of-israel"
   },
   {
-    "id": "705594",
-    "question": "Will Israel strike 3 or more countries in December 2025?",
-    "volume_24hr": 759.7605919999999,
-    "liquidity": 1575.00916,
+    "id": "971312",
+    "question": "Will Israel strike Lebanon on December 23?",
+    "volume_24hr": 4078.032978,
+    "liquidity": 2027.6451,
     "answers": [
-      "Yes: $0.03 (3%)",
-      "No: $0.97 (97%)"
+      "Yes: $0.39 (39%)",
+      "No: $0.61 (61%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-3-or-more-countries-in-december-2025"
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-23"
   },
   {
-    "id": "549334",
-    "question": "Israel and Lebanon normalize relations in 2025?",
-    "volume_24hr": 699.74,
-    "liquidity": 19074.5852,
+    "id": "677314",
+    "question": "Israel and Indonesia normalize relations by June 30, 2026?",
+    "volume_24hr": 3620.0,
+    "liquidity": 2011.9127,
     "answers": [
-      "Yes: $0.01 (0%)",
-      "No: $0.99 (100%)"
+      "Yes: $0.18 (18%)",
+      "No: $0.81 (82%)"
     ],
-    "url": "https://polymarket.com/market/israel-and-lebanon-normalize-relations-in-2025"
+    "url": "https://polymarket.com/market/israel-and-indonesia-normalize-relations-by-june-30-2026"
   },
   {
-    "id": "971314",
-    "question": "Will Israel strike Lebanon on December 25?",
-    "volume_24hr": 699.132532,
-    "liquidity": 1209.1243,
+    "id": "578169",
+    "question": "Will Zelenskyy and Putin meet next in Saudi Arabia?",
+    "volume_24hr": 3200.0,
+    "liquidity": 39760.68393,
     "answers": [
-      "Yes: $0.37 (37%)",
-      "No: $0.63 (63%)"
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-25"
-  },
-  {
-    "id": "661700",
-    "question": "Khamenei out as Supreme Leader of Iran by December 31, 2026?",
-    "volume_24hr": 677.8185320000001,
-    "liquidity": 9384.5979,
-    "answers": [
-      "Yes: $0.34 (34%)",
-      "No: $0.66 (66%)"
-    ],
-    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-by-december-31-2026"
-  },
-  {
-    "id": "614699",
-    "question": "US strikes Yemen by December 31?",
-    "volume_24hr": 638.698673,
-    "liquidity": 1305.80894,
-    "answers": [
-      "Yes: $0.03 (3%)",
-      "No: $0.97 (97%)"
-    ],
-    "url": "https://polymarket.com/market/us-strikes-yemen-by-december-31"
-  },
-  {
-    "id": "516948",
-    "question": "Israel withdraws from Gaza in 2025?",
-    "volume_24hr": 537.026035,
-    "liquidity": 19351.6884,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/israel-withdraws-from-gaza-in-2025"
-  },
-  {
-    "id": "627831",
-    "question": "Will Trump establish a Gaza “Board of Peace” in 2025?",
-    "volume_24hr": 531.15,
-    "liquidity": 5560.26469,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.96 (96%)"
-    ],
-    "url": "https://polymarket.com/market/will-trump-establish-a-gaza-board-of-peace-in-2025"
-  },
-  {
-    "id": "591893",
-    "question": "Will Israel strike Turkey by December 31?",
-    "volume_24hr": 505.14837500000004,
-    "liquidity": 4328.76705,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-turkey-by-december-31"
-  },
-  {
-    "id": "971315",
-    "question": "Will Israel strike Lebanon on December 26?",
-    "volume_24hr": 496.562192,
-    "liquidity": 1025.3535,
-    "answers": [
-      "Yes: $0.35 (36%)",
-      "No: $0.65 (64%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-26"
-  },
-  {
-    "id": "705593",
-    "question": "Will Israel strike 2 countries in December 2025?",
-    "volume_24hr": 485.983054,
-    "liquidity": 2031.4888,
-    "answers": [
-      "Yes: $0.17 (16%)",
-      "No: $0.83 (84%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-2-countries-in-december-2025"
+    "url": "https://polymarket.com/market/will-trump-and-putin-meet-next-in-saudi-arabia"
   },
   {
     "id": "690180",
     "question": "Will Trump meet with Netanyahu again before 2026?",
-    "volume_24hr": 477.450125,
-    "liquidity": 2250.13999,
+    "volume_24hr": 2862.532826,
+    "liquidity": 2207.93999,
     "answers": [
       "Yes: $0.95 (95%)",
       "No: $0.05 (5%)"
@@ -638,65 +352,65 @@
     "url": "https://polymarket.com/market/will-trump-meet-with-netanyahu-again-before-2026"
   },
   {
-    "id": "661699",
-    "question": "Khamenei out as Supreme Leader of Iran by June 30?",
-    "volume_24hr": 469.397253,
-    "liquidity": 34706.0429,
+    "id": "791703",
+    "question": "Israel strikes Iran by June 30, 2026?",
+    "volume_24hr": 2815.902735,
+    "liquidity": 4582.0617,
     "answers": [
-      "Yes: $0.18 (18%)",
-      "No: $0.81 (82%)"
+      "Yes: $0.39 (38%)",
+      "No: $0.61 (62%)"
     ],
-    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-by-june-30-747"
+    "url": "https://polymarket.com/market/israel-strikes-iran-by-june-30-2026"
   },
   {
-    "id": "658013",
-    "question": "Hezbollah strike on Israel by December 31?",
-    "volume_24hr": 448.67333199999996,
-    "liquidity": 4029.8817,
-    "answers": [
-      "Yes: $0.05 (5%)",
-      "No: $0.95 (95%)"
-    ],
-    "url": "https://polymarket.com/market/hezbollah-strike-on-israel-by-december-31"
-  },
-  {
-    "id": "554711",
-    "question": "US forces in Iran in 2025?",
-    "volume_24hr": 439.01,
-    "liquidity": 8714.23769,
+    "id": "516948",
+    "question": "Israel withdraws from Gaza in 2025?",
+    "volume_24hr": 2754.0939489999996,
+    "liquidity": 19361.09922,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/us-forces-in-iran-in-2025"
+    "url": "https://polymarket.com/market/israel-withdraws-from-gaza-in-2025"
   },
   {
-    "id": "971332",
-    "question": "Will Israel strike Gaza on December 25?",
-    "volume_24hr": 405.769388,
-    "liquidity": 872.7679,
+    "id": "677273",
+    "question": "Israel and Syria normalize relations by December 31, 2026?",
+    "volume_24hr": 2520.0,
+    "liquidity": 545.1471,
     "answers": [
-      "Yes: $0.49 (50%)",
-      "No: $0.51 (50%)"
+      "Yes: $0.33 (33%)",
+      "No: $0.67 (67%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-25"
+    "url": "https://polymarket.com/market/israel-and-syria-normalize-relations-by-december-31-2026-166"
   },
   {
-    "id": "971331",
-    "question": "Will Israel strike Gaza on December 24?",
-    "volume_24hr": 384.039252,
-    "liquidity": 1695.6826,
+    "id": "604675",
+    "question": "Israeli parliament dissolved by March 31?",
+    "volume_24hr": 2333.952375,
+    "liquidity": 1331.5606,
     "answers": [
-      "Yes: $0.44 (44%)",
-      "No: $0.56 (56%)"
+      "Yes: $0.17 (18%)",
+      "No: $0.82 (82%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-24"
+    "url": "https://polymarket.com/market/israeli-parliament-dissolved-by-march-31"
+  },
+  {
+    "id": "916732",
+    "question": "Khamenei out as Supreme Leader of Iran by March 31?",
+    "volume_24hr": 2195.295422,
+    "liquidity": 1918.4113,
+    "answers": [
+      "Yes: $0.10 (10%)",
+      "No: $0.90 (90%)"
+    ],
+    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-by-march-31"
   },
   {
     "id": "971313",
     "question": "Will Israel strike Lebanon on December 24?",
-    "volume_24hr": 363.882963,
-    "liquidity": 1388.6998,
+    "volume_24hr": 1719.159762,
+    "liquidity": 1316.899,
     "answers": [
       "Yes: $0.50 (50%)",
       "No: $0.50 (50%)"
@@ -704,153 +418,263 @@
     "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-24"
   },
   {
-    "id": "665734",
-    "question": "Will Trump establish a Gaza “Board of Peace” by March 31?",
-    "volume_24hr": 353.996922,
-    "liquidity": 4186.2275,
+    "id": "984442",
+    "question": "US strikes Iran by June 30, 2026?",
+    "volume_24hr": 1676.0,
+    "liquidity": 1925.2809,
     "answers": [
-      "Yes: $0.58 (58%)",
-      "No: $0.42 (42%)"
+      "Yes: $0.30 (30%)",
+      "No: $0.70 (70%)"
     ],
-    "url": "https://polymarket.com/market/will-trump-establish-a-gaza-board-of-peace-by-march-31"
+    "url": "https://polymarket.com/market/us-strikes-iran-by-june-30-2026"
   },
   {
-    "id": "665736",
-    "question": "Foreign intervention in Gaza by March 31?",
-    "volume_24hr": 339.322102,
-    "liquidity": 4397.2419,
-    "answers": [
-      "Yes: $0.25 (25%)",
-      "No: $0.75 (75%)"
-    ],
-    "url": "https://polymarket.com/market/foreign-intervention-in-gaza-by-march-31"
-  },
-  {
-    "id": "788680",
-    "question": "Will Israel strike Iraq by December 31?",
-    "volume_24hr": 338.0,
-    "liquidity": 3901.31404,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.96 (96%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-iraq-by-december-31"
-  },
-  {
-    "id": "528751",
-    "question": "US forces in Yemen in 2025?",
-    "volume_24hr": 336.61120000000005,
-    "liquidity": 7264.29051,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/us-forces-in-yemen-in-2025"
-  },
-  {
-    "id": "706280",
-    "question": "Israel strike on the West Bank by December 31?",
-    "volume_24hr": 321.36,
-    "liquidity": 4750.6116,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.95 (96%)"
-    ],
-    "url": "https://polymarket.com/market/israel-strike-on-the-west-bank-by-december-31-586"
-  },
-  {
-    "id": "567033",
-    "question": "Syria strikes Israel by December 31?",
-    "volume_24hr": 308.73,
-    "liquidity": 6740.83225,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/syria-strikes-israel-by-december-31"
-  },
-  {
-    "id": "557893",
-    "question": "Will Saudi Arabia join the Abraham Accords in 2025?",
-    "volume_24hr": 295.062985,
-    "liquidity": 10077.64474,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-saudi-arabia-join-the-abraham-accords-in-2025-645"
-  },
-  {
-    "id": "642992",
-    "question": "Will the War Powers Resolution on Iran (H.Con.Res.38) be signed into law by December 31 2025?",
-    "volume_24hr": 294.37,
-    "liquidity": 443.41578,
+    "id": "581752",
+    "question": "Will Trump announce Stephen Miran to replace Lisa Cook?",
+    "volume_24hr": 1624.0,
+    "liquidity": 5827.89895,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-the-war-powers-resolution-on-iran-hconres38-be-signed-into-law-by-december-31-2025-891"
+    "url": "https://polymarket.com/market/will-trump-announce-stephen-miran-to-replace-lisa-cook"
   },
   {
-    "id": "665228",
-    "question": "Will Hezbollah disarm by March 31?",
-    "volume_24hr": 268.539318,
-    "liquidity": 7318.4999,
-    "answers": [
-      "Yes: $0.12 (12%)",
-      "No: $0.88 (88%)"
-    ],
-    "url": "https://polymarket.com/market/will-hezbollah-disarm-by-march-31"
-  },
-  {
-    "id": "554710",
-    "question": "Will the US officially declare war on Iran in 2025?",
-    "volume_24hr": 258.873572,
-    "liquidity": 47566.86981,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-us-officially-declare-war-on-iran-in-2025"
-  },
-  {
-    "id": "958427",
-    "question": "Israel x Iran ceasefire broken by June 30, 2026?",
-    "volume_24hr": 251.538455,
-    "liquidity": 20043.4326,
-    "answers": [
-      "Yes: $0.39 (38%)",
-      "No: $0.61 (62%)"
-    ],
-    "url": "https://polymarket.com/market/israel-x-iran-ceasefire-broken-by-june-30-2026"
-  },
-  {
-    "id": "631099",
-    "question": "Israel x Hamas ceasefire cancelled by December 31?",
-    "volume_24hr": 247.192466,
-    "liquidity": 10938.39103,
+    "id": "676744",
+    "question": "Will Saudi Aramco be the largest company in the world by market cap on December 31?",
+    "volume_24hr": 1622.337256,
+    "liquidity": 33391.95082,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-cancelled-by-december-31-672-844"
+    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-december-31-584"
   },
   {
-    "id": "763325",
-    "question": "Will Al Nassr Saudi Club win on 2025-12-27?",
-    "volume_24hr": 246.457387,
-    "liquidity": 10660.3868,
+    "id": "705592",
+    "question": "Will Israel strike 1 country in December 2025?",
+    "volume_24hr": 1578.9828960000004,
+    "liquidity": 2125.2041,
     "answers": [
-      "Yes: $0.93 (92%)",
-      "No: $0.07 (8%)"
+      "Yes: $0.81 (82%)",
+      "No: $0.18 (18%)"
     ],
-    "url": "https://polymarket.com/market/spl-nsr-okh-2025-12-27-nsr"
+    "url": "https://polymarket.com/market/will-israel-strike-1-country-in-december-2025"
+  },
+  {
+    "id": "553374",
+    "question": "Will the Iranian regime fall in 2025?",
+    "volume_24hr": 1522.8718289999997,
+    "liquidity": 28213.91361,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-in-2025"
+  },
+  {
+    "id": "971330",
+    "question": "Will Israel strike Gaza on December 23?",
+    "volume_24hr": 1400.7096790000005,
+    "liquidity": 1625.8726,
+    "answers": [
+      "Yes: $0.47 (48%)",
+      "No: $0.53 (52%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-23"
+  },
+  {
+    "id": "520579",
+    "question": "Israel and Saudi Arabia normalize relations in 2025?",
+    "volume_24hr": 1338.505333,
+    "liquidity": 302322.93129,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/israel-and-saudi-arabia-normalize-relations-in-2025"
+  },
+  {
+    "id": "549333",
+    "question": "Israel and Syria normalize relations by December 31, 2025?",
+    "volume_24hr": 1070.475833,
+    "liquidity": 7656.012,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/israel-and-syria-normalize-relations-in-2025"
+  },
+  {
+    "id": "631186",
+    "question": "Will Saudi Aramco be the largest company in the world by market cap on June 30?",
+    "volume_24hr": 1052.828,
+    "liquidity": 32638.31954,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-june-30"
+  },
+  {
+    "id": "957644",
+    "question": "Israel x Hamas Ceasefire Phase II by January 31?",
+    "volume_24hr": 1042.808365,
+    "liquidity": 328.937,
+    "answers": [
+      "Yes: $0.40 (40%)",
+      "No: $0.60 (60%)"
+    ],
+    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-january-31"
+  },
+  {
+    "id": "984441",
+    "question": "US strikes Iran by March 31, 2026?",
+    "volume_24hr": 1020.141322,
+    "liquidity": 3184.4936,
+    "answers": [
+      "Yes: $0.15 (16%)",
+      "No: $0.84 (84%)"
+    ],
+    "url": "https://polymarket.com/market/us-strikes-iran-by-march-31-2026"
+  },
+  {
+    "id": "701423",
+    "question": "Will Saudi Aramco be the third-largest company in the world by market cap on December 31?",
+    "volume_24hr": 1000.0,
+    "liquidity": 15144.29656,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-third-largest-company-in-the-world-by-market-cap-on-december-31"
+  },
+  {
+    "id": "566096",
+    "question": "Will Hezbollah disarm in 2025?",
+    "volume_24hr": 943.448444,
+    "liquidity": 14919.32645,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-hezbollah-to-disarm-before-in-2025"
+  },
+  {
+    "id": "677315",
+    "question": "Israel and Indonesia normalize relations by December 31, 2026?",
+    "volume_24hr": 923.9,
+    "liquidity": 3133.5864,
+    "answers": [
+      "Yes: $0.28 (28%)",
+      "No: $0.72 (72%)"
+    ],
+    "url": "https://polymarket.com/market/israel-and-indonesia-normalize-relations-by-december-31-2026-618-741"
+  },
+  {
+    "id": "971314",
+    "question": "Will Israel strike Lebanon on December 25?",
+    "volume_24hr": 857.750603,
+    "liquidity": 1123.3494,
+    "answers": [
+      "Yes: $0.37 (37%)",
+      "No: $0.63 (63%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-25"
+  },
+  {
+    "id": "682710",
+    "question": "Will Avigdor Lieberman be the next Prime Minister of Israel?",
+    "volume_24hr": 800.41,
+    "liquidity": 4911.51153,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/will-avigdor-lieberman-be-the-next-prime-minister-of-israel"
+  },
+  {
+    "id": "556126",
+    "question": "Another US military action against Iran before 2026?",
+    "volume_24hr": 800.183444,
+    "liquidity": 11024.76328,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/another-us-military-action-against-iran-before-2026"
+  },
+  {
+    "id": "984440",
+    "question": "US strikes Iran by December 31, 2025?",
+    "volume_24hr": 796.6446859999999,
+    "liquidity": 5594.67842,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/us-strikes-iran-by-december-31-2025"
+  },
+  {
+    "id": "554711",
+    "question": "US forces in Iran in 2025?",
+    "volume_24hr": 773.7000999999999,
+    "liquidity": 8960.11197,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/us-forces-in-iran-in-2025"
+  },
+  {
+    "id": "549334",
+    "question": "Israel and Lebanon normalize relations in 2025?",
+    "volume_24hr": 706.22,
+    "liquidity": 19074.79054,
+    "answers": [
+      "Yes: $0.01 (0%)",
+      "No: $0.99 (100%)"
+    ],
+    "url": "https://polymarket.com/market/israel-and-lebanon-normalize-relations-in-2025"
+  },
+  {
+    "id": "964992",
+    "question": "Will Saudi Aramco be the second-largest company in the world by market cap on January 31?",
+    "volume_24hr": 698.2104999999999,
+    "liquidity": 3570.40976,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-second-largest-company-in-the-world-by-market-cap-on-january-31"
+  },
+  {
+    "id": "898685",
+    "question": "Israel x Hamas Ceasefire Phase II by March 31?",
+    "volume_24hr": 665.97,
+    "liquidity": 1735.4092,
+    "answers": [
+      "Yes: $0.45 (44%)",
+      "No: $0.56 (56%)"
+    ],
+    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-march-31-117-352"
+  },
+  {
+    "id": "614699",
+    "question": "US strikes Yemen by December 31?",
+    "volume_24hr": 658.213861,
+    "liquidity": 1304.83293,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/us-strikes-yemen-by-december-31"
   },
   {
     "id": "788676",
     "question": "Will Netanyahu be pardoned by February 28?",
-    "volume_24hr": 236.506382,
-    "liquidity": 1397.3267,
+    "volume_24hr": 656.629834,
+    "liquidity": 1391.3815,
     "answers": [
       "Yes: $0.21 (22%)",
       "No: $0.79 (78%)"
@@ -858,32 +682,285 @@
     "url": "https://polymarket.com/market/will-netanyahu-be-pardoned-by-february-28"
   },
   {
-    "id": "890754",
-    "question": "Will Netanyahu visit NYC by March 31?",
-    "volume_24hr": 206.436955,
-    "liquidity": 1269.2174,
+    "id": "661700",
+    "question": "Khamenei out as Supreme Leader of Iran by December 31, 2026?",
+    "volume_24hr": 572.238227,
+    "liquidity": 9332.8479,
     "answers": [
-      "Yes: $0.20 (20%)",
-      "No: $0.81 (80%)"
+      "Yes: $0.34 (34%)",
+      "No: $0.66 (66%)"
     ],
-    "url": "https://polymarket.com/market/will-netanyahu-visit-nyc-by-march-31"
+    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-by-december-31-2026"
   },
   {
-    "id": "664715",
-    "question": "Israel strike on Yemen by December 31?",
-    "volume_24hr": 183.0,
-    "liquidity": 4674.6849,
+    "id": "705594",
+    "question": "Will Israel strike 3 or more countries in December 2025?",
+    "volume_24hr": 554.780951,
+    "liquidity": 1401.61704,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-3-or-more-countries-in-december-2025"
+  },
+  {
+    "id": "627831",
+    "question": "Will Trump establish a Gaza “Board of Peace” in 2025?",
+    "volume_24hr": 514.88,
+    "liquidity": 5545.7314,
+    "answers": [
+      "Yes: $0.04 (4%)",
+      "No: $0.96 (96%)"
+    ],
+    "url": "https://polymarket.com/market/will-trump-establish-a-gaza-board-of-peace-in-2025"
+  },
+  {
+    "id": "705593",
+    "question": "Will Israel strike 2 countries in December 2025?",
+    "volume_24hr": 511.338273,
+    "liquidity": 1763.7427,
+    "answers": [
+      "Yes: $0.16 (16%)",
+      "No: $0.84 (84%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-2-countries-in-december-2025"
+  },
+  {
+    "id": "571775",
+    "question": "Will Germany recognize Palestine in 2025?",
+    "volume_24hr": 509.0,
+    "liquidity": 6178.94836,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-germany-recognize-palestine-in-2025"
+  },
+  {
+    "id": "971315",
+    "question": "Will Israel strike Lebanon on December 26?",
+    "volume_24hr": 499.062192,
+    "liquidity": 1029.7035,
+    "answers": [
+      "Yes: $0.35 (36%)",
+      "No: $0.65 (64%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-26"
+  },
+  {
+    "id": "554710",
+    "question": "Will the US officially declare war on Iran in 2025?",
+    "volume_24hr": 497.69023899999996,
+    "liquidity": 46932.00543,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-us-officially-declare-war-on-iran-in-2025"
+  },
+  {
+    "id": "667081",
+    "question": "Will Zelenskyy and Putin meet next in Qatar / UAE before 2027?",
+    "volume_24hr": 476.959253,
+    "liquidity": 1070.80952,
     "answers": [
       "Yes: $0.04 (4%)",
       "No: $0.95 (96%)"
     ],
-    "url": "https://polymarket.com/market/israel-strike-on-yemen-by-december-31"
+    "url": "https://polymarket.com/market/will-zelenskyy-and-putin-meet-next-in-qatar-uae"
+  },
+  {
+    "id": "631099",
+    "question": "Israel x Hamas ceasefire cancelled by December 31?",
+    "volume_24hr": 468.194158,
+    "liquidity": 10935.15875,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-cancelled-by-december-31-672-844"
+  },
+  {
+    "id": "661699",
+    "question": "Khamenei out as Supreme Leader of Iran by June 30?",
+    "volume_24hr": 444.65883199999996,
+    "liquidity": 34585.5333,
+    "answers": [
+      "Yes: $0.18 (18%)",
+      "No: $0.81 (82%)"
+    ],
+    "url": "https://polymarket.com/market/khamenei-out-as-supreme-leader-of-iran-by-june-30-747"
+  },
+  {
+    "id": "663583",
+    "question": "Will the Iranian regime fall before 2027?",
+    "volume_24hr": 415.50228599999997,
+    "liquidity": 17729.6351,
+    "answers": [
+      "Yes: $0.12 (12%)",
+      "No: $0.89 (88%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-by-the-end-of-2026"
+  },
+  {
+    "id": "971332",
+    "question": "Will Israel strike Gaza on December 25?",
+    "volume_24hr": 412.8640920000001,
+    "liquidity": 716.4621,
+    "answers": [
+      "Yes: $0.40 (40%)",
+      "No: $0.60 (60%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-25"
+  },
+  {
+    "id": "834851",
+    "question": "Maduro exiled to Qatar by March 31?",
+    "volume_24hr": 386.184575,
+    "liquidity": 2517.68545,
+    "answers": [
+      "Yes: $0.05 (5%)",
+      "No: $0.95 (95%)"
+    ],
+    "url": "https://polymarket.com/market/maduro-exiled-to-qatar-by-march-31"
+  },
+  {
+    "id": "971331",
+    "question": "Will Israel strike Gaza on December 24?",
+    "volume_24hr": 360.62396299999995,
+    "liquidity": 1683.0887,
+    "answers": [
+      "Yes: $0.43 (44%)",
+      "No: $0.56 (56%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-24"
+  },
+  {
+    "id": "658013",
+    "question": "Hezbollah strike on Israel by December 31?",
+    "volume_24hr": 329.9,
+    "liquidity": 4294.8024,
+    "answers": [
+      "Yes: $0.05 (5%)",
+      "No: $0.95 (95%)"
+    ],
+    "url": "https://polymarket.com/market/hezbollah-strike-on-israel-by-december-31"
+  },
+  {
+    "id": "528751",
+    "question": "US forces in Yemen in 2025?",
+    "volume_24hr": 312.94120000000004,
+    "liquidity": 7868.04484,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/us-forces-in-yemen-in-2025"
+  },
+  {
+    "id": "543356",
+    "question": "Will the US recognize Palestine in 2025?",
+    "volume_24hr": 310.01923400000004,
+    "liquidity": 20854.29109,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-us-recognize-palestine-in-2025"
+  },
+  {
+    "id": "591900",
+    "question": "Will Greta Thunberg enter Gaza by December 31?",
+    "volume_24hr": 310.0,
+    "liquidity": 2520.10117,
+    "answers": [
+      "Yes: $0.01 (0%)",
+      "No: $0.99 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-greta-thunberg-enter-gaza-by-december-31"
+  },
+  {
+    "id": "642992",
+    "question": "Will the War Powers Resolution on Iran (H.Con.Res.38) be signed into law by December 31 2025?",
+    "volume_24hr": 299.89,
+    "liquidity": 444.55708,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-war-powers-resolution-on-iran-hconres38-be-signed-into-law-by-december-31-2025-891"
+  },
+  {
+    "id": "564650",
+    "question": "Will Israeli troops enter Suwayda in 2025?",
+    "volume_24hr": 281.632653,
+    "liquidity": 3313.47148,
+    "answers": [
+      "Yes: $0.04 (4%)",
+      "No: $0.96 (96%)"
+    ],
+    "url": "https://polymarket.com/market/will-israeli-troops-enter-suwayda-in-2025"
+  },
+  {
+    "id": "994634",
+    "question": "Will Trump say \"Peace in the Middle East\" during the announcement on December 22?",
+    "volume_24hr": 248.50338499999998,
+    "liquidity": 86.2932,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/will-trump-say-peace-in-the-middle-east-during-the-announcement-on-december-22"
+  },
+  {
+    "id": "788680",
+    "question": "Will Israel strike Iraq by December 31?",
+    "volume_24hr": 248.0,
+    "liquidity": 3815.23651,
+    "answers": [
+      "Yes: $0.04 (4%)",
+      "No: $0.96 (96%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-iraq-by-december-31"
+  },
+  {
+    "id": "552652",
+    "question": "Israel confirms it has nuclear weapons in 2025?",
+    "volume_24hr": 235.62,
+    "liquidity": 3370.54466,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/israel-confirms-it-has-nuclear-weapons-in-2025"
+  },
+  {
+    "id": "665734",
+    "question": "Will Trump establish a Gaza “Board of Peace” by March 31?",
+    "volume_24hr": 224.86999999999998,
+    "liquidity": 4187.1687,
+    "answers": [
+      "Yes: $0.58 (58%)",
+      "No: $0.41 (42%)"
+    ],
+    "url": "https://polymarket.com/market/will-trump-establish-a-gaza-board-of-peace-by-march-31"
+  },
+  {
+    "id": "958442",
+    "question": "Will the Iranian regime fall by March 31?",
+    "volume_24hr": 219.234534,
+    "liquidity": 9638.98836,
+    "answers": [
+      "Yes: $0.07 (6%)",
+      "No: $0.94 (94%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-by-march-31"
   },
   {
     "id": "705362",
     "question": "Will Trump agree to a tariff agreement with Israel by December 31?",
-    "volume_24hr": 181.659151,
-    "liquidity": 1139.6039,
+    "volume_24hr": 181.219151,
+    "liquidity": 1138.2079,
     "answers": [
       "Yes: $0.81 (82%)",
       "No: $0.18 (18%)"
@@ -893,8 +970,8 @@
   {
     "id": "618817",
     "question": "Abdul-Malik out as leader of Houthis by December 31?",
-    "volume_24hr": 179.678521,
-    "liquidity": 3209.23981,
+    "volume_24hr": 173.6,
+    "liquidity": 3208.34417,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -902,131 +979,10 @@
     "url": "https://polymarket.com/market/abdul-malik-out-as-leader-of-houthis-by-december-31"
   },
   {
-    "id": "569207",
-    "question": "U.S. forces in Gaza in 2025?",
-    "volume_24hr": 176.028295,
-    "liquidity": 7834.23412,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/us-forces-in-gaza-in-2025"
-  },
-  {
-    "id": "678752",
-    "question": "Will Israel strike 9 countries in 2026?",
-    "volume_24hr": 173.263332,
-    "liquidity": 841.04552,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-9-countries-in-2026"
-  },
-  {
-    "id": "543356",
-    "question": "Will the US recognize Palestine in 2025?",
-    "volume_24hr": 169.904416,
-    "liquidity": 20785.1791,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-us-recognize-palestine-in-2025"
-  },
-  {
-    "id": "898685",
-    "question": "Israel x Hamas Ceasefire Phase II by March 31?",
-    "volume_24hr": 165.97000000000003,
-    "liquidity": 1795.4931,
-    "answers": [
-      "Yes: $0.43 (44%)",
-      "No: $0.56 (56%)"
-    ],
-    "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-march-31-117-352"
-  },
-  {
-    "id": "705319",
-    "question": "Israel banned from Eurovision 2026 by December 31?",
-    "volume_24hr": 159.118571,
-    "liquidity": 1474.13643,
-    "answers": [
-      "Yes: $0.01 (0%)",
-      "No: $0.99 (100%)"
-    ],
-    "url": "https://polymarket.com/market/israel-banned-from-eurovision-2026-by-december-31"
-  },
-  {
-    "id": "842020",
-    "question": "Will Israel win Eurovision 2026?",
-    "volume_24hr": 158.823528,
-    "liquidity": 23140.2747,
-    "answers": [
-      "Yes: $0.17 (16%)",
-      "No: $0.83 (84%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-win-eurovision-2026"
-  },
-  {
-    "id": "718621",
-    "question": "Will NEOM SC vs. Al Najmah Saudi Club end in a draw?",
-    "volume_24hr": 150.0,
-    "liquidity": 11900.296,
-    "answers": [
-      "Yes: $0.18 (18%)",
-      "No: $0.81 (82%)"
-    ],
-    "url": "https://polymarket.com/market/spl-neo-njm-2025-12-25-draw"
-  },
-  {
-    "id": "570071",
-    "question": "Will Hamas agree to disarm by December 31?",
-    "volume_24hr": 145.436665,
-    "liquidity": 8516.98122,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-hamaz-disarm-by-december-31-858"
-  },
-  {
-    "id": "677357",
-    "question": "Will Hamas agree to disarm by March 31?",
-    "volume_24hr": 142.152431,
-    "liquidity": 2919.0023,
-    "answers": [
-      "Yes: $0.27 (27%)",
-      "No: $0.73 (73%)"
-    ],
-    "url": "https://polymarket.com/market/will-hamas-agree-to-disarm-by-march-31"
-  },
-  {
-    "id": "566718",
-    "question": "Will Israel annex any territory by December 31?",
-    "volume_24hr": 136.7,
-    "liquidity": 7561.90399,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-annex-any-territory-by-december-31"
-  },
-  {
-    "id": "591900",
-    "question": "Will Greta Thunberg enter Gaza by December 31?",
-    "volume_24hr": 123.97,
-    "liquidity": 2519.46588,
-    "answers": [
-      "Yes: $0.01 (0%)",
-      "No: $0.99 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-greta-thunberg-enter-gaza-by-december-31"
-  },
-  {
     "id": "678748",
     "question": "Will Israel strike 5 countries in 2026?",
-    "volume_24hr": 115.529458,
-    "liquidity": 1740.96759,
+    "volume_24hr": 165.680482,
+    "liquidity": 2462.89831,
     "answers": [
       "Yes: $0.07 (7%)",
       "No: $0.93 (93%)"
@@ -1034,43 +990,87 @@
     "url": "https://polymarket.com/market/will-israel-strike-5-countries-in-november-2025"
   },
   {
-    "id": "676744",
-    "question": "Will Saudi Aramco be the largest company in the world by market cap on December 31?",
-    "volume_24hr": 112.7474,
-    "liquidity": 33192.65432,
+    "id": "890754",
+    "question": "Will Netanyahu visit NYC by March 31?",
+    "volume_24hr": 159.206955,
+    "liquidity": 1571.6374,
+    "answers": [
+      "Yes: $0.20 (20%)",
+      "No: $0.81 (80%)"
+    ],
+    "url": "https://polymarket.com/market/will-netanyahu-visit-nyc-by-march-31"
+  },
+  {
+    "id": "718621",
+    "question": "Will NEOM SC vs. Al Najmah Saudi Club end in a draw?",
+    "volume_24hr": 159.0,
+    "liquidity": 11814.726,
+    "answers": [
+      "Yes: $0.18 (18%)",
+      "No: $0.81 (82%)"
+    ],
+    "url": "https://polymarket.com/market/spl-neo-njm-2025-12-25-draw"
+  },
+  {
+    "id": "569207",
+    "question": "U.S. forces in Gaza in 2025?",
+    "volume_24hr": 151.318295,
+    "liquidity": 7823.34967,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-december-31-584"
+    "url": "https://polymarket.com/market/us-forces-in-gaza-in-2025"
   },
   {
-    "id": "676715",
-    "question": "Will Saudi Aramco be the largest company in the world by market cap on March 31?",
-    "volume_24hr": 106.05000000000001,
-    "liquidity": 21298.23182,
+    "id": "677397",
+    "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
+    "volume_24hr": 136.870785,
+    "liquidity": 1486.413,
+    "answers": [
+      "Yes: $0.28 (28%)",
+      "No: $0.72 (72%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
+  },
+  {
+    "id": "611504",
+    "question": "Will Finland recognize Palestine in 2025?",
+    "volume_24hr": 128.81,
+    "liquidity": 2930.44089,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-march-31"
+    "url": "https://polymarket.com/market/will-finland-recognize-palestine-in-2025"
   },
   {
-    "id": "645014",
-    "question": "Joseph Aoun out as President of Lebanon by December 31, 2025?",
-    "volume_24hr": 103.0,
-    "liquidity": 3745.60189,
+    "id": "566718",
+    "question": "Will Israel annex any territory by December 31?",
+    "volume_24hr": 127.69,
+    "liquidity": 7570.7563,
     "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/joseph-aoun-out-as-president-of-lebanon-by-december-31-2025"
+    "url": "https://polymarket.com/market/will-israel-annex-any-territory-by-december-31"
+  },
+  {
+    "id": "665736",
+    "question": "Foreign intervention in Gaza by March 31?",
+    "volume_24hr": 127.621577,
+    "liquidity": 4420.9982,
+    "answers": [
+      "Yes: $0.25 (25%)",
+      "No: $0.75 (75%)"
+    ],
+    "url": "https://polymarket.com/market/foreign-intervention-in-gaza-by-march-31"
   },
   {
     "id": "571777",
     "question": "Will Belgium recognize Palestine in 2025?",
-    "volume_24hr": 101.66,
-    "liquidity": 15242.48064,
+    "volume_24hr": 117.12,
+    "liquidity": 15231.85644,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -1078,54 +1078,87 @@
     "url": "https://polymarket.com/market/will-belgium-recognize-palestine-in-2025-171"
   },
   {
-    "id": "678751",
-    "question": "Will Israel strike 8 countries in 2026?",
-    "volume_24hr": 97.318694,
-    "liquidity": 1486.75669,
+    "id": "678744",
+    "question": "Will Israel strike 1 country in 2026?",
+    "volume_24hr": 116.66,
+    "liquidity": 4127.8827,
+    "answers": [
+      "Yes: $0.04 (4%)",
+      "No: $0.95 (96%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-1-country-in-2026"
+  },
+  {
+    "id": "706280",
+    "question": "Israel strike on the West Bank by December 31?",
+    "volume_24hr": 111.10000000000001,
+    "liquidity": 5004.2717,
+    "answers": [
+      "Yes: $0.04 (4%)",
+      "No: $0.95 (96%)"
+    ],
+    "url": "https://polymarket.com/market/israel-strike-on-the-west-bank-by-december-31-586"
+  },
+  {
+    "id": "677357",
+    "question": "Will Hamas agree to disarm by March 31?",
+    "volume_24hr": 109.72,
+    "liquidity": 3216.964,
+    "answers": [
+      "Yes: $0.27 (27%)",
+      "No: $0.73 (73%)"
+    ],
+    "url": "https://polymarket.com/market/will-hamas-agree-to-disarm-by-march-31"
+  },
+  {
+    "id": "566222",
+    "question": "U.S. agrees to a new trade deal with \"Israel\"?",
+    "volume_24hr": 109.58578899999999,
+    "liquidity": 10645.6073,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/us-agrees-to-a-new-trade-deal-with-israel"
+  },
+  {
+    "id": "543929",
+    "question": "Israel parliament dissolved in 2025?",
+    "volume_24hr": 105.091121,
+    "liquidity": 5079.07485,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/israel-parliament-dissolved-in-2025"
+  },
+  {
+    "id": "667082",
+    "question": "Will Zelenskyy and Putin meet next in Saudi Arabia before 2027?",
+    "volume_24hr": 100.0,
+    "liquidity": 2020.31124,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-zelenskyy-and-putin-meet-next-in-saudi-arabia"
+  },
+  {
+    "id": "654433",
+    "question": "Mahmoud Abbas out as Palestinian President by December 31?",
+    "volume_24hr": 99.895,
+    "liquidity": 7580.35842,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-8-countries-in-2026"
-  },
-  {
-    "id": "678750",
-    "question": "Will Israel strike 7 countries in 2026?",
-    "volume_24hr": 89.279458,
-    "liquidity": 1316.82468,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-7-countries-in-2026"
-  },
-  {
-    "id": "678758",
-    "question": "Will Israel strike 15 or more countries in 2026?",
-    "volume_24hr": 77.49,
-    "liquidity": 1969.3212,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-15-or-more-countries-in-2026"
-  },
-  {
-    "id": "705521",
-    "question": "Houthi strike on Israel by December 31?",
-    "volume_24hr": 68.375857,
-    "liquidity": 476.64636,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/houthi-strike-on-israel-by-december-31"
+    "url": "https://polymarket.com/market/mahmoud-abbas-out-as-palestinian-president-by-december-31"
   },
   {
     "id": "634462",
     "question": "Will Trump visit Gaza by Dec 31?",
-    "volume_24hr": 65.065,
-    "liquidity": 6142.73719,
+    "volume_24hr": 99.181,
+    "liquidity": 6136.36219,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -1133,42 +1166,64 @@
     "url": "https://polymarket.com/market/will-trump-visit-gaza-by-dec-31"
   },
   {
-    "id": "971316",
-    "question": "Will Israel strike Lebanon on December 27?",
-    "volume_24hr": 60.302194,
-    "liquidity": 1004.3434,
+    "id": "645014",
+    "question": "Joseph Aoun out as President of Lebanon by December 31, 2025?",
+    "volume_24hr": 86.75,
+    "liquidity": 3743.29091,
     "answers": [
-      "Yes: $0.42 (42%)",
-      "No: $0.57 (57%)"
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-27"
+    "url": "https://polymarket.com/market/joseph-aoun-out-as-president-of-lebanon-by-december-31-2025"
   },
   {
-    "id": "631186",
-    "question": "Will Saudi Aramco be the largest company in the world by market cap on June 30?",
-    "volume_24hr": 60.0,
-    "liquidity": 32498.21651,
+    "id": "678758",
+    "question": "Will Israel strike 15 or more countries in 2026?",
+    "volume_24hr": 77.49,
+    "liquidity": 1826.6287,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-june-30"
+    "url": "https://polymarket.com/market/will-israel-strike-15-or-more-countries-in-2026"
   },
   {
-    "id": "971333",
-    "question": "Will Israel strike Gaza on December 26?",
-    "volume_24hr": 58.933282,
-    "liquidity": 870.8179,
+    "id": "552121",
+    "question": "Will the U.S. invade Iran in 2025?",
+    "volume_24hr": 66.32,
+    "liquidity": 12394.57945,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.55 (55%)"
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-26"
+    "url": "https://polymarket.com/market/will-the-us-invade-iran-in-2025"
+  },
+  {
+    "id": "842020",
+    "question": "Will Israel win Eurovision 2026?",
+    "volume_24hr": 58.823528,
+    "liquidity": 23117.5454,
+    "answers": [
+      "Yes: $0.17 (16%)",
+      "No: $0.83 (84%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-win-eurovision-2026"
+  },
+  {
+    "id": "678743",
+    "question": "Will Israel strike 0 countries in 2026?",
+    "volume_24hr": 57.88,
+    "liquidity": 3581.4401,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-0-countries-in-2026"
   },
   {
     "id": "971338",
     "question": "Will Israel strike Gaza on December 31?",
-    "volume_24hr": 57.90739,
+    "volume_24hr": 53.292236,
     "liquidity": 708.5201,
     "answers": [
       "Yes: $0.42 (42%)",
@@ -1177,141 +1232,9 @@
     "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-31"
   },
   {
-    "id": "678743",
-    "question": "Will Israel strike 0 countries in 2026?",
-    "volume_24hr": 57.88,
-    "liquidity": 3822.56911,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-0-countries-in-2026"
-  },
-  {
-    "id": "521873",
-    "question": "Will the U.S. take over Gaza in 2025?",
-    "volume_24hr": 57.129999999999995,
-    "liquidity": 31777.89367,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-us-take-over-gaza-in-2025"
-  },
-  {
-    "id": "663583",
-    "question": "Will the Iranian regime fall before 2027?",
-    "volume_24hr": 55.210252,
-    "liquidity": 17740.4261,
-    "answers": [
-      "Yes: $0.12 (12%)",
-      "No: $0.89 (88%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-by-the-end-of-2026"
-  },
-  {
-    "id": "549333",
-    "question": "Israel and Syria normalize relations by December 31, 2025?",
-    "volume_24hr": 55.045833,
-    "liquidity": 7653.56745,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/israel-and-syria-normalize-relations-in-2025"
-  },
-  {
-    "id": "566222",
-    "question": "U.S. agrees to a new trade deal with \"Israel\"?",
-    "volume_24hr": 54.61,
-    "liquidity": 10642.90335,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/us-agrees-to-a-new-trade-deal-with-israel"
-  },
-  {
-    "id": "677398",
-    "question": "Will Israel launch a major ground offensive in Gaza by March 31?",
-    "volume_24hr": 54.022984,
-    "liquidity": 1087.3474,
-    "answers": [
-      "Yes: $0.20 (20%)",
-      "No: $0.80 (80%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-launch-a-major-ground-offensive-in-gaza-by-march-31"
-  },
-  {
-    "id": "971334",
-    "question": "Will Israel strike Gaza on December 27?",
-    "volume_24hr": 53.678136,
-    "liquidity": 740.7175,
-    "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-27"
-  },
-  {
-    "id": "537895",
-    "question": "U.S. withdraws from Syria in 2025?",
-    "volume_24hr": 51.6,
-    "liquidity": 1916.53081,
-    "answers": [
-      "Yes: $0.01 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/us-withdraws-from-syria-in-2025"
-  },
-  {
-    "id": "552652",
-    "question": "Israel confirms it has nuclear weapons in 2025?",
-    "volume_24hr": 50.22,
-    "liquidity": 3345.26281,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/israel-confirms-it-has-nuclear-weapons-in-2025"
-  },
-  {
-    "id": "602010",
-    "question": "Israel x Syria security agreement by December 31?",
-    "volume_24hr": 49.630703,
-    "liquidity": 5525.81189,
-    "answers": [
-      "Yes: $0.03 (3%)",
-      "No: $0.97 (97%)"
-    ],
-    "url": "https://polymarket.com/market/israel-x-syria-security-agreement-by-december-31-629-842"
-  },
-  {
-    "id": "521878",
-    "question": "US-Iran nuclear deal in 2025?",
-    "volume_24hr": 48.615024,
-    "liquidity": 3075.19517,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/us-x-iran-nuclear-deal-in-2025"
-  },
-  {
-    "id": "971321",
-    "question": "Will Israel strike Lebanon on December 28?",
-    "volume_24hr": 47.284378,
-    "liquidity": 937.2127,
-    "answers": [
-      "Yes: $0.37 (37%)",
-      "No: $0.63 (63%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-28"
-  },
-  {
     "id": "971337",
     "question": "Will Israel strike Gaza on December 30?",
-    "volume_24hr": 46.413047999999996,
+    "volume_24hr": 49.420733999999996,
     "liquidity": 795.0478,
     "answers": [
       "Yes: $0.47 (47%)",
@@ -1320,43 +1243,21 @@
     "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-30"
   },
   {
-    "id": "520927",
-    "question": "Iran Nuke in 2025?",
-    "volume_24hr": 43.6,
-    "liquidity": 42298.21142,
+    "id": "763325",
+    "question": "Will Al Nassr Saudi Club win on 2025-12-27?",
+    "volume_24hr": 42.781203000000005,
+    "liquidity": 10717.4996,
     "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
+      "Yes: $0.93 (92%)",
+      "No: $0.07 (8%)"
     ],
-    "url": "https://polymarket.com/market/iran-nuke-in-2025"
-  },
-  {
-    "id": "580861",
-    "question": "US x Iran nuclear talks resume by December 31? ",
-    "volume_24hr": 43.25,
-    "liquidity": 5165.63848,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/us-x-iran-nuclear-talks-resume-by-december-31"
-  },
-  {
-    "id": "647846",
-    "question": "Will Trump publicly disparage Netanyahu by December 31?",
-    "volume_24hr": 41.0,
-    "liquidity": 3344.57353,
-    "answers": [
-      "Yes: $0.03 (3%)",
-      "No: $0.97 (97%)"
-    ],
-    "url": "https://polymarket.com/market/will-trump-publicly-disparage-netanyahu-by-december-31"
+    "url": "https://polymarket.com/market/spl-nsr-okh-2025-12-27-nsr"
   },
   {
     "id": "639929",
     "question": "Will Israel launch a major ground offensive in Gaza by December 31?",
     "volume_24hr": 40.66,
-    "liquidity": 3557.3764,
+    "liquidity": 3556.78007,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
@@ -1375,10 +1276,87 @@
     "url": "https://polymarket.com/market/spl-qad-dam-2025-12-27-qad"
   },
   {
+    "id": "718622",
+    "question": "Will Al Najmah Saudi Club win on 2025-12-25?",
+    "volume_24hr": 36.5,
+    "liquidity": 9975.502,
+    "answers": [
+      "Yes: $0.12 (12%)",
+      "No: $0.88 (88%)"
+    ],
+    "url": "https://polymarket.com/market/spl-neo-njm-2025-12-25-njm"
+  },
+  {
+    "id": "634624",
+    "question": "Will Trump visit Israel again by Dec 31?",
+    "volume_24hr": 35.84,
+    "liquidity": 5016.7044,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-trump-visit-israel-again-by-dec-31"
+  },
+  {
+    "id": "971322",
+    "question": "Will Israel strike Lebanon on December 29?",
+    "volume_24hr": 35.27346,
+    "liquidity": 786.0942,
+    "answers": [
+      "Yes: $0.36 (36%)",
+      "No: $0.64 (64%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-29"
+  },
+  {
+    "id": "971334",
+    "question": "Will Israel strike Gaza on December 27?",
+    "volume_24hr": 34.224696,
+    "liquidity": 729.5183,
+    "answers": [
+      "Yes: $0.44 (44%)",
+      "No: $0.56 (56%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-27"
+  },
+  {
+    "id": "677398",
+    "question": "Will Israel launch a major ground offensive in Gaza by March 31?",
+    "volume_24hr": 33.333332,
+    "liquidity": 1077.3624,
+    "answers": [
+      "Yes: $0.21 (21%)",
+      "No: $0.79 (79%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-launch-a-major-ground-offensive-in-gaza-by-march-31"
+  },
+  {
+    "id": "591893",
+    "question": "Will Israel strike Turkey by December 31?",
+    "volume_24hr": 32.98,
+    "liquidity": 4328.84858,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-turkey-by-december-31"
+  },
+  {
+    "id": "580861",
+    "question": "US x Iran nuclear talks resume by December 31? ",
+    "volume_24hr": 32.0,
+    "liquidity": 5161.43198,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/us-x-iran-nuclear-talks-resume-by-december-31"
+  },
+  {
     "id": "533152",
     "question": "Israel x Turkey military clash in 2025?",
-    "volume_24hr": 37.89,
-    "liquidity": 2219.37549,
+    "volume_24hr": 31.82,
+    "liquidity": 2277.74113,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -1386,54 +1364,10 @@
     "url": "https://polymarket.com/market/israel-x-turkey-military-clash-by"
   },
   {
-    "id": "971323",
-    "question": "Will Israel strike Lebanon on December 31?",
-    "volume_24hr": 32.261764,
-    "liquidity": 871.9269,
-    "answers": [
-      "Yes: $0.36 (36%)",
-      "No: $0.64 (64%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-31-784"
-  },
-  {
-    "id": "677093",
-    "question": "Turkish forces in Gaza in 2025?",
-    "volume_24hr": 31.97,
-    "liquidity": 4432.79716,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/turkish-forces-in-gaza-in-2025"
-  },
-  {
-    "id": "667081",
-    "question": "Will Zelenskyy and Putin meet next in Qatar / UAE before 2027?",
-    "volume_24hr": 31.25,
-    "liquidity": 1429.32913,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.95 (96%)"
-    ],
-    "url": "https://polymarket.com/market/will-zelenskyy-and-putin-meet-next-in-qatar-uae"
-  },
-  {
-    "id": "636920",
-    "question": "Foreign intervention in Gaza in 2025?",
-    "volume_24hr": 30.16,
-    "liquidity": 3486.3617,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/foreign-intervention-in-gaza-in-2025"
-  },
-  {
     "id": "682707",
     "question": "Will Yair Lapid be the next Prime Minister of Israel?",
     "volume_24hr": 30.0,
-    "liquidity": 3467.04362,
+    "liquidity": 4869.36444,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
@@ -1441,32 +1375,21 @@
     "url": "https://polymarket.com/market/will-yair-lapid-be-the-next-prime-minister-of-israel"
   },
   {
-    "id": "543929",
-    "question": "Israel parliament dissolved in 2025?",
-    "volume_24hr": 29.441121,
-    "liquidity": 5085.85003,
+    "id": "602010",
+    "question": "Israel x Syria security agreement by December 31?",
+    "volume_24hr": 29.02,
+    "liquidity": 5824.77292,
     "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
     ],
-    "url": "https://polymarket.com/market/israel-parliament-dissolved-in-2025"
-  },
-  {
-    "id": "563623",
-    "question": "Ahmed al-Sharaa out as leader of Syria in 2025?",
-    "volume_24hr": 28.55,
-    "liquidity": 5087.11095,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/ahmed-al-sharaa-out-as-leader-of-syria-in-2025"
+    "url": "https://polymarket.com/market/israel-x-syria-security-agreement-by-december-31-629-842"
   },
   {
     "id": "955424",
     "question": "Trump's new travel ban on Palestinians removed by January 31?",
     "volume_24hr": 27.77,
-    "liquidity": 3052.5359,
+    "liquidity": 2978.0959,
     "answers": [
       "Yes: $0.07 (6%)",
       "No: $0.94 (94%)"
@@ -1474,59 +1397,26 @@
     "url": "https://polymarket.com/market/trumps-new-travel-ban-removed-by-january-31-people-travelling-on-palestinian-authority-issued-documents"
   },
   {
-    "id": "654430",
-    "question": "Will Israel launch a major ground offensive in Lebanon by December 31?",
-    "volume_24hr": 27.27,
-    "liquidity": 9857.81092,
+    "id": "520927",
+    "question": "Iran Nuke in 2025?",
+    "volume_24hr": 25.22,
+    "liquidity": 42393.39885,
     "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-launch-a-major-ground-offensive-in-lebanon-by-december-31"
-  },
-  {
-    "id": "552480",
-    "question": "Iran nuclear test in 2025?",
-    "volume_24hr": 26.1,
-    "liquidity": 13297.81763,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/iran-nuclear-test-in-2025"
+    "url": "https://polymarket.com/market/iran-nuke-in-2025"
   },
   {
     "id": "565933",
     "question": "Israel withdraws from Syria in 2025?",
-    "volume_24hr": 25.76,
-    "liquidity": 4169.68997,
+    "volume_24hr": 25.08,
+    "liquidity": 4196.31161,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
     ],
     "url": "https://polymarket.com/market/israel-withdraws-from-syria-in-2025"
-  },
-  {
-    "id": "971335",
-    "question": "Will Israel strike Gaza on December 28?",
-    "volume_24hr": 25.644148,
-    "liquidity": 688.0027,
-    "answers": [
-      "Yes: $0.41 (42%)",
-      "No: $0.58 (58%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-28"
-  },
-  {
-    "id": "564650",
-    "question": "Will Israeli troops enter Suwayda in 2025?",
-    "volume_24hr": 25.449863,
-    "liquidity": 3229.93675,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.96 (96%)"
-    ],
-    "url": "https://polymarket.com/market/will-israeli-troops-enter-suwayda-in-2025"
   },
   {
     "id": "789944",
@@ -1551,21 +1441,65 @@
     "url": "https://polymarket.com/market/spl-taa-njm-2025-12-29-njm"
   },
   {
-    "id": "552121",
-    "question": "Will the U.S. invade Iran in 2025?",
-    "volume_24hr": 22.29,
-    "liquidity": 12397.47581,
+    "id": "971321",
+    "question": "Will Israel strike Lebanon on December 28?",
+    "volume_24hr": 24.01515,
+    "liquidity": 935.5127,
+    "answers": [
+      "Yes: $0.37 (37%)",
+      "No: $0.63 (63%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-28"
+  },
+  {
+    "id": "570071",
+    "question": "Will Hamas agree to disarm by December 31?",
+    "volume_24hr": 23.69,
+    "liquidity": 8496.50616,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-hamaz-disarm-by-december-31-858"
+  },
+  {
+    "id": "523014",
+    "question": "Will Israel annex West Bank territory in 2025?",
+    "volume_24hr": 23.56,
+    "liquidity": 5904.85916,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-the-us-invade-iran-in-2025"
+    "url": "https://polymarket.com/market/will-israel-annex-west-bank-territory-in-2025"
+  },
+  {
+    "id": "677093",
+    "question": "Turkish forces in Gaza in 2025?",
+    "volume_24hr": 22.27,
+    "liquidity": 4432.22873,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/turkish-forces-in-gaza-in-2025"
+  },
+  {
+    "id": "616560",
+    "question": "Will FIFA ban or suspend Israel in 2025?",
+    "volume_24hr": 22.12,
+    "liquidity": 2961.5302,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-fifa-ban-or-suspend-israel-in-2025"
   },
   {
     "id": "665727",
     "question": "Will Iran withdraw from the NPT before 2027?",
     "volume_24hr": 22.0,
-    "liquidity": 411.9102,
+    "liquidity": 420.1858,
     "answers": [
       "Yes: $0.20 (20%)",
       "No: $0.80 (80%)"
@@ -1573,10 +1507,21 @@
     "url": "https://polymarket.com/market/will-iran-withdraw-from-the-npt-before-2027"
   },
   {
+    "id": "522233",
+    "question": "Gaza mass population relocation in 2025?",
+    "volume_24hr": 21.87,
+    "liquidity": 9898.52252,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/gaza-mass-population-relocation-in-2025"
+  },
+  {
     "id": "586138",
     "question": "EU sanctions on Israel by December 31?",
     "volume_24hr": 21.65,
-    "liquidity": 4628.70227,
+    "liquidity": 4594.36517,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -1587,29 +1532,51 @@
     "id": "977808",
     "question": "Will CD Mirandés win on 2026-01-02?",
     "volume_24hr": 21.6,
-    "liquidity": 334.9992,
+    "liquidity": 337.3748,
     "answers": [
-      "Yes: $0.16 (16%)",
-      "No: $0.84 (84%)"
+      "Yes: $0.17 (16%)",
+      "No: $0.83 (84%)"
     ],
     "url": "https://polymarket.com/market/es2-eib-mir-2026-01-02-mir"
   },
   {
-    "id": "616560",
-    "question": "Will FIFA ban or suspend Israel in 2025?",
-    "volume_24hr": 20.130000000000003,
-    "liquidity": 2961.27765,
+    "id": "971335",
+    "question": "Will Israel strike Gaza on December 28?",
+    "volume_24hr": 21.541738000000002,
+    "liquidity": 688.0027,
     "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
+      "Yes: $0.41 (42%)",
+      "No: $0.58 (58%)"
     ],
-    "url": "https://polymarket.com/market/will-fifa-ban-or-suspend-israel-in-2025"
+    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-28"
+  },
+  {
+    "id": "654430",
+    "question": "Will Israel launch a major ground offensive in Lebanon by December 31?",
+    "volume_24hr": 20.63,
+    "liquidity": 10060.96826,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-launch-a-major-ground-offensive-in-lebanon-by-december-31"
+  },
+  {
+    "id": "636920",
+    "question": "Foreign intervention in Gaza in 2025?",
+    "volume_24hr": 20.0,
+    "liquidity": 3590.38068,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/foreign-intervention-in-gaza-in-2025"
   },
   {
     "id": "642816",
     "question": "Will Benjamin Netanyahu be the next leader out in 2025?",
     "volume_24hr": 20.0,
-    "liquidity": 9897.3569,
+    "liquidity": 10686.18283,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -1617,65 +1584,43 @@
     "url": "https://polymarket.com/market/will-benjamin-netanyahu-be-the-next-leader-out-in-2025"
   },
   {
-    "id": "555132",
-    "question": "Congress authorizes military force against Iran in 2025?",
-    "volume_24hr": 19.31,
-    "liquidity": 4539.10741,
+    "id": "958443",
+    "question": "Will the Iranian regime fall by June 30?",
+    "volume_24hr": 18.22165,
+    "liquidity": 6516.1322,
     "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
+      "Yes: $0.09 (9%)",
+      "No: $0.91 (91%)"
     ],
-    "url": "https://polymarket.com/market/congress-authorizes-military-force-against-iran-in-2025"
+    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-by-june-30"
   },
   {
-    "id": "612373",
-    "question": "Will New Zealand recognize Palestine in 2025?",
-    "volume_24hr": 17.27,
-    "liquidity": 1144.75091,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-new-zealand-recognize-palestine-in-2025"
-  },
-  {
-    "id": "679838",
-    "question": "20+ trapped Hamas fighters allowed to leave in 2025?",
-    "volume_24hr": 17.0,
-    "liquidity": 3648.64192,
+    "id": "678752",
+    "question": "Will Israel strike 9 countries in 2026?",
+    "volume_24hr": 17.96,
+    "liquidity": 884.4219,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
     ],
-    "url": "https://polymarket.com/market/20-or-more-trapped-hamas-fighters-allowed-to-leave-in-2025"
+    "url": "https://polymarket.com/market/will-israel-strike-9-countries-in-2026"
   },
   {
-    "id": "677397",
-    "question": "Will Israel launch a major ground offensive in Lebanon by March 31?",
-    "volume_24hr": 16.870784999999998,
-    "liquidity": 1501.243,
+    "id": "971316",
+    "question": "Will Israel strike Lebanon on December 27?",
+    "volume_24hr": 17.803646,
+    "liquidity": 1004.3435,
     "answers": [
-      "Yes: $0.28 (28%)",
-      "No: $0.72 (72%)"
+      "Yes: $0.42 (42%)",
+      "No: $0.57 (57%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31"
-  },
-  {
-    "id": "678744",
-    "question": "Will Israel strike 1 country in 2026?",
-    "volume_24hr": 16.66,
-    "liquidity": 4471.1771,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.95 (96%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-1-country-in-2026"
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-27"
   },
   {
     "id": "571773",
     "question": "Will Japan recognize Palestine in 2025?",
-    "volume_24hr": 15.92,
-    "liquidity": 3967.52242,
+    "volume_24hr": 17.0,
+    "liquidity": 3987.58002,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -1683,32 +1628,21 @@
     "url": "https://polymarket.com/market/will-japan-recognize-palestine-in-2025"
   },
   {
-    "id": "695604",
-    "question": "Will Al Hilal Saudi Club win on 2025-12-19?",
-    "volume_24hr": 14.92,
-    "liquidity": 256.6069,
+    "id": "521873",
+    "question": "Will the U.S. take over Gaza in 2025?",
+    "volume_24hr": 15.0,
+    "liquidity": 31778.23421,
     "answers": [
-      "Yes: $0.47 (48%)",
-      "No: $0.53 (52%)"
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/spl-taa-hil-2025-12-19-hil"
-  },
-  {
-    "id": "677315",
-    "question": "Israel and Indonesia normalize relations by December 31, 2026?",
-    "volume_24hr": 14.42,
-    "liquidity": 3123.1964,
-    "answers": [
-      "Yes: $0.28 (28%)",
-      "No: $0.72 (72%)"
-    ],
-    "url": "https://polymarket.com/market/israel-and-indonesia-normalize-relations-by-december-31-2026-618-741"
+    "url": "https://polymarket.com/market/will-the-us-take-over-gaza-in-2025"
   },
   {
     "id": "574531",
     "question": "Lebanon coup attempt by December 31?",
-    "volume_24hr": 14.0,
-    "liquidity": 1494.14441,
+    "volume_24hr": 14.5,
+    "liquidity": 1494.05693,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -1716,10 +1650,32 @@
     "url": "https://polymarket.com/market/lebanon-coup-attempt-by-december-31"
   },
   {
+    "id": "890828",
+    "question": "Netanyahu arrested by March 31?",
+    "volume_24hr": 14.201657,
+    "liquidity": 3047.11519,
+    "answers": [
+      "Yes: $0.04 (4%)",
+      "No: $0.96 (96%)"
+    ],
+    "url": "https://polymarket.com/market/netanyahu-arrested-by-march-31"
+  },
+  {
+    "id": "958427",
+    "question": "Israel x Iran ceasefire broken by June 30, 2026?",
+    "volume_24hr": 13.44322,
+    "liquidity": 20025.2705,
+    "answers": [
+      "Yes: $0.36 (36%)",
+      "No: $0.64 (64%)"
+    ],
+    "url": "https://polymarket.com/market/israel-x-iran-ceasefire-broken-by-june-30-2026"
+  },
+  {
     "id": "567031",
     "question": "Will Iran withdraw from the NPT in 2025?",
-    "volume_24hr": 12.57,
-    "liquidity": 7973.27876,
+    "volume_24hr": 12.64,
+    "liquidity": 7989.51065,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -1727,43 +1683,32 @@
     "url": "https://polymarket.com/market/will-iran-withdraw-from-the-npt-in-2025"
   },
   {
-    "id": "971322",
-    "question": "Will Israel strike Lebanon on December 29?",
-    "volume_24hr": 11.81346,
-    "liquidity": 787.7442,
-    "answers": [
-      "Yes: $0.36 (36%)",
-      "No: $0.64 (64%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-29"
-  },
-  {
-    "id": "566924",
-    "question": "Will Netanyahu meet with Ahmed al-Sharaa in 2025? ",
-    "volume_24hr": 11.32,
-    "liquidity": 7853.77265,
+    "id": "654465",
+    "question": "Israel withdraws from Lebanon by December 31?",
+    "volume_24hr": 12.52,
+    "liquidity": 7045.46607,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/will-netanyahu-meet-with-ahmed-al-sharaa-in-2025-342"
+    "url": "https://polymarket.com/market/israel-withdraws-from-lebanon-by-december-31"
   },
   {
-    "id": "665217",
-    "question": "Israel and Saudi Arabia normalize relations by March 31?",
-    "volume_24hr": 9.27,
-    "liquidity": 3080.27823,
+    "id": "567033",
+    "question": "Syria strikes Israel by December 31?",
+    "volume_24hr": 12.15,
+    "liquidity": 6458.87643,
     "answers": [
-      "Yes: $0.06 (6%)",
-      "No: $0.94 (94%)"
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
     ],
-    "url": "https://polymarket.com/market/israel-and-saudi-arabia-normalize-relations-by-march-31"
+    "url": "https://polymarket.com/market/syria-strikes-israel-by-december-31"
   },
   {
     "id": "614695",
     "question": "Israel strike on Gulf State by December 31?",
-    "volume_24hr": 8.78,
-    "liquidity": 2179.15012,
+    "volume_24hr": 11.96,
+    "liquidity": 2179.16668,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -1771,21 +1716,109 @@
     "url": "https://polymarket.com/market/israel-strike-on-gulf-state-by-december-31"
   },
   {
-    "id": "677393",
-    "question": "Hezbollah strike on Israel by March 31?",
-    "volume_24hr": 8.0,
-    "liquidity": 2043.6997,
+    "id": "971324",
+    "question": "Will Israel strike Lebanon on December 30?",
+    "volume_24hr": 11.666664,
+    "liquidity": 831.6914,
     "answers": [
-      "Yes: $0.47 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.37 (37%)",
+      "No: $0.63 (63%)"
     ],
-    "url": "https://polymarket.com/market/hezbollah-strike-on-israel-by-march-31"
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-30"
+  },
+  {
+    "id": "678756",
+    "question": "Will Israel strike 13 countries in 2026?",
+    "volume_24hr": 11.26,
+    "liquidity": 1901.26712,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-13-countries-in-2026"
+  },
+  {
+    "id": "971333",
+    "question": "Will Israel strike Gaza on December 26?",
+    "volume_24hr": 10.576415,
+    "liquidity": 843.5383,
+    "answers": [
+      "Yes: $0.45 (45%)",
+      "No: $0.55 (55%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-26"
+  },
+  {
+    "id": "665218",
+    "question": "Israel and Saudi Arabia normalize relations before 2027?",
+    "volume_24hr": 10.0,
+    "liquidity": 1834.388,
+    "answers": [
+      "Yes: $0.29 (30%)",
+      "No: $0.70 (70%)"
+    ],
+    "url": "https://polymarket.com/market/israel-and-saudi-arabia-normalize-relations-before-2027"
+  },
+  {
+    "id": "693489",
+    "question": "Will Syria recognize Israel by June 30?",
+    "volume_24hr": 10.0,
+    "liquidity": 323.368,
+    "answers": [
+      "Yes: $0.12 (12%)",
+      "No: $0.88 (88%)"
+    ],
+    "url": "https://polymarket.com/market/will-syria-recognize-israel-by-june-30"
+  },
+  {
+    "id": "666828",
+    "question": "U.S. agrees to a new trade deal with \"Israel\" before 2027?",
+    "volume_24hr": 8.44,
+    "liquidity": 733.7638,
+    "answers": [
+      "Yes: $0.39 (38%)",
+      "No: $0.61 (62%)"
+    ],
+    "url": "https://polymarket.com/market/us-agrees-to-a-new-trade-deal-with-israel-before-2027"
+  },
+  {
+    "id": "665217",
+    "question": "Israel and Saudi Arabia normalize relations by March 31?",
+    "volume_24hr": 8.41,
+    "liquidity": 3090.00655,
+    "answers": [
+      "Yes: $0.06 (6%)",
+      "No: $0.94 (94%)"
+    ],
+    "url": "https://polymarket.com/market/israel-and-saudi-arabia-normalize-relations-by-march-31"
+  },
+  {
+    "id": "521878",
+    "question": "US-Iran nuclear deal in 2025?",
+    "volume_24hr": 8.270048,
+    "liquidity": 3086.27858,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/us-x-iran-nuclear-deal-in-2025"
+  },
+  {
+    "id": "563623",
+    "question": "Ahmed al-Sharaa out as leader of Syria in 2025?",
+    "volume_24hr": 7.69,
+    "liquidity": 5109.1852,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/ahmed-al-sharaa-out-as-leader-of-syria-in-2025"
   },
   {
     "id": "957646",
     "question": "Israel x Hamas Ceasefire Phase II by June 30?",
     "volume_24hr": 7.5,
-    "liquidity": 194.9401,
+    "liquidity": 176.3846,
     "answers": [
       "Yes: $0.69 (70%)",
       "No: $0.30 (30%)"
@@ -1793,75 +1826,163 @@
     "url": "https://polymarket.com/market/israel-x-hamas-ceasefire-phase-ii-by-june-30"
   },
   {
-    "id": "718622",
-    "question": "Will Al Najmah Saudi Club win on 2025-12-25?",
-    "volume_24hr": 7.0,
-    "liquidity": 9760.4169,
-    "answers": [
-      "Yes: $0.12 (12%)",
-      "No: $0.88 (88%)"
-    ],
-    "url": "https://polymarket.com/market/spl-neo-njm-2025-12-25-njm"
-  },
-  {
-    "id": "604674",
-    "question": "Israeli parliament dissolved by December 31?",
-    "volume_24hr": 6.72,
-    "liquidity": 2687.1488,
+    "id": "571767",
+    "question": "Will Italy recognize Palestine in 2025?",
+    "volume_24hr": 6.82,
+    "liquidity": 5228.23047,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/israeli-parliament-dissolved-by-december-31"
+    "url": "https://polymarket.com/market/will-italy-recognize-palestine-in-2025"
   },
   {
-    "id": "693484",
-    "question": "Will Saudi Arabia recognize Israel by June 30?",
-    "volume_24hr": 6.0,
-    "liquidity": 411.0808,
+    "id": "971323",
+    "question": "Will Israel strike Lebanon on December 31?",
+    "volume_24hr": 6.492536,
+    "liquidity": 870.6296,
     "answers": [
-      "Yes: $0.14 (14%)",
-      "No: $0.86 (86%)"
+      "Yes: $0.36 (36%)",
+      "No: $0.64 (64%)"
     ],
-    "url": "https://polymarket.com/market/will-saudi-arabia-recognize-israel-by-june-30"
+    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-31-784"
   },
   {
-    "id": "695598",
-    "question": "Will Al Ahli Saudi Club win on 2025-12-19?",
-    "volume_24hr": 5.31,
-    "liquidity": 2.6705,
+    "id": "678747",
+    "question": "Will Israel strike 4 countries in 2026?",
+    "volume_24hr": 5.34,
+    "liquidity": 4766.8344,
+    "answers": [
+      "Yes: $0.17 (17%)",
+      "No: $0.83 (83%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-4-countries-in-november-2025"
+  },
+  {
+    "id": "668513",
+    "question": "Will Kanye visit Israel by December 31?",
+    "volume_24hr": 5.1,
+    "liquidity": 3969.69986,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-kanye-visit-israel-by-december-31"
+  },
+  {
+    "id": "571770",
+    "question": "Will The Netherlands recognize Palestine in 2025?",
+    "volume_24hr": 5.0,
+    "liquidity": 3682.90528,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-the-netherlands-recognize-palestine-in-2025"
+  },
+  {
+    "id": "612371",
+    "question": "Will Austria recognize Palestine in 2025?",
+    "volume_24hr": 5.0,
+    "liquidity": 675.55986,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/will-austria-recognize-palestine-in-2025"
+  },
+  {
+    "id": "612372",
+    "question": "Will Greece recognize Palestine in 2025?",
+    "volume_24hr": 5.0,
+    "liquidity": 2021.98383,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-greece-recognize-palestine-in-2025"
+  },
+  {
+    "id": "612373",
+    "question": "Will New Zealand recognize Palestine in 2025?",
+    "volume_24hr": 5.0,
+    "liquidity": 1146.00834,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-new-zealand-recognize-palestine-in-2025"
+  },
+  {
+    "id": "677405",
+    "question": "US x Iran nuclear talks resume by March 31? ",
+    "volume_24hr": 5.0,
+    "liquidity": 650.2612,
+    "answers": [
+      "Yes: $0.24 (24%)",
+      "No: $0.76 (76%)"
+    ],
+    "url": "https://polymarket.com/market/us-x-iran-nuclear-talks-resume-by-march-31"
+  },
+  {
+    "id": "718615",
+    "question": "Will Al Fayha Saudi Club vs. Al Hazem SC end in a draw?",
+    "volume_24hr": 5.0,
+    "liquidity": 18881.67,
+    "answers": [
+      "Yes: $0.28 (28%)",
+      "No: $0.72 (72%)"
+    ],
+    "url": "https://polymarket.com/market/spl-fay-haz-2025-12-25-draw"
+  },
+  {
+    "id": "973014",
+    "question": "Will Trump say \"Bibi\" or \"Israel\" this week? (December 22 - 28)",
+    "volume_24hr": 5.0,
+    "liquidity": 69.7967,
+    "answers": [
+      "Yes: $0.73 (73%)",
+      "No: $0.27 (27%)"
+    ],
+    "url": "https://polymarket.com/market/will-trump-say-bibi-or-israel-this-week-december-22-28"
+  },
+  {
+    "id": "718619",
+    "question": "Will Al Ettifaq Saudi Club win on 2025-12-25?",
+    "volume_24hr": 2.173912,
+    "liquidity": 1703.4021,
+    "answers": [
+      "Yes: $0.42 (42%)",
+      "No: $0.57 (57%)"
+    ],
+    "url": "https://polymarket.com/market/spl-riy-ett-2025-12-25-ett"
+  },
+  {
+    "id": "718614",
+    "question": "Will Al Fayha Saudi Club win on 2025-12-25?",
+    "volume_24hr": 1.85185,
+    "liquidity": 8900.1647,
     "answers": [
       "Yes: $0.51 (51%)",
       "No: $0.49 (49%)"
     ],
-    "url": "https://polymarket.com/market/spl-dam-ahl-2025-12-19-ahl"
+    "url": "https://polymarket.com/market/spl-fay-haz-2025-12-25-fay"
   },
   {
-    "id": "701301",
-    "question": "Naim Qassem out as Hezbollah’s secretary-general by December 31?",
-    "volume_24hr": 5.0,
-    "liquidity": 448.85587,
+    "id": "665260",
+    "question": "Will Donald Trump visit Israel in 2026?",
+    "volume_24hr": 1.59,
+    "liquidity": 203.7748,
     "answers": [
-      "Yes: $0.05 (5%)",
-      "No: $0.95 (95%)"
+      "Yes: $0.81 (82%)",
+      "No: $0.18 (18%)"
     ],
-    "url": "https://polymarket.com/market/naim-qassem-out-as-hezbollahs-secretary-general-by-december-31"
-  },
-  {
-    "id": "763326",
-    "question": "Will Al Nassr Saudi Club vs. Al Okhdood SC end in a draw?",
-    "volume_24hr": 5.0,
-    "liquidity": 13800.7447,
-    "answers": [
-      "Yes: $0.06 (6%)",
-      "No: $0.94 (94%)"
-    ],
-    "url": "https://polymarket.com/market/spl-nsr-okh-2025-12-27-draw"
+    "url": "https://polymarket.com/market/will-donald-trump-visit-israel-in-2026"
   },
   {
     "id": "971336",
     "question": "Will Israel strike Gaza on December 29?",
-    "volume_24hr": 4.6875,
+    "volume_24hr": 1.5625,
     "liquidity": 795.7158,
     "answers": [
       "Yes: $0.44 (44%)",
@@ -1870,208 +1991,65 @@
     "url": "https://polymarket.com/market/will-israel-strike-gaza-on-december-29"
   },
   {
-    "id": "693489",
-    "question": "Will Syria recognize Israel by June 30?",
-    "volume_24hr": 4.0,
-    "liquidity": 336.1203,
+    "id": "739012",
+    "question": "Will Al Ahli Saudi Club win on 2025-12-26?",
+    "volume_24hr": 1.53846,
+    "liquidity": 867.945,
     "answers": [
-      "Yes: $0.12 (12%)",
-      "No: $0.89 (88%)"
+      "Yes: $0.64 (64%)",
+      "No: $0.36 (36%)"
     ],
-    "url": "https://polymarket.com/market/will-syria-recognize-israel-by-june-30"
+    "url": "https://polymarket.com/market/spl-fat-ahl-2025-12-26-ahl"
   },
   {
-    "id": "958443",
-    "question": "Will the Iranian regime fall by June 30?",
-    "volume_24hr": 3.86165,
-    "liquidity": 6531.2272,
-    "answers": [
-      "Yes: $0.09 (8%)",
-      "No: $0.92 (92%)"
-    ],
-    "url": "https://polymarket.com/market/will-the-iranian-regime-fall-by-june-30"
-  },
-  {
-    "id": "556642",
-    "question": "Will Lebanon join the Abraham Accords in 2025?",
-    "volume_24hr": 3.49,
-    "liquidity": 2206.6302,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-lebanon-join-the-abraham-accords-in-2025-554-616"
-  },
-  {
-    "id": "739017",
-    "question": "Will Al Hilal Saudi Club vs. Al Khaleej Saudi Club end in a draw?",
-    "volume_24hr": 3.0,
-    "liquidity": 12582.3019,
+    "id": "763322",
+    "question": "Will Damac Saudi Club win on 2025-12-27?",
+    "volume_24hr": 1.5,
+    "liquidity": 1455.641,
     "answers": [
       "Yes: $0.10 (10%)",
       "No: $0.90 (90%)"
     ],
-    "url": "https://polymarket.com/market/spl-hil-kha-2025-12-26-draw"
+    "url": "https://polymarket.com/market/spl-qad-dam-2025-12-27-dam"
   },
   {
-    "id": "739018",
-    "question": "Will Al Khaleej Saudi Club win on 2025-12-26?",
-    "volume_24hr": 3.0,
-    "liquidity": 10950.8395,
+    "id": "763326",
+    "question": "Will Al Nassr Saudi Club vs. Al Okhdood SC end in a draw?",
+    "volume_24hr": 1.5,
+    "liquidity": 13122.6887,
     "answers": [
       "Yes: $0.06 (6%)",
       "No: $0.94 (94%)"
     ],
-    "url": "https://polymarket.com/market/spl-hil-kha-2025-12-26-kha"
+    "url": "https://polymarket.com/market/spl-nsr-okh-2025-12-27-draw"
   },
   {
-    "id": "973014",
-    "question": "Will Trump say \"Bibi\" or \"Israel\" this week? (December 22 - 28)",
-    "volume_24hr": 2.5,
-    "liquidity": 51.8363,
+    "id": "555132",
+    "question": "Congress authorizes military force against Iran in 2025?",
+    "volume_24hr": 1.01,
+    "liquidity": 4510.67471,
     "answers": [
-      "Yes: $0.73 (73%)",
-      "No: $0.27 (27%)"
+      "Yes: $0.01 (0%)",
+      "No: $0.99 (100%)"
     ],
-    "url": "https://polymarket.com/market/will-trump-say-bibi-or-israel-this-week-december-22-28"
+    "url": "https://polymarket.com/market/congress-authorizes-military-force-against-iran-in-2025"
   },
   {
-    "id": "890828",
-    "question": "Netanyahu arrested by March 31?",
-    "volume_24hr": 2.3899999999999997,
-    "liquidity": 3039.29962,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.96 (96%)"
-    ],
-    "url": "https://polymarket.com/market/netanyahu-arrested-by-march-31"
-  },
-  {
-    "id": "718619",
-    "question": "Will Al Ettifaq Saudi Club win on 2025-12-25?",
-    "volume_24hr": 2.173912,
-    "liquidity": 1558.1421,
-    "answers": [
-      "Yes: $0.42 (42%)",
-      "No: $0.57 (57%)"
-    ],
-    "url": "https://polymarket.com/market/spl-riy-ett-2025-12-25-ett"
-  },
-  {
-    "id": "834851",
-    "question": "Maduro exiled to Qatar by March 31?",
-    "volume_24hr": 2.16,
-    "liquidity": 2520.82662,
-    "answers": [
-      "Yes: $0.04 (4%)",
-      "No: $0.96 (96%)"
-    ],
-    "url": "https://polymarket.com/market/maduro-exiled-to-qatar-by-march-31"
-  },
-  {
-    "id": "718614",
-    "question": "Will Al Fayha Saudi Club win on 2025-12-25?",
-    "volume_24hr": 1.85185,
-    "liquidity": 1797.013,
-    "answers": [
-      "Yes: $0.51 (51%)",
-      "No: $0.49 (49%)"
-    ],
-    "url": "https://polymarket.com/market/spl-fay-haz-2025-12-25-fay"
-  },
-  {
-    "id": "611504",
-    "question": "Will Finland recognize Palestine in 2025?",
-    "volume_24hr": 1.83,
-    "liquidity": 2920.2485,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-finland-recognize-palestine-in-2025"
-  },
-  {
-    "id": "678746",
-    "question": "Will Israel strike 3 countries in 2026?",
-    "volume_24hr": 1.785713,
-    "liquidity": 3204.3803,
-    "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.55 (55%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-3-countries-in-2026"
-  },
-  {
-    "id": "636921",
-    "question": "Will Israel annex Gaza territory by June 30 2026?",
-    "volume_24hr": 1.77,
-    "liquidity": 4780.6234,
-    "answers": [
-      "Yes: $0.10 (10%)",
-      "No: $0.90 (90%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-annex-gaza-territory-by-2026"
-  },
-  {
-    "id": "839441",
-    "question": "Will Iran win Group G in the 2026 FIFA World Cup?",
-    "volume_24hr": 1.61,
-    "liquidity": 3356.1487,
-    "answers": [
-      "Yes: $0.12 (12%)",
-      "No: $0.88 (88%)"
-    ],
-    "url": "https://polymarket.com/market/will-iran-win-group-g-in-the-2026-fifa-world-cup"
-  },
-  {
-    "id": "971324",
-    "question": "Will Israel strike Lebanon on December 30?",
-    "volume_24hr": 1.53846,
-    "liquidity": 833.4412,
-    "answers": [
-      "Yes: $0.37 (37%)",
-      "No: $0.63 (63%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-lebanon-on-december-30"
-  },
-  {
-    "id": "571767",
-    "question": "Will Italy recognize Palestine in 2025?",
-    "volume_24hr": 1.49,
-    "liquidity": 5227.2751,
+    "id": "566924",
+    "question": "Will Netanyahu meet with Ahmed al-Sharaa in 2025? ",
+    "volume_24hr": 0.91,
+    "liquidity": 7895.26465,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/will-italy-recognize-palestine-in-2025"
-  },
-  {
-    "id": "523014",
-    "question": "Will Israel annex West Bank territory in 2025?",
-    "volume_24hr": 1.05,
-    "liquidity": 5916.18327,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-annex-west-bank-territory-in-2025"
-  },
-  {
-    "id": "612372",
-    "question": "Will Greece recognize Palestine in 2025?",
-    "volume_24hr": 1.01,
-    "liquidity": 1998.25449,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-greece-recognize-palestine-in-2025"
+    "url": "https://polymarket.com/market/will-netanyahu-meet-with-ahmed-al-sharaa-in-2025-342"
   },
   {
     "id": "573551",
     "question": " IDF Chief Eyal  Zamir out by December 31, 2025?",
     "volume_24hr": 0.1,
-    "liquidity": 2356.60506,
+    "liquidity": 2663.81686,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2079,21 +2057,32 @@
     "url": "https://polymarket.com/market/chief-of-the-general-staff-of-the-idf-eyal-zamir-out-by-december-31-2025"
   },
   {
-    "id": "522233",
-    "question": "Gaza mass population relocation in 2025?",
+    "id": "537895",
+    "question": "U.S. withdraws from Syria in 2025?",
     "volume_24hr": 0.0,
-    "liquidity": 9906.05253,
+    "liquidity": 1914.89155,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/us-withdraws-from-syria-in-2025"
+  },
+  {
+    "id": "552480",
+    "question": "Iran nuclear test in 2025?",
+    "volume_24hr": 0.0,
+    "liquidity": 13473.61031,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/gaza-mass-population-relocation-in-2025"
+    "url": "https://polymarket.com/market/iran-nuclear-test-in-2025"
   },
   {
     "id": "556641",
     "question": "Will Syria join the Abraham Accords in 2025?",
     "volume_24hr": 0.0,
-    "liquidity": 6497.92234,
+    "liquidity": 6509.72379,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2101,10 +2090,32 @@
     "url": "https://polymarket.com/market/will-syria-join-the-abraham-accords-in-2025-567-437"
   },
   {
+    "id": "556642",
+    "question": "Will Lebanon join the Abraham Accords in 2025?",
+    "volume_24hr": 0.0,
+    "liquidity": 2471.67235,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-lebanon-join-the-abraham-accords-in-2025-554-616"
+  },
+  {
+    "id": "557893",
+    "question": "Will Saudi Arabia join the Abraham Accords in 2025?",
+    "volume_24hr": 0.0,
+    "liquidity": 10066.23448,
+    "answers": [
+      "Yes: $0.01 (1%)",
+      "No: $0.99 (99%)"
+    ],
+    "url": "https://polymarket.com/market/will-saudi-arabia-join-the-abraham-accords-in-2025-645"
+  },
+  {
     "id": "564417",
     "question": "Will Stephen Miran be the first to leave the Trump Cabinet in 2025?",
     "volume_24hr": 0.0,
-    "liquidity": 4549.87942,
+    "liquidity": 4987.9081,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
@@ -2112,43 +2123,32 @@
     "url": "https://polymarket.com/market/will-stephen-miran-be-the-first-to-leave-the-trump-cabinet-in-2025"
   },
   {
-    "id": "571770",
-    "question": "Will The Netherlands recognize Palestine in 2025?",
+    "id": "578168",
+    "question": "Will Zelenskyy and Putin meet next in Qatar / UAE?",
     "volume_24hr": 0.0,
-    "liquidity": 3684.68905,
+    "liquidity": 45754.961,
+    "answers": [
+      "Yes: $0.00 (0%)",
+      "No: $1.00 (100%)"
+    ],
+    "url": "https://polymarket.com/market/will-trump-and-putin-meet-next-in-qatar-uae"
+  },
+  {
+    "id": "604674",
+    "question": "Israeli parliament dissolved by December 31?",
+    "volume_24hr": 0.0,
+    "liquidity": 2456.49473,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
     ],
-    "url": "https://polymarket.com/market/will-the-netherlands-recognize-palestine-in-2025"
-  },
-  {
-    "id": "571775",
-    "question": "Will Germany recognize Palestine in 2025?",
-    "volume_24hr": 0.0,
-    "liquidity": 6231.42332,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-germany-recognize-palestine-in-2025"
-  },
-  {
-    "id": "612371",
-    "question": "Will Austria recognize Palestine in 2025?",
-    "volume_24hr": 0.0,
-    "liquidity": 691.61419,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/will-austria-recognize-palestine-in-2025"
+    "url": "https://polymarket.com/market/israeli-parliament-dissolved-by-december-31"
   },
   {
     "id": "626789",
     "question": "Israel strike on Damascus by December 31?",
     "volume_24hr": 0.0,
-    "liquidity": 775.4644,
+    "liquidity": 776.1142,
     "answers": [
       "Yes: $0.04 (4%)",
       "No: $0.96 (96%)"
@@ -2156,21 +2156,21 @@
     "url": "https://polymarket.com/market/israel-strike-on-damascus-by-december-31"
   },
   {
-    "id": "634624",
-    "question": "Will Trump visit Israel again by Dec 31?",
+    "id": "636921",
+    "question": "Will Israel annex Gaza territory by June 30 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 5027.544,
+    "liquidity": 4550.7024,
     "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
+      "Yes: $0.10 (10%)",
+      "No: $0.90 (90%)"
     ],
-    "url": "https://polymarket.com/market/will-trump-visit-israel-again-by-dec-31"
+    "url": "https://polymarket.com/market/will-israel-annex-gaza-territory-by-2026"
   },
   {
     "id": "637015",
     "question": "Will Benjamin Netanyahu win the Nobel Peace Prize in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 36142.17129,
+    "liquidity": 36121.13305,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2178,43 +2178,43 @@
     "url": "https://polymarket.com/market/will-benjamin-netanyahu-win-the-nobel-peace-prize-in-2026"
   },
   {
-    "id": "654465",
-    "question": "Israel withdraws from Lebanon by December 31?",
+    "id": "647846",
+    "question": "Will Trump publicly disparage Netanyahu by December 31?",
     "volume_24hr": 0.0,
-    "liquidity": 7049.76225,
+    "liquidity": 3504.24253,
     "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
     ],
-    "url": "https://polymarket.com/market/israel-withdraws-from-lebanon-by-december-31"
+    "url": "https://polymarket.com/market/will-trump-publicly-disparage-netanyahu-by-december-31"
   },
   {
-    "id": "665218",
-    "question": "Israel and Saudi Arabia normalize relations before 2027?",
+    "id": "664715",
+    "question": "Israel strike on Yemen by December 31?",
     "volume_24hr": 0.0,
-    "liquidity": 1843.7893,
+    "liquidity": 4352.7132,
     "answers": [
-      "Yes: $0.29 (30%)",
-      "No: $0.70 (70%)"
+      "Yes: $0.04 (4%)",
+      "No: $0.95 (96%)"
     ],
-    "url": "https://polymarket.com/market/israel-and-saudi-arabia-normalize-relations-before-2027"
+    "url": "https://polymarket.com/market/israel-strike-on-yemen-by-december-31"
   },
   {
-    "id": "665260",
-    "question": "Will Donald Trump visit Israel in 2026?",
+    "id": "665228",
+    "question": "Will Hezbollah disarm by March 31?",
     "volume_24hr": 0.0,
-    "liquidity": 204.7845,
+    "liquidity": 6908.133,
     "answers": [
-      "Yes: $0.82 (82%)",
-      "No: $0.18 (18%)"
+      "Yes: $0.12 (12%)",
+      "No: $0.88 (88%)"
     ],
-    "url": "https://polymarket.com/market/will-donald-trump-visit-israel-in-2026"
+    "url": "https://polymarket.com/market/will-hezbollah-disarm-by-march-31"
   },
   {
     "id": "665263",
     "question": "Will Donald Trump visit Saudi Arabia in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 315.8233,
+    "liquidity": 325.5248,
     "answers": [
       "Yes: $0.40 (40%)",
       "No: $0.60 (60%)"
@@ -2236,7 +2236,7 @@
     "id": "665325",
     "question": "US-Iran nuclear deal before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 4230.3034,
+    "liquidity": 4216.2575,
     "answers": [
       "Yes: $0.30 (30%)",
       "No: $0.69 (70%)"
@@ -2258,7 +2258,7 @@
     "id": "665327",
     "question": "Will Italy recognize Palestine before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 497.1441,
+    "liquidity": 496.4203,
     "answers": [
       "Yes: $0.34 (34%)",
       "No: $0.66 (66%)"
@@ -2269,7 +2269,7 @@
     "id": "665328",
     "question": "Will The Netherlands recognize Palestine before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 567.3099,
+    "liquidity": 561.3099,
     "answers": [
       "Yes: $0.29 (29%)",
       "No: $0.71 (71%)"
@@ -2280,7 +2280,7 @@
     "id": "665329",
     "question": "Will Japan recognize Palestine before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 328.1712,
+    "liquidity": 358.1712,
     "answers": [
       "Yes: $0.47 (48%)",
       "No: $0.53 (52%)"
@@ -2302,10 +2302,10 @@
     "id": "665331",
     "question": "Will Belgium recognize Palestine before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 540.8501,
+    "liquidity": 551.4866,
     "answers": [
-      "Yes: $0.40 (40%)",
-      "No: $0.60 (60%)"
+      "Yes: $0.41 (40%)",
+      "No: $0.59 (60%)"
     ],
     "url": "https://polymarket.com/market/will-belgium-recognize-palestine-before-2027"
   },
@@ -2324,7 +2324,7 @@
     "id": "665333",
     "question": "Will Austria recognize Palestine before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 397.2025,
+    "liquidity": 391.806,
     "answers": [
       "Yes: $0.31 (31%)",
       "No: $0.69 (69%)"
@@ -2335,10 +2335,10 @@
     "id": "665334",
     "question": "Will Greece recognize Palestine before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 116.7819,
+    "liquidity": 117.1825,
     "answers": [
-      "Yes: $0.41 (40%)",
-      "No: $0.59 (60%)"
+      "Yes: $0.41 (41%)",
+      "No: $0.59 (59%)"
     ],
     "url": "https://polymarket.com/market/will-greece-recognize-palestine-before-2027"
   },
@@ -2379,10 +2379,10 @@
     "id": "665472",
     "question": "Will Syria join the Abraham Accords before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 168.6045,
+    "liquidity": 165.3288,
     "answers": [
-      "Yes: $0.40 (40%)",
-      "No: $0.60 (60%)"
+      "Yes: $0.41 (40%)",
+      "No: $0.59 (60%)"
     ],
     "url": "https://polymarket.com/market/will-syria-join-the-abraham-accords-before-2027"
   },
@@ -2390,10 +2390,10 @@
     "id": "665473",
     "question": "Will Lebanon join the Abraham Accords before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 232.5524,
+    "liquidity": 224.5825,
     "answers": [
-      "Yes: $0.30 (30%)",
-      "No: $0.70 (70%)"
+      "Yes: $0.34 (34%)",
+      "No: $0.66 (66%)"
     ],
     "url": "https://polymarket.com/market/will-lebanon-join-the-abraham-accords-before-2027"
   },
@@ -2401,7 +2401,7 @@
     "id": "665474",
     "question": "Will Saudi Arabia join the Abraham Accords before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 780.7944,
+    "liquidity": 777.3617,
     "answers": [
       "Yes: $0.33 (33%)",
       "No: $0.67 (67%)"
@@ -2412,10 +2412,10 @@
     "id": "665484",
     "question": "Israel x Turkey military clash before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 3369.8949,
+    "liquidity": 3368.6694,
     "answers": [
-      "Yes: $0.17 (17%)",
-      "No: $0.83 (83%)"
+      "Yes: $0.17 (16%)",
+      "No: $0.83 (84%)"
     ],
     "url": "https://polymarket.com/market/israel-x-turkey-military-clash-before-2027"
   },
@@ -2423,7 +2423,7 @@
     "id": "665485",
     "question": "U.S. forces in Gaza before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 676.6996,
+    "liquidity": 686.2342,
     "answers": [
       "Yes: $0.30 (30%)",
       "No: $0.69 (70%)"
@@ -2445,7 +2445,7 @@
     "id": "665521",
     "question": "Iran nuclear test before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 1435.2204,
+    "liquidity": 1435.6271,
     "answers": [
       "Yes: $0.12 (12%)",
       "No: $0.89 (88%)"
@@ -2456,40 +2456,18 @@
     "id": "665738",
     "question": "Ahmed al-Sharaa out as leader of Syria before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 539.2428,
+    "liquidity": 537.5913,
     "answers": [
-      "Yes: $0.17 (16%)",
-      "No: $0.83 (84%)"
+      "Yes: $0.14 (14%)",
+      "No: $0.86 (86%)"
     ],
     "url": "https://polymarket.com/market/ahmed-al-sharaa-out-as-leader-of-syria-before-2027"
-  },
-  {
-    "id": "666828",
-    "question": "U.S. agrees to a new trade deal with \"Israel\" before 2027?",
-    "volume_24hr": 0.0,
-    "liquidity": 769.7877,
-    "answers": [
-      "Yes: $0.38 (38%)",
-      "No: $0.62 (62%)"
-    ],
-    "url": "https://polymarket.com/market/us-agrees-to-a-new-trade-deal-with-israel-before-2027"
-  },
-  {
-    "id": "667082",
-    "question": "Will Zelenskyy and Putin meet next in Saudi Arabia before 2027?",
-    "volume_24hr": 0.0,
-    "liquidity": 1584.786,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-zelenskyy-and-putin-meet-next-in-saudi-arabia"
   },
   {
     "id": "667138",
     "question": "duplicate Will Stephen Miran be the first to leave the Trump Cabinet before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 59.8249,
+    "liquidity": 70.8467,
     "answers": [
       "Yes: $0.04 (4%)",
       "No: $0.95 (96%)"
@@ -2497,32 +2475,32 @@
     "url": "https://polymarket.com/market/duplicate-will-stephen-miran-be-the-first-to-leave-the-trump-cabinet-before-2027"
   },
   {
-    "id": "668513",
-    "question": "Will Kanye visit Israel by December 31?",
-    "volume_24hr": 0.0,
-    "liquidity": 3802.09782,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-kanye-visit-israel-by-december-31"
-  },
-  {
     "id": "675788",
     "question": "Israel x Syria security agreement by January 31?",
     "volume_24hr": 0.0,
-    "liquidity": 160.0659,
+    "liquidity": 140.8517,
     "answers": [
-      "Yes: $0.15 (15%)",
-      "No: $0.85 (85%)"
+      "Yes: $0.16 (16%)",
+      "No: $0.84 (84%)"
     ],
     "url": "https://polymarket.com/market/israel-x-syria-security-agreement-by-january-31"
+  },
+  {
+    "id": "677393",
+    "question": "Hezbollah strike on Israel by March 31?",
+    "volume_24hr": 0.0,
+    "liquidity": 2036.6845,
+    "answers": [
+      "Yes: $0.47 (46%)",
+      "No: $0.54 (54%)"
+    ],
+    "url": "https://polymarket.com/market/hezbollah-strike-on-israel-by-march-31"
   },
   {
     "id": "677396",
     "question": "Iran Nuke before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 3624.838,
+    "liquidity": 3624.8373,
     "answers": [
       "Yes: $0.15 (15%)",
       "No: $0.85 (85%)"
@@ -2530,21 +2508,10 @@
     "url": "https://polymarket.com/market/iran-nuke-before-2027"
   },
   {
-    "id": "677405",
-    "question": "US x Iran nuclear talks resume by March 31? ",
-    "volume_24hr": 0.0,
-    "liquidity": 650.2612,
-    "answers": [
-      "Yes: $0.24 (24%)",
-      "No: $0.76 (76%)"
-    ],
-    "url": "https://polymarket.com/market/us-x-iran-nuclear-talks-resume-by-march-31"
-  },
-  {
     "id": "678745",
     "question": "Will Israel strike 2 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 3054.3865,
+    "liquidity": 3211.0121,
     "answers": [
       "Yes: $0.20 (20%)",
       "No: $0.80 (80%)"
@@ -2552,32 +2519,54 @@
     "url": "https://polymarket.com/market/will-israel-strike-2-countries-in-2026"
   },
   {
-    "id": "678747",
-    "question": "Will Israel strike 4 countries in 2026?",
+    "id": "678746",
+    "question": "Will Israel strike 3 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 4833.35572,
+    "liquidity": 4135.6199,
     "answers": [
-      "Yes: $0.17 (17%)",
-      "No: $0.83 (83%)"
+      "Yes: $0.46 (46%)",
+      "No: $0.55 (55%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-4-countries-in-november-2025"
+    "url": "https://polymarket.com/market/will-israel-strike-3-countries-in-2026"
   },
   {
     "id": "678749",
     "question": "Will Israel strike 6 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 1451.20553,
+    "liquidity": 1536.14644,
+    "answers": [
+      "Yes: $0.03 (3%)",
+      "No: $0.97 (97%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-6-countries-in-2026"
+  },
+  {
+    "id": "678750",
+    "question": "Will Israel strike 7 countries in 2026?",
+    "volume_24hr": 0.0,
+    "liquidity": 1669.45569,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
     ],
-    "url": "https://polymarket.com/market/will-israel-strike-6-countries-in-2026"
+    "url": "https://polymarket.com/market/will-israel-strike-7-countries-in-2026"
+  },
+  {
+    "id": "678751",
+    "question": "Will Israel strike 8 countries in 2026?",
+    "volume_24hr": 0.0,
+    "liquidity": 1366.16229,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/will-israel-strike-8-countries-in-2026"
   },
   {
     "id": "678753",
     "question": "Will Israel strike 10 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 1251.69399,
+    "liquidity": 1415.5298,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2588,7 +2577,7 @@
     "id": "678754",
     "question": "Will Israel strike 11 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 1159.89526,
+    "liquidity": 1238.12386,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -2599,7 +2588,7 @@
     "id": "678755",
     "question": "Will Israel strike 12 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 1218.96418,
+    "liquidity": 1676.23233,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2607,21 +2596,10 @@
     "url": "https://polymarket.com/market/will-israel-strike-12-countries-in-2026"
   },
   {
-    "id": "678756",
-    "question": "Will Israel strike 13 countries in 2026?",
-    "volume_24hr": 0.0,
-    "liquidity": 1307.48775,
-    "answers": [
-      "Yes: $0.00 (0%)",
-      "No: $1.00 (100%)"
-    ],
-    "url": "https://polymarket.com/market/will-israel-strike-13-countries-in-2026"
-  },
-  {
     "id": "678757",
     "question": "Will Israel strike 14 countries in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 1293.87198,
+    "liquidity": 1494.68242,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2629,10 +2607,21 @@
     "url": "https://polymarket.com/market/will-israel-strike-14-countries-in-2026"
   },
   {
+    "id": "679838",
+    "question": "20+ trapped Hamas fighters allowed to leave in 2025?",
+    "volume_24hr": 0.0,
+    "liquidity": 3658.26392,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/20-or-more-trapped-hamas-fighters-allowed-to-leave-in-2025"
+  },
+  {
     "id": "682708",
     "question": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 2620.04209,
+    "liquidity": 2576.25919,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -2643,7 +2632,7 @@
     "id": "682709",
     "question": "Will Benny Gantz be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 4001.99167,
+    "liquidity": 4020.54839,
     "answers": [
       "Yes: $0.02 (2%)",
       "No: $0.98 (98%)"
@@ -2654,7 +2643,7 @@
     "id": "682711",
     "question": "Will Yossi Cohen be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 3378.66874,
+    "liquidity": 3693.14988,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -2665,7 +2654,7 @@
     "id": "682712",
     "question": "Will Yair Golan be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 4705.33715,
+    "liquidity": 5087.26533,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2676,7 +2665,7 @@
     "id": "682713",
     "question": "Will Itamar Ben Gvir be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 4489.92479,
+    "liquidity": 4790.9309,
     "answers": [
       "Yes: $0.00 (0%)",
       "No: $1.00 (100%)"
@@ -2687,7 +2676,7 @@
     "id": "682714",
     "question": "Will Gideon Sa’ar be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 4059.53046,
+    "liquidity": 4304.05388,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2698,7 +2687,7 @@
     "id": "682715",
     "question": "Will Yariv Levin be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 3485.76417,
+    "liquidity": 4075.03188,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2709,7 +2698,7 @@
     "id": "682716",
     "question": "Will Moshe Feiglin be the next Prime Minister of Israel?",
     "volume_24hr": 0.0,
-    "liquidity": 3197.27138,
+    "liquidity": 4454.47794,
     "answers": [
       "Yes: $0.01 (1%)",
       "No: $0.99 (99%)"
@@ -2720,7 +2709,7 @@
     "id": "687652",
     "question": "Will Benjamin Netanyahu be the next leader out before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 1550.42414,
+    "liquidity": 1595.04366,
     "answers": [
       "Yes: $0.03 (3%)",
       "No: $0.97 (97%)"
@@ -2742,7 +2731,7 @@
     "id": "693482",
     "question": "Will North Korea recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 1306.40119,
+    "liquidity": 1306.36715,
     "answers": [
       "Yes: $0.03 (3%)",
       "No: $0.97 (97%)"
@@ -2753,12 +2742,23 @@
     "id": "693483",
     "question": "Will Cuba recognize Israel by June 30",
     "volume_24hr": 0.0,
-    "liquidity": 428.75336,
+    "liquidity": 428.76002,
     "answers": [
       "Yes: $0.05 (5%)",
       "No: $0.95 (95%)"
     ],
     "url": "https://polymarket.com/market/will-cuba-recognize-israel-by-june-30"
+  },
+  {
+    "id": "693484",
+    "question": "Will Saudi Arabia recognize Israel by June 30?",
+    "volume_24hr": 0.0,
+    "liquidity": 401.2408,
+    "answers": [
+      "Yes: $0.14 (14%)",
+      "No: $0.86 (86%)"
+    ],
+    "url": "https://polymarket.com/market/will-saudi-arabia-recognize-israel-by-june-30"
   },
   {
     "id": "693485",
@@ -2775,10 +2775,10 @@
     "id": "693486",
     "question": "Will Afghanistan recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 194.8966,
+    "liquidity": 197.8256,
     "answers": [
-      "Yes: $0.15 (15%)",
-      "No: $0.85 (85%)"
+      "Yes: $0.13 (13%)",
+      "No: $0.87 (87%)"
     ],
     "url": "https://polymarket.com/market/will-afghanistan-recognize-israel-by-june-30"
   },
@@ -2786,7 +2786,7 @@
     "id": "693487",
     "question": "Will Iraq recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 216.5976,
+    "liquidity": 205.4281,
     "answers": [
       "Yes: $0.08 (8%)",
       "No: $0.92 (92%)"
@@ -2808,10 +2808,10 @@
     "id": "693491",
     "question": "Will Venezuela recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 352.2587,
+    "liquidity": 345.0777,
     "answers": [
-      "Yes: $0.13 (13%)",
-      "No: $0.87 (87%)"
+      "Yes: $0.14 (14%)",
+      "No: $0.86 (86%)"
     ],
     "url": "https://polymarket.com/market/will-venezuela-recognize-israel-by-june-30-115"
   },
@@ -2819,10 +2819,10 @@
     "id": "693493",
     "question": "Will Tunisia recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 160.5025,
+    "liquidity": 150.4398,
     "answers": [
-      "Yes: $0.32 (32%)",
-      "No: $0.68 (68%)"
+      "Yes: $0.36 (36%)",
+      "No: $0.64 (64%)"
     ],
     "url": "https://polymarket.com/market/will-tunisia-recognize-israel-by-june-30"
   },
@@ -2852,10 +2852,10 @@
     "id": "693496",
     "question": "Will Indonesia recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 370.3586,
+    "liquidity": 359.3146,
     "answers": [
       "Yes: $0.10 (10%)",
-      "No: $0.91 (90%)"
+      "No: $0.90 (90%)"
     ],
     "url": "https://polymarket.com/market/will-indonesia-recognize-israel-by-june-30"
   },
@@ -2863,7 +2863,7 @@
     "id": "693502",
     "question": "Will Malaysia recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 155.1705,
+    "liquidity": 155.8155,
     "answers": [
       "Yes: $0.15 (16%)",
       "No: $0.84 (84%)"
@@ -2874,10 +2874,10 @@
     "id": "693506",
     "question": "Will Bangladesh recognize Israel by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 190.2649,
+    "liquidity": 189.3228,
     "answers": [
       "Yes: $0.12 (12%)",
-      "No: $0.89 (88%)"
+      "No: $0.88 (88%)"
     ],
     "url": "https://polymarket.com/market/will-bangladesh-recognize-israel-by-june-30"
   },
@@ -2902,6 +2902,17 @@
       "No: $0.55 (55%)"
     ],
     "url": "https://polymarket.com/market/spl-dam-ahl-2025-12-19-draw"
+  },
+  {
+    "id": "695598",
+    "question": "Will Al Ahli Saudi Club win on 2025-12-19?",
+    "volume_24hr": 0.0,
+    "liquidity": 2.9038,
+    "answers": [
+      "Yes: $0.51 (51%)",
+      "No: $0.49 (49%)"
+    ],
+    "url": "https://polymarket.com/market/spl-dam-ahl-2025-12-19-ahl"
   },
   {
     "id": "695599",
@@ -2940,7 +2951,7 @@
     "id": "695602",
     "question": "Will Al Taawoun Saudi Club win on 2025-12-19?",
     "volume_24hr": 0.0,
-    "liquidity": 549.655,
+    "liquidity": 549.5818,
     "answers": [
       "Yes: $0.28 (28%)",
       "No: $0.72 (72%)"
@@ -2959,13 +2970,24 @@
     "url": "https://polymarket.com/market/spl-taa-hil-2025-12-19-draw"
   },
   {
+    "id": "695604",
+    "question": "Will Al Hilal Saudi Club win on 2025-12-19?",
+    "volume_24hr": 0.0,
+    "liquidity": 256.3985,
+    "answers": [
+      "Yes: $0.47 (48%)",
+      "No: $0.53 (52%)"
+    ],
+    "url": "https://polymarket.com/market/spl-taa-hil-2025-12-19-hil"
+  },
+  {
     "id": "697453",
     "question": "Will Al Shabab Saudi Club win on 2025-12-20?",
     "volume_24hr": 0.0,
-    "liquidity": 3.54912,
+    "liquidity": 3.21495,
     "answers": [
-      "Yes: $0.52 (52%)",
-      "No: $0.48 (48%)"
+      "Yes: $0.51 (51%)",
+      "No: $0.49 (49%)"
     ],
     "url": "https://polymarket.com/market/spl-sha-riy-2025-12-20-sha"
   },
@@ -2973,7 +2995,7 @@
     "id": "697454",
     "question": "Will Al Shabab Saudi Club vs. Al Riyadh Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 0.8166,
+    "liquidity": 1.168,
     "answers": [
       "Yes: $0.50 (50%)",
       "No: $0.50 (50%)"
@@ -2984,7 +3006,7 @@
     "id": "697455",
     "question": "Will Al Riyadh Saudi Club win on 2025-12-20?",
     "volume_24hr": 0.0,
-    "liquidity": 1.1658,
+    "liquidity": 0.8166,
     "answers": [
       "Yes: $0.50 (50%)",
       "No: $0.50 (50%)"
@@ -3105,7 +3127,7 @@
     "id": "699225",
     "question": "Will Al Najmah Saudi Club vs. Al Nassr Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 2.5071,
+    "liquidity": 2.5068,
     "answers": [
       "Yes: $0.49 (49%)",
       "No: $0.51 (51%)"
@@ -3127,7 +3149,7 @@
     "id": "700881",
     "question": "Will Israel annex any territory by June 30?",
     "volume_24hr": 0.0,
-    "liquidity": 179.68748,
+    "liquidity": 168.71878,
     "answers": [
       "Yes: $0.10 (10%)",
       "No: $0.90 (90%)"
@@ -3135,21 +3157,43 @@
     "url": "https://polymarket.com/market/will-israel-annex-any-territory-by-june-30"
   },
   {
-    "id": "718615",
-    "question": "Will Al Fayha Saudi Club vs. Al Hazem SC end in a draw?",
+    "id": "701301",
+    "question": "Naim Qassem out as Hezbollah’s secretary-general by December 31?",
     "volume_24hr": 0.0,
-    "liquidity": 4202.6785,
+    "liquidity": 483.45587,
     "answers": [
-      "Yes: $0.28 (28%)",
-      "No: $0.72 (72%)"
+      "Yes: $0.05 (5%)",
+      "No: $0.95 (95%)"
     ],
-    "url": "https://polymarket.com/market/spl-fay-haz-2025-12-25-draw"
+    "url": "https://polymarket.com/market/naim-qassem-out-as-hezbollahs-secretary-general-by-december-31"
+  },
+  {
+    "id": "705319",
+    "question": "Israel banned from Eurovision 2026 by December 31?",
+    "volume_24hr": 0.0,
+    "liquidity": 1475.64346,
+    "answers": [
+      "Yes: $0.01 (0%)",
+      "No: $0.99 (100%)"
+    ],
+    "url": "https://polymarket.com/market/israel-banned-from-eurovision-2026-by-december-31"
+  },
+  {
+    "id": "705521",
+    "question": "Houthi strike on Israel by December 31?",
+    "volume_24hr": 0.0,
+    "liquidity": 485.81091,
+    "answers": [
+      "Yes: $0.02 (2%)",
+      "No: $0.98 (98%)"
+    ],
+    "url": "https://polymarket.com/market/houthi-strike-on-israel-by-december-31"
   },
   {
     "id": "718617",
     "question": "Will Al Riyadh Saudi Club win on 2025-12-25?",
     "volume_24hr": 0.0,
-    "liquidity": 2046.2954,
+    "liquidity": 1585.2354,
     "answers": [
       "Yes: $0.31 (31%)",
       "No: $0.69 (69%)"
@@ -3160,7 +3204,7 @@
     "id": "718618",
     "question": "Will Al Riyadh Saudi Club vs. Al Ettifaq Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 4096.9512,
+    "liquidity": 4192.0512,
     "answers": [
       "Yes: $0.29 (29%)",
       "No: $0.71 (71%)"
@@ -3171,7 +3215,7 @@
     "id": "739010",
     "question": "Will Al Fateh Saudi Club win on 2025-12-26?",
     "volume_24hr": 0.0,
-    "liquidity": 1171.2195,
+    "liquidity": 962.604,
     "answers": [
       "Yes: $0.17 (16%)",
       "No: $0.83 (84%)"
@@ -3182,7 +3226,7 @@
     "id": "739011",
     "question": "Will Al Fateh Saudi Club vs. Al Ahli Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 2858.244,
+    "liquidity": 2919.244,
     "answers": [
       "Yes: $0.20 (20%)",
       "No: $0.81 (80%)"
@@ -3190,21 +3234,10 @@
     "url": "https://polymarket.com/market/spl-fat-ahl-2025-12-26-draw"
   },
   {
-    "id": "739012",
-    "question": "Will Al Ahli Saudi Club win on 2025-12-26?",
-    "volume_24hr": 0.0,
-    "liquidity": 1273.895,
-    "answers": [
-      "Yes: $0.64 (64%)",
-      "No: $0.36 (36%)"
-    ],
-    "url": "https://polymarket.com/market/spl-fat-ahl-2025-12-26-ahl"
-  },
-  {
     "id": "739013",
     "question": "Will Al Kholood Saudi Club win on 2025-12-26?",
     "volume_24hr": 0.0,
-    "liquidity": 2075.8486,
+    "liquidity": 1419.8486,
     "answers": [
       "Yes: $0.30 (30%)",
       "No: $0.69 (70%)"
@@ -3215,7 +3248,7 @@
     "id": "739014",
     "question": "Will Al Kholood Saudi Club vs. Al Taawoun Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 4019.9193,
+    "liquidity": 3466.8593,
     "answers": [
       "Yes: $0.29 (29%)",
       "No: $0.71 (71%)"
@@ -3226,7 +3259,7 @@
     "id": "739015",
     "question": "Will Al Taawoun Saudi Club win on 2025-12-26?",
     "volume_24hr": 0.0,
-    "liquidity": 2087.927,
+    "liquidity": 2201.9269,
     "answers": [
       "Yes: $0.43 (44%)",
       "No: $0.56 (56%)"
@@ -3237,12 +3270,34 @@
     "id": "739016",
     "question": "Will Al Hilal Saudi Club win on 2025-12-26?",
     "volume_24hr": 0.0,
-    "liquidity": 9448.8729,
+    "liquidity": 9509.3823,
     "answers": [
       "Yes: $0.81 (82%)",
       "No: $0.18 (18%)"
     ],
     "url": "https://polymarket.com/market/spl-hil-kha-2025-12-26-hil"
+  },
+  {
+    "id": "739017",
+    "question": "Will Al Hilal Saudi Club vs. Al Khaleej Saudi Club end in a draw?",
+    "volume_24hr": 0.0,
+    "liquidity": 12635.0019,
+    "answers": [
+      "Yes: $0.10 (10%)",
+      "No: $0.90 (90%)"
+    ],
+    "url": "https://polymarket.com/market/spl-hil-kha-2025-12-26-draw"
+  },
+  {
+    "id": "739018",
+    "question": "Will Al Khaleej Saudi Club win on 2025-12-26?",
+    "volume_24hr": 0.0,
+    "liquidity": 11117.325,
+    "answers": [
+      "Yes: $0.06 (6%)",
+      "No: $0.94 (94%)"
+    ],
+    "url": "https://polymarket.com/market/spl-hil-kha-2025-12-26-kha"
   },
   {
     "id": "763321",
@@ -3256,21 +3311,10 @@
     "url": "https://polymarket.com/market/spl-qad-dam-2025-12-27-draw"
   },
   {
-    "id": "763322",
-    "question": "Will Damac Saudi Club win on 2025-12-27?",
-    "volume_24hr": 0.0,
-    "liquidity": 1455.641,
-    "answers": [
-      "Yes: $0.10 (10%)",
-      "No: $0.90 (90%)"
-    ],
-    "url": "https://polymarket.com/market/spl-qad-dam-2025-12-27-dam"
-  },
-  {
     "id": "763330",
     "question": "Will Al Ittihad Saudi Club win on 2025-12-27?",
     "volume_24hr": 0.0,
-    "liquidity": 1973.1484,
+    "liquidity": 2055.2734,
     "answers": [
       "Yes: $0.64 (64%)",
       "No: $0.36 (36%)"
@@ -3281,7 +3325,7 @@
     "id": "763331",
     "question": "Will Al Ittihad Saudi Club vs. Al Shabab Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 3432.0956,
+    "liquidity": 3425.6456,
     "answers": [
       "Yes: $0.21 (21%)",
       "No: $0.79 (79%)"
@@ -3303,10 +3347,10 @@
     "id": "789937",
     "question": "Will Al Khaleej Saudi Club win on 2025-12-29?",
     "volume_24hr": 0.0,
-    "liquidity": 43.7987,
+    "liquidity": 45.7469,
     "answers": [
-      "Yes: $0.47 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.45 (44%)",
+      "No: $0.56 (56%)"
     ],
     "url": "https://polymarket.com/market/spl-kha-fat-2025-12-29-kha"
   },
@@ -3314,10 +3358,10 @@
     "id": "789938",
     "question": "Will Al Khaleej Saudi Club vs. Al Fateh Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1934.211,
+    "liquidity": 1935.711,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.47 (48%)",
+      "No: $0.53 (52%)"
     ],
     "url": "https://polymarket.com/market/spl-kha-fat-2025-12-29-draw"
   },
@@ -3325,9 +3369,9 @@
     "id": "789939",
     "question": "Will Al Fateh Saudi Club win on 2025-12-29?",
     "volume_24hr": 0.0,
-    "liquidity": 37.1334,
+    "liquidity": 40.2934,
     "answers": [
-      "Yes: $0.47 (46%)",
+      "Yes: $0.46 (46%)",
       "No: $0.54 (54%)"
     ],
     "url": "https://polymarket.com/market/spl-kha-fat-2025-12-29-fat"
@@ -3336,10 +3380,10 @@
     "id": "789940",
     "question": "Will Al Riyadh Saudi Club win on 2025-12-29?",
     "volume_24hr": 0.0,
-    "liquidity": 46.6728,
+    "liquidity": 47.6577,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.44 (44%)",
+      "No: $0.56 (56%)"
     ],
     "url": "https://polymarket.com/market/spl-riy-haz-2025-12-29-riy"
   },
@@ -3347,10 +3391,10 @@
     "id": "789941",
     "question": "Will Al Riyadh Saudi Club vs. Al Hazem SC end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1941.0675,
+    "liquidity": 1942.7295,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.45 (45%)",
+      "No: $0.55 (55%)"
     ],
     "url": "https://polymarket.com/market/spl-riy-haz-2025-12-29-draw"
   },
@@ -3358,7 +3402,7 @@
     "id": "789943",
     "question": "Will Al Taawoun Saudi Club win on 2025-12-29?",
     "volume_24hr": 0.0,
-    "liquidity": 40.3545,
+    "liquidity": 42.8582,
     "answers": [
       "Yes: $0.47 (48%)",
       "No: $0.53 (52%)"
@@ -3369,7 +3413,7 @@
     "id": "801007",
     "question": "Will Al Ahli Saudi Club win on 2025-12-30?",
     "volume_24hr": 0.0,
-    "liquidity": 101.2615,
+    "liquidity": 129.3252,
     "answers": [
       "Yes: $0.43 (43%)",
       "No: $0.57 (57%)"
@@ -3380,10 +3424,10 @@
     "id": "801008",
     "question": "Will Al Ahli Saudi Club vs. Al Fayha Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1934.2107,
+    "liquidity": 1936.2814,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.48 (48%)",
+      "No: $0.52 (52%)"
     ],
     "url": "https://polymarket.com/market/spl-ahl-fay-2025-12-30-draw"
   },
@@ -3391,10 +3435,10 @@
     "id": "801009",
     "question": "Will Al Fayha Saudi Club win on 2025-12-30?",
     "volume_24hr": 0.0,
-    "liquidity": 32.7273,
+    "liquidity": 36.732,
     "answers": [
-      "Yes: $0.47 (47%)",
-      "No: $0.53 (53%)"
+      "Yes: $0.45 (44%)",
+      "No: $0.56 (56%)"
     ],
     "url": "https://polymarket.com/market/spl-ahl-fay-2025-12-30-fay"
   },
@@ -3402,7 +3446,7 @@
     "id": "801010",
     "question": "Will Al Ettifaq Saudi Club win on 2025-12-30?",
     "volume_24hr": 0.0,
-    "liquidity": 113.2816,
+    "liquidity": 154.0213,
     "answers": [
       "Yes: $0.13 (13%)",
       "No: $0.87 (87%)"
@@ -3413,7 +3457,7 @@
     "id": "801011",
     "question": "Will Al Ettifaq Saudi Club vs. Al Nassr Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 2098.8264,
+    "liquidity": 2054.8264,
     "answers": [
       "Yes: $0.15 (16%)",
       "No: $0.84 (84%)"
@@ -3424,10 +3468,10 @@
     "id": "801012",
     "question": "Will Al Nassr Saudi Club win on 2025-12-30?",
     "volume_24hr": 0.0,
-    "liquidity": 112.8824,
+    "liquidity": 118.9277,
     "answers": [
-      "Yes: $0.73 (73%)",
-      "No: $0.27 (27%)"
+      "Yes: $0.76 (76%)",
+      "No: $0.24 (24%)"
     ],
     "url": "https://polymarket.com/market/spl-ett-nsr-2025-12-30-nsr"
   },
@@ -3435,10 +3479,10 @@
     "id": "801014",
     "question": "Will Al Okhdood SC vs. Damac Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1928.665,
+    "liquidity": 1942.4484,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.43 (44%)",
+      "No: $0.56 (56%)"
     ],
     "url": "https://polymarket.com/market/spl-okh-dam-2025-12-30-draw"
   },
@@ -3446,10 +3490,10 @@
     "id": "801015",
     "question": "Will Damac Saudi Club win on 2025-12-30?",
     "volume_24hr": 0.0,
-    "liquidity": 41.0649,
+    "liquidity": 50.6076,
     "answers": [
-      "Yes: $0.48 (48%)",
-      "No: $0.52 (52%)"
+      "Yes: $0.46 (46%)",
+      "No: $0.55 (55%)"
     ],
     "url": "https://polymarket.com/market/spl-okh-dam-2025-12-30-dam"
   },
@@ -3457,10 +3501,10 @@
     "id": "812363",
     "question": "Will NEOM SC vs. Al Ittihad Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1943.1417,
+    "liquidity": 1948.5811,
     "answers": [
-      "Yes: $0.45 (45%)",
-      "No: $0.55 (55%)"
+      "Yes: $0.41 (41%)",
+      "No: $0.59 (59%)"
     ],
     "url": "https://polymarket.com/market/spl-neo-ith-2025-12-31-draw"
   },
@@ -3468,10 +3512,10 @@
     "id": "812364",
     "question": "Will Al Ittihad Saudi Club win on 2025-12-31?",
     "volume_24hr": 0.0,
-    "liquidity": 66.9524,
+    "liquidity": 70.636,
     "answers": [
-      "Yes: $0.48 (48%)",
-      "No: $0.52 (52%)"
+      "Yes: $0.47 (48%)",
+      "No: $0.53 (52%)"
     ],
     "url": "https://polymarket.com/market/spl-neo-ith-2025-12-31-ith"
   },
@@ -3479,7 +3523,7 @@
     "id": "812365",
     "question": "Will Al Shabab Saudi Club win on 2025-12-31?",
     "volume_24hr": 0.0,
-    "liquidity": 78.3361,
+    "liquidity": 82.1226,
     "answers": [
       "Yes: $0.48 (48%)",
       "No: $0.52 (52%)"
@@ -3490,10 +3534,10 @@
     "id": "812366",
     "question": "Will Al Shabab Saudi Club vs. Al Qadisiyah Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1941.7079,
+    "liquidity": 1944.9165,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.55 (55%)"
+      "Yes: $0.41 (42%)",
+      "No: $0.58 (58%)"
     ],
     "url": "https://polymarket.com/market/spl-sha-qad-2025-12-31-draw"
   },
@@ -3501,10 +3545,10 @@
     "id": "812367",
     "question": "Will Al Qadisiyah Saudi Club win on 2025-12-31?",
     "volume_24hr": 0.0,
-    "liquidity": 65.5664,
+    "liquidity": 72.7416,
     "answers": [
-      "Yes: $0.46 (46%)",
-      "No: $0.54 (54%)"
+      "Yes: $0.40 (40%)",
+      "No: $0.60 (60%)"
     ],
     "url": "https://polymarket.com/market/spl-sha-qad-2025-12-31-qad"
   },
@@ -3512,10 +3556,10 @@
     "id": "812368",
     "question": "Will Al Kholood Saudi Club win on 2025-12-31?",
     "volume_24hr": 0.0,
-    "liquidity": 70.4392,
+    "liquidity": 73.1107,
     "answers": [
-      "Yes: $0.43 (44%)",
-      "No: $0.56 (56%)"
+      "Yes: $0.42 (42%)",
+      "No: $0.57 (57%)"
     ],
     "url": "https://polymarket.com/market/spl-kho-hil-2025-12-31-kho"
   },
@@ -3523,10 +3567,10 @@
     "id": "812369",
     "question": "Will Al Kholood Saudi Club vs. Al Hilal Saudi Club end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 1936.0782,
+    "liquidity": 1941.4782,
     "answers": [
-      "Yes: $0.45 (45%)",
-      "No: $0.55 (55%)"
+      "Yes: $0.42 (42%)",
+      "No: $0.57 (57%)"
     ],
     "url": "https://polymarket.com/market/spl-kho-hil-2025-12-31-draw"
   },
@@ -3534,7 +3578,7 @@
     "id": "812370",
     "question": "Will Al Hilal Saudi Club win on 2025-12-31?",
     "volume_24hr": 0.0,
-    "liquidity": 71.8833,
+    "liquidity": 71.042,
     "answers": [
       "Yes: $0.51 (50%)",
       "No: $0.49 (50%)"
@@ -3545,10 +3589,10 @@
     "id": "838568",
     "question": "Will Stephen Miran be the first to leave the Trump Cabinet before 2027?",
     "volume_24hr": 0.0,
-    "liquidity": 2108.32031,
+    "liquidity": 2594.47321,
     "answers": [
-      "Yes: $0.06 (6%)",
-      "No: $0.94 (94%)"
+      "Yes: $0.04 (4%)",
+      "No: $0.96 (96%)"
     ],
     "url": "https://polymarket.com/market/will-stephen-miran-be-the-first-to-leave-the-trump-cabinet-before-2027-187"
   },
@@ -3556,7 +3600,7 @@
     "id": "839396",
     "question": "Will Qatar win Group B in the 2026 FIFA World Cup?",
     "volume_24hr": 0.0,
-    "liquidity": 3562.2467,
+    "liquidity": 3631.2467,
     "answers": [
       "Yes: $0.05 (5%)",
       "No: $0.95 (95%)"
@@ -3564,10 +3608,21 @@
     "url": "https://polymarket.com/market/will-qatar-win-group-a-in-the-2026-fifa-world-cup"
   },
   {
+    "id": "839441",
+    "question": "Will Iran win Group G in the 2026 FIFA World Cup?",
+    "volume_24hr": 0.0,
+    "liquidity": 3435.9935,
+    "answers": [
+      "Yes: $0.12 (12%)",
+      "No: $0.88 (88%)"
+    ],
+    "url": "https://polymarket.com/market/will-iran-win-group-g-in-the-2026-fifa-world-cup"
+  },
+  {
     "id": "839563",
     "question": "Will Saudi Arabia win Group H in the 2026 FIFA World Cup?",
     "volume_24hr": 0.0,
-    "liquidity": 4242.4685,
+    "liquidity": 4296.45378,
     "answers": [
       "Yes: $0.04 (4%)",
       "No: $0.96 (96%)"
@@ -3578,7 +3633,7 @@
     "id": "897227",
     "question": "Will Donald Trump visit Syria in 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 61.1062,
+    "liquidity": 61.0117,
     "answers": [
       "Yes: $0.20 (20%)",
       "No: $0.80 (80%)"
@@ -3589,7 +3644,7 @@
     "id": "897530",
     "question": "Israel strike on Damascus by March 31, 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 3585.0767,
+    "liquidity": 3958.6742,
     "answers": [
       "Yes: $0.10 (10%)",
       "No: $0.90 (90%)"
@@ -3600,7 +3655,7 @@
     "id": "950001",
     "question": "Naim Qassem out as Hezbollah’s secretary-general by March 31, 2026?",
     "volume_24hr": 0.0,
-    "liquidity": 452.3353,
+    "liquidity": 421.3958,
     "answers": [
       "Yes: $0.21 (22%)",
       "No: $0.79 (78%)"
@@ -3622,7 +3677,7 @@
     "id": "964882",
     "question": "Will Leavitt say \"Nuclear\" or \"Iran\" during the next White House press briefing?",
     "volume_24hr": 0.0,
-    "liquidity": 147.6907,
+    "liquidity": 147.5207,
     "answers": [
       "Yes: $0.54 (54%)",
       "No: $0.46 (46%)"
@@ -3633,66 +3688,11 @@
     "id": "977807",
     "question": "Will SD Eibar vs. CD Mirandés end in a draw?",
     "volume_24hr": 0.0,
-    "liquidity": 2206.5685,
+    "liquidity": 2267.5685,
     "answers": [
       "Yes: $0.25 (25%)",
       "No: $0.75 (75%)"
     ],
     "url": "https://polymarket.com/market/es2-eib-mir-2026-01-02-draw"
-  },
-  {
-    "id": "984440",
-    "question": "US strikes Iran by December 31, 2025?",
-    "volume_24hr": 0.0,
-    "liquidity": 4622.62842,
-    "answers": [
-      "Yes: $0.02 (2%)",
-      "No: $0.98 (98%)"
-    ],
-    "url": "https://polymarket.com/market/us-strikes-iran-by-december-31-2025"
-  },
-  {
-    "id": "984441",
-    "question": "US strikes Iran by March 31, 2026?",
-    "volume_24hr": 0.0,
-    "liquidity": 3258.743,
-    "answers": [
-      "Yes: $0.17 (16%)",
-      "No: $0.83 (84%)"
-    ],
-    "url": "https://polymarket.com/market/us-strikes-iran-by-march-31-2026"
-  },
-  {
-    "id": "984442",
-    "question": "US strikes Iran by June 30, 2026?",
-    "volume_24hr": 0.0,
-    "liquidity": 1578.8101,
-    "answers": [
-      "Yes: $0.27 (26%)",
-      "No: $0.73 (74%)"
-    ],
-    "url": "https://polymarket.com/market/us-strikes-iran-by-june-30-2026"
-  },
-  {
-    "id": "994634",
-    "question": "Will Trump say \"Peace in the Middle East\" during the announcement on December 22?",
-    "volume_24hr": 0.0,
-    "liquidity": 256.2951,
-    "answers": [
-      "Yes: $0.01 (1%)",
-      "No: $0.99 (99%)"
-    ],
-    "url": "https://polymarket.com/market/will-trump-say-peace-in-the-middle-east-during-the-announcement-on-december-22"
-  },
-  {
-    "id": "994900",
-    "question": "Israel strikes Iran by January 31, 2026?",
-    "volume_24hr": 0.0,
-    "liquidity": 15332.7406,
-    "answers": [
-      "Yes: $0.13 (13%)",
-      "No: $0.87 (87%)"
-    ],
-    "url": "https://polymarket.com/market/israel-strikes-iran-by-january-31-2026"
   }
 ]
