@@ -1,43 +1,44 @@
 import requests
 import json
 import os
-import math
 from datetime import datetime
 
 # --- CONFIGURATION ---
 MARKET_SLUG = "israel-strikes-iran-by-january-31-2026"
 API_URL = "https://gamma-api.polymarket.com/events"
-STATE_FILE = "bot_memory.json" # Stores the "brain" of the bot
+STATE_FILE = "bot_state.json"  # This file stores the bot's "brain"
 
-class MarketIntelligence:
+class PredictionEngine:
     def __init__(self):
         self.state = self.load_state()
-    
+
     def load_state(self):
         """Loads the hidden states (memory) from the previous run."""
         if os.path.exists(STATE_FILE):
-            with open(STATE_FILE, 'r') as f:
-                return json.load(f)
-        else:
-            # Initialize fresh state (Epoch 0)
-            return {
-                "epoch": 0,
-                "history": { 
-                    "momentum": 0.5, 
-                    "insider_sensitivity": 1.0, 
-                    "adaptive_bias": 0.0 # This changes over time (Learning)
-                },
-                "last_prediction": None,
-                "learning_rate": 0.05
-            }
+            try:
+                with open(STATE_FILE, 'r') as f:
+                    return json.load(f)
+            except json.JSONDecodeError:
+                pass # If file is corrupted, start over
+        
+        # DEFAULT STATE (Epoch 0)
+        return {
+            "epoch": 0,
+            "history": [], 
+            "weights": {
+                "momentum": 0.3,       # Short-term trend sensitivity
+                "learning_bias": 0.0   # Long-term correction (starts neutral)
+            },
+            "last_prediction": None
+        }
 
     def save_state(self):
-        """Saves the current state back to the repo."""
+        """Saves the learned weights back to the repo."""
         with open(STATE_FILE, 'w') as f:
             json.dump(self.state, f, indent=2)
 
-    def fetch_live_data(self):
-        """Fetches raw data from Polymarket."""
+    def fetch_data(self):
+        """Gets live data from Polymarket."""
         try:
             params = {"slug": MARKET_SLUG}
             response = requests.get(API_URL, params=params)
@@ -50,138 +51,124 @@ class MarketIntelligence:
             return {
                 "question": market['question'],
                 "price": float(prices), # "Yes" Price
-                "volume": float(data.get('volume', 0)),
-                "liquidity": float(market.get('liquidity', 0))
+                "volume": float(data.get('volume', 0))
             }
         except Exception as e:
             print(f"API Error: {e}")
             return None
 
-    def calculate_smart_prediction(self, live_data):
-        """
-        The Core Algorithm:
-        1. Short-Term: Momentum (Are we diverging from the 10-epoch average?)
-        2. Heuristic: Insider Volatility (High volume + Low price move = Accumulation)
-        3. Long-Term: Adaptive Bias (Self-correction from previous errors)
-        """
+    def run_algorithm(self, live_data):
         current_price = live_data['price']
         
-        # A. LONG-TERM LEARNING (Self-Correction)
-        # If we made a prediction last time, how wrong were we?
+        # --- 1. LONG-TERM LEARNING (Error Correction) ---
+        # If we made a prediction last time, check how wrong we were
         if self.state['last_prediction'] is not None:
-            # Error = Real Price - What we predicted
+            # Error = Real Price - Our Last Prediction
             error = current_price - self.state['last_prediction']
             
-            # Update the bias weight (Gradient Descent-lite)
-            # If we were too high, lower the bias. If too low, raise it.
-            self.state['weights']['adaptive_bias'] += (error * self.state['learning_rate'])
+            # Update Bias: If we were too high, lower the bias. If too low, raise it.
+            # 0.1 is the 'Learning Rate'
+            self.state['weights']['learning_bias'] += (error * 0.1)
 
-        # B. SHORT-TERM MOMENTUM
-        # Calculate Moving Average of last 10 runs
-        history_prices = [h['price'] for h in self.state['history'][-10:]]
-        if history_prices:
-            avg_price = sum(history_prices) / len(history_prices)
-            momentum = (current_price - avg_price) * self.state['weights']['momentum']
+        # --- 2. SHORT-TERM ALGO (Momentum) ---
+        # Compare current price to the average of the last 5 runs
+        history = self.state['history'][-5:]
+        if history:
+            avg_price = sum([h['price'] for h in history]) / len(history)
+            momentum_score = (current_price - avg_price) * self.state['weights']['momentum']
         else:
-            momentum = 0
+            momentum_score = 0
 
-        # C. INSIDER HEURISTIC
-        # Detect volume spikes relative to recent history
-        insider_boost = 0.0
-        if self.state['history']:
-            last_vol = self.state['history'][-1]['volume']
-            vol_change = (live_data['volume'] - last_vol) / (last_vol + 1)
-            # If volume spiked > 5% but price moved < 2%, assume "Stealth Accumulation"
-            if vol_change > 0.05 and abs(momentum) < 0.02:
-                insider_boost = 0.05 # Add 5% probability
-
-        # D. FINAL CALCULATION
-        smart_prob = current_price + momentum + insider_boost + self.state['weights']['adaptive_bias']
+        # --- 3. FINAL PREDICTION ---
+        # Base Price + Momentum + Learned Bias
+        smart_pred = current_price + momentum_score + self.state['weights']['learning_bias']
         
         # Clamp result between 1% and 99%
-        return max(0.01, min(0.99, smart_prob))
+        smart_pred = max(0.01, min(0.99, smart_pred))
 
-    def run_epoch(self):
-        """Runs one cycle of the bot."""
-        data = self.fetch_live_data()
-        if not data: return
-        
-        # Generate Prediction
-        smart_prob = self.calculate_smart_prediction(data)
-        
-        # Update Memory
+        # Update State
         self.state['epoch'] += 1
-        self.state['last_prediction'] = smart_prob
+        self.state['last_prediction'] = smart_pred
         self.state['history'].append({
-            "timestamp": datetime.utcnow().strftime("%H:%M"),
-            "price": data['price'],
-            "volume": data['volume'],
-            "predicted": smart_prob
+            "time": datetime.utcnow().strftime("%H:%M"),
+            "price": current_price,
+            "pred": smart_pred,
+            "bias": self.state['weights']['learning_bias']
         })
         
-        # Keep history manageable (last 50 runs)
-        self.state['history'] = self.state['history'][-50:]
+        # Keep history short (last 20 items) to save space
+        self.state['history'] = self.state['history'][-20:]
         
-        self.save_state()
-        self.generate_dashboard(data, smart_prob)
+        return smart_pred
 
-    def generate_dashboard(self, data, smart_prob):
-        """Writes the HTML dashboard."""
+    def generate_html(self, data, prediction):
+        """Creates the visual dashboard."""
         
-        # Determine Trend direction
-        if len(self.state['history']) > 1:
-            prev = self.state['history'][-2]['predicted']
-            trend_arrow = "↑" if smart_prob > prev else "↓"
-            trend_color = "#00ff00" if smart_prob > prev else "#ff0000"
-        else:
-            trend_arrow = "-"
-            trend_color = "#cccccc"
+        # Trend Indicator
+        prev_pred = self.state['history'][-2]['pred'] if len(self.state['history']) > 1 else prediction
+        trend = "UP" if prediction > prev_pred else "DOWN"
+        color = "#00ff00" if prediction > prev_pred else "#ff4444"
+
+        # Table Rows
+        rows = ""
+        for h in reversed(self.state['history']):
+            rows += f"<tr><td>{h['time']}</td><td>{h['price']:.3f}</td><td>{h['pred']:.3f}</td><td>{h['bias']:.4f}</td></tr>"
 
         html = f"""
         <!DOCTYPE html>
         <html>
         <head>
-            <title>Automated Intelligence Unit</title>
-            <meta http-equiv="refresh" content="300"> 
+            <title>Algorithmic Forecaster</title>
+            <meta http-equiv="refresh" content="300">
             <style>
-                body {{ background: #111; color: #eee; font-family: monospace; padding: 20px; }}
-               .box {{ border: 1px solid #444; padding: 20px; margin: 20px 0; border-radius: 5px; }}
-               .big-text {{ font-size: 3em; font-weight: bold; color: {trend_color}; }}
-               .label {{ color: #888; font-size: 0.8em; text-transform: uppercase; }}
-                table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
-                td, th {{ border: 1px solid #333; padding: 8px; text-align: left; font-size: 0.9em; }}
+                body {{ background: #111; color: #eee; font-family: sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }}
+                h1 {{ border-bottom: 2px solid #555; }}
+               .card {{ background: #222; padding: 20px; border-radius: 8px; margin-bottom: 20px; }}
+               .big-num {{ font-size: 3em; font-weight: bold; color: {color}; }}
+                table {{ width: 100%; border-collapse: collapse; font-size: 0.9em; }}
+                th, td {{ border-bottom: 1px solid #333; padding: 8px; text-align: left; }}
+                th {{ color: #888; }}
             </style>
         </head>
         <body>
-            <h1>INTELLIGENCE UNIT // AUTONOMOUS MODE</h1>
-            <div class="label">TARGET MARKET: {data['question']}</div>
-            <div class="label">EPOCH: {self.state['epoch']} | LEARNING RATE: {self.state['learning_rate']}</div>
-
-            <div class="box">
-                <div class="label">SMART PREDICTION (ADJUSTED)</div>
-                <div class="big-text">{smart_prob:.1%} {trend_arrow}</div>
-                <p>Base Market Price: {data['price']:.1%}</p>
-                <p>Learned Bias Weight: {self.state['weights']['adaptive_bias']:.4f}</p>
+            <h1>Market Prediction Bot</h1>
+            <p>Target: {data['question']}</p>
+            
+            <div class="card">
+                <div>SMART PREDICTION ({trend})</div>
+                <div class="big-num">{prediction:.1%}</div>
+                <div style="font-size: 0.8em; color: #888;">
+                    Raw Market Price: {data['price']:.1%} | 
+                    Learned Bias: {self.state['weights']['learning_bias']:.4f}
+                </div>
             </div>
 
-            <div class="box">
-                <div class="label">DECISION LOG (LAST 5 EPOCHS)</div>
+            <div class="card">
+                <h3>Algorithm Memory (Last 20 Epochs)</h3>
                 <table>
-                    <tr><th>Time</th><th>Market Price</th><th>Bot Prediction</th><th>Volume</th></tr>
-                    {''.join([f"<tr><td>{h['timestamp']}</td><td>{h['price']:.2f}</td><td>{h['predicted']:.2f}</td><td>${h['volume']:,.0f}</td></tr>" for h in reversed(self.state['history'][-5:])])}
+                    <tr><th>Time (UTC)</th><th>Real Price</th><th>Bot Prediction</th><th>Internal Bias</th></tr>
+                    {rows}
                 </table>
             </div>
             
-            <p style="text-align: center; color: #555; font-size: 0.7em;">
-                Generated by GitHub Actions | Updates every 15 minutes
+            <p style="text-align:center; font-size: 0.7em; color: #555;">
+                Epoch: {self.state['epoch']} | Powered by GitHub Actions
             </p>
         </body>
         </html>
         """
+        
         with open("index.html", "w") as f:
             f.write(html)
-        print("Dashboard updated successfully.")
 
 if __name__ == "__main__":
-    bot = MarketIntelligence()
-    bot.run_epoch()
+    bot = PredictionEngine()
+    data = bot.fetch_data()
+    
+    if data:
+        prediction = bot.run_algorithm(data)
+        bot.generate_html(data, prediction)
+        bot.save_state()
+        print(f"Epoch {bot.state['epoch']} Complete. Prediction: {prediction}")
+    else:
+        print("Failed to fetch data.")
