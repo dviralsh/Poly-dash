@@ -77,6 +77,63 @@
         .market-link:hover {
             text-decoration: underline;
         }
+        
+        /* Whale & Prediction Styles */
+        .whale-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .whale-badge.low { background-color: #6c757d; opacity: 0; } /* Hide normal */
+        .whale-badge.medium { background-color: #17a2b8; }
+        .whale-badge.high { background-color: #ffc107; color: #000; }
+        .whale-badge.extreme { background-color: #dc3545; }
+
+        .prediction-section {
+            margin-top: 10px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 8px;
+        }
+        .prediction-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+        .prediction-title::before {
+            content: "🧠";
+            margin-right: 5px;
+        }
+        .prediction-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+            text-align: center;
+        }
+        .prediction-item {
+            background: #f1f8ff;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #cce5ff;
+        }
+        .prediction-label {
+            font-size: 0.65rem;
+            color: #666;
+            display: block;
+            text-transform: uppercase;
+        }
+        .prediction-value {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #0366d6;
+        }
     </style>
 </head>
 <body>
@@ -125,15 +182,59 @@
                         answersHtml = '<li>Prices not available.</li>';
                     }
 
+                    // Whale Logic
+                    const whaleIndex = parseFloat(market.whale_index || 0);
+                    let whaleClass = 'low';
+                    let whaleText = '';
+                    if (whaleIndex > 2.0) { whaleClass = 'extreme'; whaleText = 'WHALE ALERT 🐋'; }
+                    else if (whaleIndex > 1.0) { whaleClass = 'high'; whaleText = 'High Volume'; }
+                    else if (whaleIndex > 0.5) { whaleClass = 'medium'; whaleText = 'Active'; }
+                    
+                    const whaleBadge = whaleText ? `<span class="whale-badge ${whaleClass}" title="Whale Index: ${whaleIndex.toFixed(2)}">${whaleText}</span>` : '';
+
+                    // AI Predictions Logic
+                    let predictionHtml = '';
+                    if (market.predictions) {
+                        const p15m = (parseFloat(market.predictions['15m']) * 100).toFixed(0);
+                        const p1h = (parseFloat(market.predictions['1h']) * 100).toFixed(0);
+                        const p24h = (parseFloat(market.predictions['24h']) * 100).toFixed(0);
+                        const p1w = (parseFloat(market.predictions['1w']) * 100).toFixed(0);
+
+                        predictionHtml = `
+                            <div class="prediction-section">
+                                <div class="prediction-title">AI Forecast (Price Probability)</div>
+                                <div class="prediction-grid">
+                                    <div class="prediction-item">
+                                        <span class="prediction-label">15m</span>
+                                        <div class="prediction-value">${p15m}%</div>
+                                    </div>
+                                    <div class="prediction-item">
+                                        <span class="prediction-label">1h</span>
+                                        <div class="prediction-value">${p1h}%</div>
+                                    </div>
+                                    <div class="prediction-item">
+                                        <span class="prediction-label">24h</span>
+                                        <div class="prediction-value">${p24h}%</div>
+                                    </div>
+                                    <div class="prediction-item">
+                                        <span class="prediction-label">1w</span>
+                                        <div class="prediction-value">${p1w}%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+
                     marketCard.innerHTML = `
                         <div class="market-question">#${index + 1}: ${market.question}</div>
                         <div class="market-stats">
-                            24h Volume: <span>$${market.volume_24hr.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span> | 
-                            Total Liquidity: <span>$${market.liquidity.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                            Vol: <span>$${Math.round(market.volume_24hr).toLocaleString()}</span>
+                            ${whaleBadge}
                         </div>
                         <ul class="market-answers">
                             ${answersHtml}
                         </ul>
+                        ${predictionHtml}
                         <a href="${market.url}" target="_blank" rel="noopener noreferrer" class="market-link">Trade on Polymarket &rarr;</a>
                     `;
                     container.appendChild(marketCard);

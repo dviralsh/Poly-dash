@@ -31,6 +31,6 @@ jobs:
         with:
           commit_message: "BOT: Update prediction state [skip ci]"
           # CRITICAL: This saves the memory file so the bot "learns"
-          file_pattern: "index.html bot_state.json"
+          file_pattern: "data.json model_state.json"
           commit_user_name: Prediction Bot
           commit_user_email: bot@github.com
