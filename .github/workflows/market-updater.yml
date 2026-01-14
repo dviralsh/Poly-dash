@@ -1,51 +1,37 @@
-name: Update Market Data
+name: Intelligence Bot
 
 on:
   schedule:
+    # Runs every 15 minutes
     - cron: '*/15 * * * *'
   workflow_dispatch:
 
-# --- THIS IS THE FIX ---
-# Grant write permissions to the GITHUB_TOKEN
 permissions:
   contents: write
-# --- END OF FIX ---
 
 jobs:
-  build:
+  run-analysis:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Checks-out your repository
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Sets up python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # 3. Installs dependencies
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
+      - name: Install Requests
+        run: pip install requests
 
-      # 4. List files (for debugging, can be removed later)
-      - name: List files in workspace
-        run: ls -R
+      - name: Run Prediction Script
+        run: python update_markets.py
 
-      # 5. Runs the python script
-      - name: Run Python script
-        run: python $GITHUB_WORKSPACE/update_markets.py
-
-      # 6. Commits the new data.json file back to the repository
-      - name: Commit data.json
+      - name: Save Memory & Dashboard
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "BOT: Auto-update market data"
-          file_pattern: data.json
-          commit_user_name: Market Data Bot
-          commit_user_email: bot@github.com
-          commit_author: Market Data Bot <bot@github.com>
+          commit_message: "BOT: Epoch Update [skip ci]"
+          # IMPORTANT: Commit BOTH the HTML and the JSON memory file
+          file_pattern: "index.html bot_memory.json"
+          commit_user_name: Prediction Bot
+          commit_user_email: bot@gmail.com
