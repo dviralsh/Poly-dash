@@ -3,262 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Middle East Market Seismograph</title>
+    <title>Middle East Alpha Predator 🧠</title>
     <style>
-        :root {
-            --bg-color: #f4f6f8;
-            --card-bg: #ffffff;
-            --text-main: #212529;
-            --text-sub: #6c757d;
+        :root { --bg: #f0f2f5; --card: #fff; --text: #1c1e21; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); padding: 20px; margin: 0; }
+        
+        .container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+        
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { margin: 0; font-weight: 800; }
+        
+        .card { 
+            background: var(--card); border-radius: 12px; padding: 20px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #ccc;
+            display: flex; flex-direction: column; gap: 15px;
+        }
+        
+        .question { font-weight: 700; font-size: 1.05rem; line-height: 1.4; }
+        .outcome-badge { 
+            display: inline-block; background: #eef; color: #007bff; 
+            padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 5px;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
-        }
+        /* Prediction Row */
+        .pred-row { display: flex; align-items: center; justify-content: space-between; background: #f8f9fa; padding: 10px; border-radius: 8px; }
+        .stat { text-align: center; }
+        .stat-label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-val { font-size: 1.4rem; font-weight: 800; }
+        
+        .arrow { font-size: 1.5rem; color: #aaa; }
+        .arrow.up { color: #28a745; transform: rotate(-45deg); }
+        .arrow.down { color: #dc3545; transform: rotate(45deg); }
 
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        h1 { margin: 0; font-weight: 800; letter-spacing: -0.5px; }
-        .subtitle { color: var(--text-sub); font-size: 0.9rem; margin-top: 5px; }
+        /* Narrative */
+        .narrative { font-size: 0.9rem; line-height: 1.5; color: #333; background: #fff; border: 1px solid #eee; padding: 10px; border-radius: 6px; }
+        
+        .actions { display: flex; gap: 10px; margin-top: auto; }
+        .btn { flex: 1; padding: 10px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; }
+        .btn-trade { background: #000; color: #fff; }
+        .btn-raw { background: #eee; color: #333; }
 
-        /* Grid Layout */
-        .market-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-        }
-
-        /* The Intelligent Card */
-        .market-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .market-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-
-        /* The colored strip on the left */
-        .anomaly-indicator {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 6px;
-        }
-
-        /* Content */
-        .market-question {
-            font-size: 1.1rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .price-tag {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            letter-spacing: -1px;
-        }
-
-        .price-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--text-sub);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        /* Signal Bar (The "Seismograph") */
-        .signal-container {
-            margin-bottom: 15px;
-        }
-        .signal-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        .progress-track {
-            background: #e9ecef;
-            height: 6px;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            border-radius: 3px;
-            transition: width 1s ease-in-out;
-        }
-
-        /* Reason Tags */
-        .analysis-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        .tag {
-            font-size: 0.7rem;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            background: #f1f3f5;
-            color: #495057;
-        }
-
-        /* Action Button */
-        .trade-btn {
-            text-align: center;
-            display: block;
-            width: 100%;
-            padding: 10px 0;
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #212529;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-        .trade-btn:hover { background: #e9ecef; }
-
-        /* Pulse Animation for High Anomalies */
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 82, 82, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
-        }
-        .pulsing {
-            animation: pulse-red 2s infinite;
-        }
-
-        /* Loading State */
-        #status-msg { text-align: center; color: #888; margin-top: 50px; }
+        /* Modal */
+        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 999; }
+        #modal-content { background: #fff; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; max-height: 80vh; overflow: auto; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Middle East Market Seismograph 📡</h1>
-        <div class="subtitle" id="last-updated">Connecting to AI Neural Net...</div>
+        <h1>Middle East Alpha Predator 🧠</h1>
+        <p>AI-Driven Price Targeting & Trend Prediction</p>
+        <small id="updated">Loading...</small>
     </header>
 
-    <div id="market-container" class="market-container">
+    <div class="container" id="app"></div>
+
+    <div id="modal" onclick="closeModal()">
+        <div id="modal-content" onclick="event.stopPropagation()">
+            <pre id="json-view"></pre>
         </div>
-    <p id="status-msg">Loading market data...</p>
+    </div>
 
     <script>
-        // Formatter for currency/numbers
-        const fmtPrice = (p) => (parseFloat(p) * 100).toFixed(1) + "¢";
+        const fmt = (p) => (parseFloat(p) * 100).toFixed(0) + '%';
 
-        async function fetchMarkets() {
-            const container = document.getElementById('market-container');
-            const statusMsg = document.getElementById('status-msg');
-            const dateDisplay = document.getElementById('last-updated');
-
+        async function init() {
             try {
-                // Cache buster to ensure fresh data
-                const res = await fetch(`data.json?t=${new Date().getTime()}`);
-                if (!res.ok) throw new Error("Data file not found");
+                const res = await fetch(`data.json?t=${Date.now()}`);
+                const data = await res.json();
                 
-                const markets = await res.json();
-                
-                container.innerHTML = '';
-                statusMsg.style.display = 'none';
-                dateDisplay.textContent = `Last AI Scan: ${new Date().toLocaleString()}`;
+                document.getElementById('updated').innerText = `Scanned: ${new Date().toLocaleString()}`;
+                const app = document.getElementById('app');
+                app.innerHTML = '';
 
-                if (markets.length === 0) {
-                    statusMsg.style.display = 'block';
-                    statusMsg.textContent = "No active anomalies detected.";
-                    return;
-                }
+                data.forEach(m => {
+                    const price = parseFloat(m.price);
+                    const pred = parseFloat(m.predicted);
+                    const diff = pred - price;
+                    
+                    // Determine Arrow
+                    let arrow = "→";
+                    let arrowClass = "";
+                    if (diff > 0.02) { arrow = "↗"; arrowClass = "up"; }
+                    if (diff < -0.02) { arrow = "↘"; arrowClass = "down"; }
 
-                markets.forEach(m => {
-                    // Extract data from the new ML structure
-                    const score = m.score_float || 0; // 0.0 to 1.0
-                    const color = m.color || "hsl(120, 50%, 50%)"; // Fallback green
-                    const percent = (score * 100).toFixed(0);
+                    const el = document.createElement('div');
+                    el.className = 'card';
+                    el.style.borderLeftColor = m.color;
                     
-                    // Parse "Reasoning" string into tags
-                    // Backend sends: "Whale Activity + Sector Trend"
-                    const reasons = (m.analysis || "Stable").split(' + ');
-                    const tagsHtml = reasons.map(r => `<span class="tag">${r}</span>`).join('');
-
-                    // Logic for visual urgency
-                    const isUrgent = score > 0.8;
-                    const pulseClass = isUrgent ? 'pulsing' : '';
-                    
-                    const card = document.createElement('div');
-                    card.className = `market-card ${pulseClass}`;
-                    
-                    // Apply dynamic styling based on ML color
-                    card.innerHTML = `
-                        <div class="anomaly-indicator" style="background-color: ${color};"></div>
-                        
+                    el.innerHTML = `
                         <div>
-                            <div class="market-question">${m.question}</div>
-                            
-                            <div class="price-tag" style="color: ${color}">
-                                $${m.price}
-                            </div>
-                            <div class="price-label">Current Price</div>
+                            <span class="outcome-badge">Analyzing: ${m.outcome}</span>
+                            <div class="question">${m.question}</div>
+                        </div>
 
-                            <div class="signal-container">
-                                <div class="signal-header">
-                                    <span>Signal Strength</span>
-                                    <span style="color:${color}">${percent}%</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" style="width: ${percent}%; background-color: ${color};"></div>
-                                </div>
+                        <div class="pred-row">
+                            <div class="stat">
+                                <div class="stat-val" style="color:#666">${fmt(price)}</div>
+                                <div class="stat-label">Market</div>
                             </div>
-
-                            <div class="analysis-tags">
-                                ${tagsHtml}
+                            <div class="arrow ${arrowClass}">${arrow}</div>
+                            <div class="stat">
+                                <div class="stat-val" style="color:${m.color}">${fmt(pred)}</div>
+                                <div class="stat-label">AI Target</div>
                             </div>
                         </div>
 
-                        <a href="${m.url}" target="_blank" class="trade-btn">View on Polymarket</a>
-                    `;
+                        <div class="narrative">
+                            ${m.narrative}
+                        </div>
 
-                    container.appendChild(card);
+                        <div class="actions">
+                            <button class="btn btn-raw" onclick='showRaw(${JSON.stringify(m.raw_data)})'>Raw</button>
+                            <a href="${m.url}" target="_blank" class="btn btn-trade">Trade</a>
+                        </div>
+                    `;
+                    app.appendChild(el);
                 });
 
-            } catch (err) {
-                console.error(err);
-                statusMsg.textContent = "System Offline (Check GitHub Actions)";
-            }
+            } catch(e) { console.error(e); }
         }
 
-        // Run on load
-        fetchMarkets();
+        function showRaw(json) {
+            document.getElementById('json-view').innerText = JSON.stringify(JSON.parse(json), null, 2);
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() { document.getElementById('modal').style.display = 'none'; }
         
-        // Refresh every 5 minutes
-        setInterval(fetchMarkets, 5 * 60 * 1000);
+        init();
     </script>
 </body>
 </html>
