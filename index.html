@@ -25,34 +25,35 @@
             padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 5px;
         }
 
-        /* Prediction Row */
-        .pred-row { display: flex; align-items: center; justify-content: space-between; background: #f8f9fa; padding: 10px; border-radius: 8px; }
-        .stat { text-align: center; }
-        .stat-label { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
-        .stat-val { font-size: 1.4rem; font-weight: 800; }
-        
-        .arrow { font-size: 1.5rem; color: #aaa; }
-        .arrow.up { color: #28a745; transform: rotate(-45deg); }
-        .arrow.down { color: #dc3545; transform: rotate(45deg); }
+        /* 3-Column Prediction Row */
+        .pred-row { display: flex; align-items: center; justify-content: space-between; background: #f8f9fa; padding: 12px; border-radius: 8px; }
+        .stat { text-align: center; flex: 1; }
+        .stat-label { font-size: 0.65rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;}
+        .stat-val { font-size: 1.2rem; font-weight: 800; }
+        .sep { width: 1px; height: 30px; background: #ddd; margin: 0 10px; }
 
-        /* Narrative */
-        .narrative { font-size: 0.9rem; line-height: 1.5; color: #333; background: #fff; border: 1px solid #eee; padding: 10px; border-radius: 6px; }
+        /* Colors */
+        .val-market { color: #555; }
+        .val-alpha { color: #d63384; } /* Pink/Red for Aggressive */
+        .val-rl { color: #0d6efd; }    /* Blue for Smart/Learned */
+
+        .narrative { font-size: 0.85rem; line-height: 1.5; color: #333; background: #fff; border: 1px solid #eee; padding: 10px; border-radius: 6px; }
         
         .actions { display: flex; gap: 10px; margin-top: auto; }
         .btn { flex: 1; padding: 10px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: none; cursor: pointer; }
         .btn-trade { background: #000; color: #fff; }
         .btn-raw { background: #eee; color: #333; }
 
-        /* Modal */
         #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 999; }
         #modal-content { background: #fff; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; max-height: 80vh; overflow: auto; }
+        #json-view { white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Middle East Alpha Predator 🧠</h1>
-        <p>AI-Driven Price Targeting & Trend Prediction</p>
+        <p>Man vs. Machine: Heuristic Alpha vs. RL Learner</p>
         <small id="updated">Loading...</small>
     </header>
 
@@ -60,33 +61,27 @@
 
     <div id="modal" onclick="closeModal()">
         <div id="modal-content" onclick="event.stopPropagation()">
+            <h3>Raw Data</h3>
             <pre id="json-view"></pre>
         </div>
     </div>
 
     <script>
         const fmt = (p) => (parseFloat(p) * 100).toFixed(0) + '%';
+        let marketData = [];
 
         async function init() {
             try {
                 const res = await fetch(`data.json?t=${Date.now()}`);
-                const data = await res.json();
-                
+                if (!res.ok) { document.getElementById('updated').innerText = "Error loading data."; return; }
+
+                marketData = await res.json();
                 document.getElementById('updated').innerText = `Scanned: ${new Date().toLocaleString()}`;
+                
                 const app = document.getElementById('app');
                 app.innerHTML = '';
 
-                data.forEach(m => {
-                    const price = parseFloat(m.price);
-                    const pred = parseFloat(m.predicted);
-                    const diff = pred - price;
-                    
-                    // Determine Arrow
-                    let arrow = "→";
-                    let arrowClass = "";
-                    if (diff > 0.02) { arrow = "↗"; arrowClass = "up"; }
-                    if (diff < -0.02) { arrow = "↘"; arrowClass = "down"; }
-
+                marketData.forEach((m, index) => {
                     const el = document.createElement('div');
                     el.className = 'card';
                     el.style.borderLeftColor = m.color;
@@ -99,13 +94,18 @@
 
                         <div class="pred-row">
                             <div class="stat">
-                                <div class="stat-val" style="color:#666">${fmt(price)}</div>
                                 <div class="stat-label">Market</div>
+                                <div class="stat-val val-market">${fmt(m.price)}</div>
                             </div>
-                            <div class="arrow ${arrowClass}">${arrow}</div>
+                            <div class="sep"></div>
                             <div class="stat">
-                                <div class="stat-val" style="color:${m.color}">${fmt(pred)}</div>
-                                <div class="stat-label">AI Target</div>
+                                <div class="stat-label">⚡ Alpha</div>
+                                <div class="stat-val val-alpha">${fmt(m.alpha_pred)}</div>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="stat">
+                                <div class="stat-label">🧠 RL Score</div>
+                                <div class="stat-val val-rl">${fmt(m.rl_pred)}</div>
                             </div>
                         </div>
 
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="actions">
-                            <button class="btn btn-raw" onclick='showRaw(${JSON.stringify(m.raw_data)})'>Raw</button>
+                            <button class="btn btn-raw" onclick="showRaw(${index})">Raw</button>
                             <a href="${m.url}" target="_blank" class="btn btn-trade">Trade</a>
                         </div>
                     `;
@@ -124,8 +124,11 @@
             } catch(e) { console.error(e); }
         }
 
-        function showRaw(json) {
-            document.getElementById('json-view').innerText = JSON.stringify(JSON.parse(json), null, 2);
+        function showRaw(index) {
+            const data = marketData[index];
+            let displayData = data.raw_data;
+            try { if (typeof displayData === 'string') displayData = JSON.parse(displayData); } catch (e) {}
+            document.getElementById('json-view').innerText = JSON.stringify(displayData, null, 2);
             document.getElementById('modal').style.display = 'flex';
         }
         function closeModal() { document.getElementById('modal').style.display = 'none'; }

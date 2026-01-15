@@ -33,8 +33,7 @@ jobs:
       - name: Save Knowledge & Publish
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "AI: Update market anomaly scores [skip ci]"
-          # UPDATED: Now saving the history log so the model remembers past trends
-          file_pattern: "data.json market_history_log.json"
+          commit_message: "AI: Update weights & traders [skip ci]"
+          file_pattern: "data.json traders.json model_state.json prediction_log.json"
           commit_user_name: Market Seismograph Bot
           commit_user_email: bot@github.com

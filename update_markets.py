@@ -1,238 +1,277 @@
 import requests
 import json
 import numpy as np
-import pandas as pd
-from datetime import datetime
-from sklearn.preprocessing import MinMaxScaler
-from textblob import TextBlob
 import time
 import os
 import math
+from textblob import TextBlob
 
 # --- CONFIGURATION ---
 GAMMA_URL = "https://gamma-api.polymarket.com"
 DATA_API_URL = "https://data-api.polymarket.com"
 DATA_FILE = 'data.json'
 TRADERS_FILE = 'traders.json'
+MODEL_STATE_FILE = 'model_state.json'
+PREDICTION_LOG_FILE = 'prediction_log.json'
 
 TOPICS = {
-    'GAZA': ['gaza', 'hamas', 'rafah', 'sinwar', 'hostage'],
+    'GAZA': ['gaza', 'hamas', 'rafah', 'sinwar', 'hostage', 'israel', 'idf'],
     'NORTH': ['lebanon', 'hezbollah', 'beirut', 'nasrallah'],
     'IRAN': ['iran', 'tehran', 'nuclear', 'khamenei', 'irgc'],
     'US_POL': ['biden', 'trump', 'election', 'harris'],
     'UKRAINE': ['ukraine', 'russia', 'putin', 'zelensky', 'kursk']
 }
 
+class MetaLearner:
+    """
+    The RL Brain. Observes the Alpha Signal and learns to weight it.
+    """
+    def __init__(self):
+        self.learning_rate = 0.05
+        self.state = self.load_state()
+        self.pending_predictions = self.load_predictions()
+
+    def load_state(self):
+        if os.path.exists(MODEL_STATE_FILE):
+            try: 
+                with open(MODEL_STATE_FILE, 'r') as f: return json.load(f)
+            except: pass
+        return { "weights": {"signal_w": 0.5, "bias": 0.0}, "epoch": 0 }
+
+    def load_predictions(self):
+        if os.path.exists(PREDICTION_LOG_FILE):
+            try: 
+                with open(PREDICTION_LOG_FILE, 'r') as f: return json.load(f)
+            except: pass
+        return {}
+
+    def save_state(self):
+        with open(MODEL_STATE_FILE, 'w') as f: json.dump(self.state, f, indent=2)
+        with open(PREDICTION_LOG_FILE, 'w') as f: json.dump(self.pending_predictions, f, indent=2)
+
+    def predict_delta(self, signal):
+        w = self.state['weights']
+        return (w['signal_w'] * signal) + w['bias']
+
+    def learn(self, current_prices_map):
+        updated_log = {}
+        updates = 0
+        total_error = 0
+        
+        for m_id, log in self.pending_predictions.items():
+            if m_id in current_prices_map:
+                actual_price = current_prices_map[m_id]
+                past_price = log['price_at_prediction']
+                pred_delta = log['predicted_delta']
+                signal = log['features']['signal']
+                
+                # Error Calculation
+                actual_delta = actual_price - past_price
+                error = pred_delta - actual_delta
+                
+                # Weight Update
+                w = self.state['weights']
+                w['signal_w'] -= self.learning_rate * error * signal
+                w['bias'] -= self.learning_rate * error
+                
+                total_error += abs(error)
+                updates += 1
+            else:
+                updated_log[m_id] = log
+                
+        self.pending_predictions = updated_log
+        if updates > 0:
+            print(f"🎓 RL Learned from {updates} events. New Signal Weight: {self.state['weights']['signal_w']:.3f}")
+
+    def log_prediction(self, m_id, price, signal, delta):
+        self.pending_predictions[m_id] = {
+            "timestamp": time.time(),
+            "price_at_prediction": price,
+            "features": {"signal": signal},
+            "predicted_delta": delta
+        }
+
 class HiveMind:
     def __init__(self):
         self.traders = self.load_traders()
+        self.learner = MetaLearner()
 
     def load_traders(self):
         if os.path.exists(TRADERS_FILE):
-            try:
-                with open(TRADERS_FILE, 'r') as f:
-                    return json.load(f)
-            except: return {}
+            try: 
+                with open(TRADERS_FILE, 'r') as f: return json.load(f)
+            except: pass
         return {}
 
     def save_traders(self):
-        with open(TRADERS_FILE, 'w') as f:
-            json.dump(self.traders, f, indent=2)
+        with open(TRADERS_FILE, 'w') as f: json.dump(self.traders, f, indent=2)
 
     def sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
 
-    def fetch_markets(self):
-        print("--- 🧠 Starting Corrected Hive Mind Scan ---")
-        all_markets = []
-        limit = 50
-        offset = 0
-        
-        for _ in range(10): 
-            try:
-                params = {'limit': limit, 'offset': offset, 'closed': 'false', 'order': 'volume24hr', 'ascending': 'false'}
-                resp = requests.get(f"{GAMMA_URL}/markets", params=params).json()
-                if not resp: break
-                
-                for m in resp:
-                    if m.get('archived'): continue
-                    text = (str(m.get('question')) + str(m.get('description'))).lower()
-                    relevant = False
-                    for topic_tags in TOPICS.values():
-                        if any(t in text for t in topic_tags):
-                            relevant = True
-                            break
-                    if relevant:
-                        all_markets.append(m)
-                
-                offset += limit
-                time.sleep(0.1)
-            except: break
-        
-        print(f"Captured {len(all_markets)} markets.")
-        return all_markets
+    def safe_parse(self, data):
+        if isinstance(data, list): return data
+        if isinstance(data, str):
+            try: return json.loads(data)
+            except: return []
+        return []
 
-    def analyze_sentiment(self, market_id):
+    def fetch_markets(self):
+        print("--- 🧠 Starting Hybrid Scan ---")
+        markets = []
         try:
-            params = {'marketID': market_id, 'limit': 20}
-            resp = requests.get(f"{GAMMA_URL}/comments", params=params).json()
-            if not resp: return 0, "No Comments"
-            
-            polarities = [TextBlob(c.get('body', '')).sentiment.polarity for c in resp]
-            return np.mean(polarities), "Mixed Discussion"
-        except: return 0, "No Comments"
+            params = {'limit': 100, 'closed': 'false', 'order': 'volume24hr', 'ascending': 'false'}
+            resp = requests.get(f"{GAMMA_URL}/markets", params=params)
+            data = resp.json()
+            for m in data:
+                if m.get('archived'): continue
+                text = (str(m.get('question')) + str(m.get('description'))).lower()
+                for tags in TOPICS.values():
+                    if any(t in text for t in tags):
+                        markets.append(m); break
+        except Exception as e: print(f"Fetch Error: {e}")
+        print(f"✅ Found {len(markets)} markets.")
+        return markets
 
     def analyze_crowd_wisdom(self, market_id, target_outcome_idx, current_price):
         """
-        CORRECTED LOGIC: Checks outcomeIndex to determine if trade is Bullish or Bearish.
+        STABLE ALGORITHM (With Trend Correction Logic)
         """
         net_vote_strength = 0
         participant_count = 0
         
         try:
-            # Fetch recent trades
             params = {'market': market_id, 'limit': 1000}
             trades = requests.get(f"{DATA_API_URL}/trades", params=params).json()
-            
-            for t in trades:
+            if not isinstance(trades, list): return 0.0, "API Limit"
+
+            for t in reversed(trades):
                 user = t.get('taker_address')
-                side = t.get('side') # "BUY" or "SELL"
+                side = t.get('side')
                 size = float(t.get('size', 0))
                 price_at_trade = float(t.get('price', 0))
-                # API returns outcomeIndex as string often
-                trade_outcome_idx = int(t.get('outcome_index', t.get('outcomeIndex', -1)))
                 
-                # --- 1. Continuous Learning (Update Score) ---
-                if user not in self.traders:
-                    self.traders[user] = {'score': 1.0, 'trades': 0}
+                raw_idx = t.get('outcome_index', t.get('outcomeIndex'))
+                if raw_idx is None: continue
+                trade_idx = int(raw_idx)
                 
+                if user not in self.traders: self.traders[user] = {'score': 1.0, 'trades': 0}
                 trader = self.traders[user]
-                
-                # Did they win?
-                # If they BOUGHT the target, and price is now higher -> WIN
-                # If they BOUGHT the OPPONENT, and price is now higher -> LOSS (because opponent dropped)
-                
-                is_bullish_trade = False
-                if side == "BUY":
-                    if trade_outcome_idx == target_outcome_idx: is_bullish_trade = True
-                    else: is_bullish_trade = False # They bought the enemy
-                elif side == "SELL":
-                    if trade_outcome_idx == target_outcome_idx: is_bullish_trade = False # Sold target
-                    else: is_bullish_trade = True # Sold enemy (Bullish for target)
 
-                # Score update logic
-                # We use sigmoid normalization later, so we let raw score float naturally
-                if is_bullish_trade:
-                    if current_price > price_at_trade: trader['score'] *= 1.02 # Good prediction
-                    else: trader['score'] *= 0.98
-                else:
-                    # Bearish trade (e.g. Bought No). If Price Dropped, they won.
-                    if current_price < price_at_trade: trader['score'] *= 1.02
-                    else: trader['score'] *= 0.98
+                # Direction Logic
+                is_bullish = False
+                if trade_idx == target_outcome_idx: is_bullish = (side == "BUY")
+                else: is_bullish = (side == "SELL")
 
-                trader['trades'] += 1
+                # Score Update
+                price_improved = False
+                if is_bullish and current_price > price_at_trade: price_improved = True
+                if not is_bullish and current_price < price_at_trade: price_improved = True
+                
+                if price_improved: trader['score'] *= 1.02
+                else: trader['score'] *= 0.98
+                trader['score'] = max(0.2, min(5.0, trader['score']))
                 self.traders[user] = trader
-                
-                # --- 2. Calculate Vote Impact ---
-                # Determine vector direction relative to OUR target
-                vector = 0
-                if trade_outcome_idx == target_outcome_idx:
-                    vector = 1 if side == "BUY" else -1
-                else:
-                    # Trading the opponent has inverse effect
-                    vector = -1 if side == "BUY" else 1
-                
-                # Weighted Vote: Log(Size) * Sigmoid(Score)
-                # Sigmoid maps score 0..inf -> 0.5..1.0 mostly
-                # We center sigmoid at 1.0 so bad traders (<1) have weight <0.5
-                reliability = self.sigmoid(trader['score'] - 1) # Center around 1.0
-                
+
+                # Stable Math
+                vector = 1.0 if is_bullish else -1.0
+                reliability = self.sigmoid(trader['score'] - 1)
                 vote_weight = np.log1p(size) * reliability
+                
                 net_vote_strength += (vote_weight * vector)
                 participant_count += 1
-                    
-        except Exception as e:
-            pass
+                        
+        except Exception as e: pass
         
-        # Normalize Net Vote (-1 to 1)
-        # Using Tanh to squash the infinite sum into a predictable range
-        impact = np.tanh(net_vote_strength / 20.0) * 0.15 # Max 15% price impact
+        # Tanh Squashing
+        impact = np.tanh(net_vote_strength / 20.0) * 0.15 
         
         narrative = ""
         if participant_count > 0:
-            if net_vote_strength > 2: narrative = f"Strong Buy Consensus ({participant_count} traders)"
-            elif net_vote_strength < -2: narrative = f"Strong Sell Consensus ({participant_count} traders)"
-            else: narrative = f"Neutral Flow ({participant_count} traders)"
+            if net_vote_strength > 2: narrative = f"Strong Buy ({participant_count} trds)"
+            elif net_vote_strength < -2: narrative = f"Strong Sell ({participant_count} trds)"
+            else: narrative = f"Neutral ({participant_count} trds)"
             
         return impact, narrative
 
-    def run_analysis(self):
+    def run(self):
         markets = self.fetch_markets()
-        results = []
-        
-        print("🧠 Processing Corrected Crowd Wisdom...")
-        
+        if not markets: return []
+
+        # 1. Learn
+        current_map = {}
         for m in markets:
             try:
-                outcomes = json.loads(m.get('outcomes', '[]'))
-                prices = json.loads(m.get('outcomePrices', '[]'))
-                if not outcomes or not prices: continue
+                prices = self.safe_parse(m.get('outcomePrices'))
+                outcomes = self.safe_parse(m.get('outcomes'))
+                if not prices: continue
+                t_idx = outcomes.index("Yes") if "Yes" in outcomes else np.argmax([float(p) for p in prices])
+                current_map[m['id']] = float(prices[t_idx])
+            except: continue
+        self.learner.learn(current_map)
+        
+        results = []
+        print("🧠 Generating Predictions...")
+        for m in markets:
+            try:
+                prices = self.safe_parse(m.get('outcomePrices'))
+                outcomes = self.safe_parse(m.get('outcomes'))
+                if not prices or not outcomes: continue
                 
-                # Select Target (Favorite or Yes)
-                target_idx = 0
-                if "Yes" in outcomes: target_idx = outcomes.index("Yes")
-                else: target_idx = np.argmax([float(p) for p in prices])
+                t_idx = outcomes.index("Yes") if "Yes" in outcomes else np.argmax([float(p) for p in prices])
+                price = float(prices[t_idx])
+                name = outcomes[t_idx]
+                if price < 0.01: continue
                 
-                price = float(prices[target_idx])
-                name = outcomes[target_idx]
+                # Fetch Trend (24h change)
+                change_24h = float(m.get('oneDayPriceChange') or 0)
+
+                # --- 1. ALPHA SIGNAL ---
+                crowd_impact, crowd_txt = self.analyze_crowd_wisdom(m['id'], t_idx, price)
                 
-                # 1. Sentiment
-                sent_score, sent_txt = self.analyze_sentiment(m['id'])
+                # --- 2. ALPHA PREDICTION (Fixed + Momentum) ---
+                # Fix: Add Trend to avoid "Bearish Bias" from profit taking
+                alpha_pred = price + crowd_impact + (change_24h * 0.1)
+                alpha_pred = max(0.01, min(0.99, alpha_pred))
                 
-                # 2. Crowd Wisdom (Now unbiased)
-                crowd_impact, crowd_txt = self.analyze_crowd_wisdom(m['id'], target_idx, price)
+                # --- 3. RL PREDICTION (Learned) ---
+                rl_delta = self.learner.predict_delta(crowd_impact)
+                rl_pred = price + rl_delta
+                rl_pred = max(0.01, min(0.99, rl_pred))
                 
-                # 3. Prediction
-                pred_price = price + (sent_score * 0.02) + crowd_impact
-                pred_price = max(0.01, min(0.99, pred_price))
+                self.learner.log_prediction(m['id'], price, crowd_impact, rl_delta)
                 
-                # Score
-                gap = abs(pred_price - price)
-                score = gap * 100 
-                hue = 120 * (1 - min(1, score/15))
-                
-                narrative = f"Analyzed <b>{name}</b>. "
-                narrative += f"👥 <b>Crowd:</b> {crowd_txt}. "
-                
-                if pred_price > price + 0.01:
-                    narrative += f"🚀 <b>Target:</b> {pred_price:.2f} (Undervalued)"
-                elif pred_price < price - 0.01:
-                    narrative += f"🔻 <b>Target:</b> {pred_price:.2f} (Overvalued)"
-                else:
-                    narrative += "⚖️ Fair Value."
+                # Format
+                score = abs(alpha_pred - price) * 100
+                hue = 120 * (1 - min(1, score/20))
+                w = self.learner.state['weights']
+                narrative = f"Analyzed <b>{name}</b>.<br>" \
+                            f"👥 <b>Crowd:</b> {crowd_txt} (Imp {crowd_impact:+.3f})<br>" \
+                            f"⚡ <b>Alpha:</b> {alpha_pred:.2f} (Trend {change_24h:+.1%})<br>" \
+                            f"🧠 <b>RL:</b> {rl_pred:.2f} (Weight {w['signal_w']:.2f})"
 
                 results.append({
                     "question": m['question'],
                     "outcome": name,
                     "price": f"{price:.2f}",
-                    "predicted": f"{pred_price:.2f}",
-                    "delta": pred_price - price,
+                    "alpha_pred": f"{alpha_pred:.2f}",
+                    "rl_pred": f"{rl_pred:.2f}",
                     "score_float": score,
                     "color": f"hsl({hue:.0f}, 90%, 45%)",
                     "narrative": narrative,
                     "url": f"https://polymarket.com/market/{m.get('slug')}",
                     "raw_data": json.dumps(m)
                 })
-                
             except Exception as e: continue
             
         self.save_traders()
+        self.learner.save_state()
         results.sort(key=lambda x: x['score_float'], reverse=True)
+        print(f"🎉 Analysis Complete. Saved {len(results)} markets.")
         return results
 
 if __name__ == "__main__":
     mind = HiveMind()
-    data = mind.run_analysis()
-    with open(DATA_FILE, 'w') as f:
-        json.dump(data, f, indent=2)
+    data = mind.run()
+    with open(DATA_FILE, 'w') as f: json.dump(data, f, indent=2)
     print("Done.")
