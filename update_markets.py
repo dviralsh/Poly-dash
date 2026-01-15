@@ -3,256 +3,236 @@ import json
 import numpy as np
 import pandas as pd
 from datetime import datetime
-from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import MinMaxScaler
+from textblob import TextBlob
 import time
-import re
+import os
+import math
 
 # --- CONFIGURATION ---
-BASE_URL = "https://gamma-api.polymarket.com/markets"
+GAMMA_URL = "https://gamma-api.polymarket.com"
+DATA_API_URL = "https://data-api.polymarket.com"
 DATA_FILE = 'data.json'
+TRADERS_FILE = 'traders.json'
 
-# Strict Topic Buckets
 TOPICS = {
-    'GAZA': ['gaza', 'hamas', 'rafah', 'sinwar', 'hostage', 'khan younis'],
-    'NORTH': ['lebanon', 'hezbollah', 'beirut', 'nasrallah', 'litani', 'northern'],
+    'GAZA': ['gaza', 'hamas', 'rafah', 'sinwar', 'hostage'],
+    'NORTH': ['lebanon', 'hezbollah', 'beirut', 'nasrallah'],
     'IRAN': ['iran', 'tehran', 'nuclear', 'khamenei', 'irgc'],
-    'YEMEN': ['yemen', 'houthi', 'red sea', 'aden'],
-    'US_RELATIONS': ['biden', 'trump', 'blinken', 'white house', 'aid'],
-    'DOMESTIC': ['netanyahu', 'gantz', 'lapid', 'election', 'knesset', 'bengvir']
+    'US_POL': ['biden', 'trump', 'election', 'harris'],
+    'UKRAINE': ['ukraine', 'russia', 'putin', 'zelensky', 'kursk']
 }
 
-ESCALATION_TERMS = ['war', 'strike', 'attack', 'invasion', 'escalation', 'conflict', 'missile', 'bomb', 'military', 'operation', 'invade', 'killed', 'assassination']
-DEESCALATION_TERMS = ['ceasefire', 'peace', 'truce', 'agreement', 'diplomacy', 'release', 'treaty', 'deal', 'negotiation', 'hostage release']
-
-class MultiOutcomeBrain:
+class HiveMind:
     def __init__(self):
-        self.scaler = MinMaxScaler()
+        self.traders = self.load_traders()
+
+    def load_traders(self):
+        if os.path.exists(TRADERS_FILE):
+            try:
+                with open(TRADERS_FILE, 'r') as f:
+                    return json.load(f)
+            except: return {}
+        return {}
+
+    def save_traders(self):
+        with open(TRADERS_FILE, 'w') as f:
+            json.dump(self.traders, f, indent=2)
+
+    def sigmoid(self, x):
+        return 1 / (1 + np.exp(-x))
 
     def fetch_markets(self):
-        print("--- 🧠 Starting Yes-Only Alpha Scan ---")
+        print("--- 🧠 Starting Corrected Hive Mind Scan ---")
         all_markets = []
-        limit = 100
+        limit = 50
         offset = 0
         
-        for _ in range(5): 
+        for _ in range(10): 
             try:
-                params = {
-                    'limit': limit, 'offset': offset, 'closed': 'false',
-                    'order': 'volume24hr', 'ascending': 'false'
-                }
-                resp = requests.get(BASE_URL, params=params).json()
+                params = {'limit': limit, 'offset': offset, 'closed': 'false', 'order': 'volume24hr', 'ascending': 'false'}
+                resp = requests.get(f"{GAMMA_URL}/markets", params=params).json()
                 if not resp: break
                 
                 for m in resp:
                     if m.get('archived'): continue
                     text = (str(m.get('question')) + str(m.get('description'))).lower()
-                    
                     relevant = False
                     for topic_tags in TOPICS.values():
                         if any(t in text for t in topic_tags):
                             relevant = True
                             break
-                    
                     if relevant:
                         all_markets.append(m)
                 
                 offset += limit
-                time.sleep(0.2)
-            except Exception as e:
-                print(f"Fetch Error: {e}")
-                break
+                time.sleep(0.1)
+            except: break
         
-        print(f"Captured {len(all_markets)} relevant markets.")
+        print(f"Captured {len(all_markets)} markets.")
         return all_markets
 
-    def assign_metadata(self, text):
-        text = text.lower()
-        topic = "GENERAL"
-        for key, tags in TOPICS.items():
-            if any(t in text for t in tags):
-                topic = key
-                break
-        
-        polarity = 0
-        if any(t in text for t in ESCALATION_TERMS): polarity = 1
-        if any(t in text for t in DEESCALATION_TERMS): polarity = -1
-        
-        return topic, polarity
-
-    def process_outcomes(self, market):
-        rows = []
+    def analyze_sentiment(self, market_id):
         try:
-            outcomes = json.loads(market.get('outcomes', '[]'))
-            prices = json.loads(market.get('outcomePrices', '[]'))
+            params = {'marketID': market_id, 'limit': 20}
+            resp = requests.get(f"{GAMMA_URL}/comments", params=params).json()
+            if not resp: return 0, "No Comments"
             
-            if not outcomes and 'tokens' in market:
-                outcomes = ["Yes", "No"]
-                p = float(market['tokens'][0].get('price', 0))
-                prices = [p, 1-p]
+            polarities = [TextBlob(c.get('body', '')).sentiment.polarity for c in resp]
+            return np.mean(polarities), "Mixed Discussion"
+        except: return 0, "No Comments"
 
-            if not outcomes or not prices: return []
+    def analyze_crowd_wisdom(self, market_id, target_outcome_idx, current_price):
+        """
+        CORRECTED LOGIC: Checks outcomeIndex to determine if trade is Bullish or Bearish.
+        """
+        net_vote_strength = 0
+        participant_count = 0
+        
+        try:
+            # Fetch recent trades
+            params = {'market': market_id, 'limit': 1000}
+            trades = requests.get(f"{DATA_API_URL}/trades", params=params).json()
             
-            vol = float(market.get('volume24hr') or 0)
-            liq = float(market.get('liquidityNum') or 0)
-            full_text = f"{market.get('question')} {market.get('description')}"
-            topic, polarity = self.assign_metadata(full_text)
-
-            # --- STANDARDIZATION LOGIC ---
-            # Check if this is a standard Binary Market (Yes/No)
-            # If so, we FORCE the loop to only accept "Yes" to ensure readability.
-            is_binary = False
-            if len(outcomes) == 2 and "Yes" in outcomes and "No" in outcomes:
-                is_binary = True
-
-            for i, outcome in enumerate(outcomes):
-                try:
-                    # READABILITY FIX: Skip 'No' outcomes in binary markets
-                    if is_binary and outcome != "Yes":
-                        continue
-
-                    price = float(prices[i])
-                    if price < 0.01: continue 
-
-                    est_vol = vol * price 
-                    est_liq = liq * price
-                    
-                    outcome_conf = 0
-                    if est_liq > 10:
-                        outcome_conf = est_vol / est_liq
-
-                    rows.append({
-                        'id': f"{market['id']}_{i}",
-                        'question': market['question'],
-                        'outcome_name': outcome,
-                        'price': price,
-                        'est_volume': est_vol,
-                        'money_confidence': outcome_conf,
-                        'topic': topic,
-                        'polarity': polarity,
-                        'slug': market.get('slug'),
-                        'raw_json': json.dumps(market)
-                    })
-                except: continue
+            for t in trades:
+                user = t.get('taker_address')
+                side = t.get('side') # "BUY" or "SELL"
+                size = float(t.get('size', 0))
+                price_at_trade = float(t.get('price', 0))
+                # API returns outcomeIndex as string often
+                trade_outcome_idx = int(t.get('outcome_index', t.get('outcomeIndex', -1)))
                 
+                # --- 1. Continuous Learning (Update Score) ---
+                if user not in self.traders:
+                    self.traders[user] = {'score': 1.0, 'trades': 0}
+                
+                trader = self.traders[user]
+                
+                # Did they win?
+                # If they BOUGHT the target, and price is now higher -> WIN
+                # If they BOUGHT the OPPONENT, and price is now higher -> LOSS (because opponent dropped)
+                
+                is_bullish_trade = False
+                if side == "BUY":
+                    if trade_outcome_idx == target_outcome_idx: is_bullish_trade = True
+                    else: is_bullish_trade = False # They bought the enemy
+                elif side == "SELL":
+                    if trade_outcome_idx == target_outcome_idx: is_bullish_trade = False # Sold target
+                    else: is_bullish_trade = True # Sold enemy (Bullish for target)
+
+                # Score update logic
+                # We use sigmoid normalization later, so we let raw score float naturally
+                if is_bullish_trade:
+                    if current_price > price_at_trade: trader['score'] *= 1.02 # Good prediction
+                    else: trader['score'] *= 0.98
+                else:
+                    # Bearish trade (e.g. Bought No). If Price Dropped, they won.
+                    if current_price < price_at_trade: trader['score'] *= 1.02
+                    else: trader['score'] *= 0.98
+
+                trader['trades'] += 1
+                self.traders[user] = trader
+                
+                # --- 2. Calculate Vote Impact ---
+                # Determine vector direction relative to OUR target
+                vector = 0
+                if trade_outcome_idx == target_outcome_idx:
+                    vector = 1 if side == "BUY" else -1
+                else:
+                    # Trading the opponent has inverse effect
+                    vector = -1 if side == "BUY" else 1
+                
+                # Weighted Vote: Log(Size) * Sigmoid(Score)
+                # Sigmoid maps score 0..inf -> 0.5..1.0 mostly
+                # We center sigmoid at 1.0 so bad traders (<1) have weight <0.5
+                reliability = self.sigmoid(trader['score'] - 1) # Center around 1.0
+                
+                vote_weight = np.log1p(size) * reliability
+                net_vote_strength += (vote_weight * vector)
+                participant_count += 1
+                    
         except Exception as e:
             pass
+        
+        # Normalize Net Vote (-1 to 1)
+        # Using Tanh to squash the infinite sum into a predictable range
+        impact = np.tanh(net_vote_strength / 20.0) * 0.15 # Max 15% price impact
+        
+        narrative = ""
+        if participant_count > 0:
+            if net_vote_strength > 2: narrative = f"Strong Buy Consensus ({participant_count} traders)"
+            elif net_vote_strength < -2: narrative = f"Strong Sell Consensus ({participant_count} traders)"
+            else: narrative = f"Neutral Flow ({participant_count} traders)"
             
-        return rows
-
-    def calculate_topic_momentum(self, df):
-        if df.empty: return {}
-        
-        topic_pressure = {}
-        for topic in TOPICS.keys():
-            topic_rows = df[df['topic'] == topic]
-            if topic_rows.empty:
-                topic_pressure[topic] = 0
-                continue
-            
-            active_rows = topic_rows[topic_rows['money_confidence'] > 0.5]
-            if not active_rows.empty:
-                pressure = (active_rows['money_confidence'] * active_rows['polarity']).mean()
-                topic_pressure[topic] = pressure
-            else:
-                topic_pressure[topic] = 0
-        return topic_pressure
-
-    def predict_fair_value(self, row, topic_pressure):
-        current = row['price']
-        conf = row['money_confidence']
-        topic = row['topic']
-        polarity = row['polarity']
-        
-        # 1. Whale Push
-        whale_push = np.log1p(conf) * 0.10
-        
-        # 2. Topic Push
-        pressure = topic_pressure.get(topic, 0)
-        topic_impact = pressure * polarity * 0.15 
-        
-        fair_value = current + whale_push + topic_impact
-        
-        # Clamps
-        fair_value = max(current - 0.2, min(current + 0.2, fair_value))
-        fair_value = max(0.01, min(0.99, fair_value))
-        
-        return fair_value
-
-    def generate_narrative(self, row, pressure):
-        outcome = row['outcome_name']
-        conf = row['money_confidence']
-        topic = row['topic']
-        pol = row['polarity']
-        
-        text = f"Analyzing <b>{outcome}</b>. "
-        
-        if conf > 1.5:
-            text += f"🐳 <b>Whale Alert:</b> Volume > Liquidity ({conf:.1f}x). "
-        elif conf > 0.8:
-            text += "Solid institutional volume. "
-            
-        if abs(pressure) > 0.1:
-            if pressure > 0: trend = "Escalation"
-            else: trend = "De-escalation"
-            
-            is_aligned = (pressure > 0 and pol == 1) or (pressure < 0 and pol == -1)
-            
-            if is_aligned and pol != 0:
-                text += f"✅ Aligns with <b>{topic} {trend}</b>. "
-            elif not is_aligned and pol != 0:
-                text += f"⚠️ Contradicts <b>{topic} {trend}</b>. "
-        
-        return text
+        return impact, narrative
 
     def run_analysis(self):
-        raw_markets = self.fetch_markets()
-        
-        all_rows = []
-        for m in raw_markets:
-            outcomes = self.process_outcomes(m)
-            all_rows.extend(outcomes)
-            
-        df = pd.DataFrame(all_rows)
-        if df.empty: return []
-        
-        print("Calculating Semantic Correlations...")
-        topic_pressure = self.calculate_topic_momentum(df)
-        
+        markets = self.fetch_markets()
         results = []
-        for _, row in df.iterrows():
-            if row['money_confidence'] < 0.3 and row['price'] < 0.4:
-                continue
+        
+        print("🧠 Processing Corrected Crowd Wisdom...")
+        
+        for m in markets:
+            try:
+                outcomes = json.loads(m.get('outcomes', '[]'))
+                prices = json.loads(m.get('outcomePrices', '[]'))
+                if not outcomes or not prices: continue
                 
-            pred = self.predict_fair_value(row, topic_pressure)
+                # Select Target (Favorite or Yes)
+                target_idx = 0
+                if "Yes" in outcomes: target_idx = outcomes.index("Yes")
+                else: target_idx = np.argmax([float(p) for p in prices])
+                
+                price = float(prices[target_idx])
+                name = outcomes[target_idx]
+                
+                # 1. Sentiment
+                sent_score, sent_txt = self.analyze_sentiment(m['id'])
+                
+                # 2. Crowd Wisdom (Now unbiased)
+                crowd_impact, crowd_txt = self.analyze_crowd_wisdom(m['id'], target_idx, price)
+                
+                # 3. Prediction
+                pred_price = price + (sent_score * 0.02) + crowd_impact
+                pred_price = max(0.01, min(0.99, pred_price))
+                
+                # Score
+                gap = abs(pred_price - price)
+                score = gap * 100 
+                hue = 120 * (1 - min(1, score/15))
+                
+                narrative = f"Analyzed <b>{name}</b>. "
+                narrative += f"👥 <b>Crowd:</b> {crowd_txt}. "
+                
+                if pred_price > price + 0.01:
+                    narrative += f"🚀 <b>Target:</b> {pred_price:.2f} (Undervalued)"
+                elif pred_price < price - 0.01:
+                    narrative += f"🔻 <b>Target:</b> {pred_price:.2f} (Overvalued)"
+                else:
+                    narrative += "⚖️ Fair Value."
+
+                results.append({
+                    "question": m['question'],
+                    "outcome": name,
+                    "price": f"{price:.2f}",
+                    "predicted": f"{pred_price:.2f}",
+                    "delta": pred_price - price,
+                    "score_float": score,
+                    "color": f"hsl({hue:.0f}, 90%, 45%)",
+                    "narrative": narrative,
+                    "url": f"https://polymarket.com/market/{m.get('slug')}",
+                    "raw_data": json.dumps(m)
+                })
+                
+            except Exception as e: continue
             
-            gap = abs(pred - row['price'])
-            score = (gap * 0.7) + (row['money_confidence'] * 0.3)
-            norm_score = min(score * 2, 1.0)
-            hue = 120 * (1 - norm_score)
-            
-            results.append({
-                "question": row['question'],
-                "outcome": row['outcome_name'],
-                "price": f"{row['price']:.2f}",
-                "predicted": f"{pred:.2f}",
-                "delta": pred - row['price'],
-                "score_float": norm_score,
-                "color": f"hsl({hue:.0f}, 90%, 45%)",
-                "narrative": self.generate_narrative(row, topic_pressure.get(row['topic'], 0)),
-                "url": f"https://polymarket.com/market/{row['slug']}",
-                "raw_data": row['raw_json']
-            })
-            
+        self.save_traders()
         results.sort(key=lambda x: x['score_float'], reverse=True)
         return results
 
-def main():
-    brain = MultiOutcomeBrain()
-    results = brain.run_analysis()
-    with open(DATA_FILE, 'w') as f:
-        json.dump(results, f, indent=2)
-    print("Done.")
-
 if __name__ == "__main__":
-    main()
+    mind = HiveMind()
+    data = mind.run_analysis()
+    with open(DATA_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+    print("Done.")
