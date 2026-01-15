@@ -1,8 +1,8 @@
-name: Update Prediction Bot
+name: Update Market Seismograph
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Run every 15 minutes
+    - cron: '*/15 * * * *' # Run every 15 minutes (ML takes a bit longer than simple requests)
   workflow_dispatch:
 
 permissions:
@@ -20,17 +20,19 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Requests
-        run: pip install requests
+      - name: Install Dependencies
+        # UPDATED: Added pandas, scikit-learn, and numpy for the ML model
+        run: pip install requests pandas scikit-learn numpy
 
-      - name: Run Algorithm
-        run: python update_markets.py
+      - name: Run AI Analysis
+        # UPDATED: Pointing to the new ML script
+        run: python market_brain.py
 
-      - name: Save Memory & Publish
+      - name: Save Knowledge & Publish
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "BOT: Update prediction state [skip ci]"
-          # CRITICAL: This saves the memory file so the bot "learns"
-          file_pattern: "data.json model_state.json"
-          commit_user_name: Prediction Bot
+          commit_message: "AI: Update market anomaly scores [skip ci]"
+          # UPDATED: Now saving the history log so the model remembers past trends
+          file_pattern: "data.json market_history_log.json"
+          commit_user_name: Market Seismograph Bot
           commit_user_email: bot@github.com

@@ -3,401 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Middle East Market Dashboard</title>
+    <title>Middle East Market Seismograph</title>
     <style>
+        :root {
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-sub: #6c757d;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
             padding: 20px;
         }
-        h1 {
-            color: #333;
+
+        /* Header */
+        header {
             text-align: center;
+            margin-bottom: 40px;
         }
-        #last-updated {
-            text-align: center;
-            font-style: italic;
-            color: #606770;
-            margin-bottom: 20px;
-        }
+        h1 { margin: 0; font-weight: 800; letter-spacing: -0.5px; }
+        .subtitle { color: var(--text-sub); font-size: 0.9rem; margin-top: 5px; }
+
+        /* Grid Layout */
         .market-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
         }
-        .market-card {
-            background-color: #ffffff;
-            border: 1px solid #dddfe2;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-        .market-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        .market-question {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #050505;
-            margin-bottom: 15px;
-        }
-        .market-stats {
-            font-size: 0.9rem;
-            color: #606770;
-            margin-bottom: 15px;
-        }
-        .market-stats span {
-            font-weight: 600;
-            color: #333;
-        }
-        .market-answers {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 15px;
-        }
-        .market-answers li {
-            background-color: #f0f2f5;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .market-link {
-            display: inline-block;
-            font-weight: 600;
-            color: #0866ff;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        .market-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Whale & Prediction Styles */
-        .whale-badge {
-            display: inline-block;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #fff;
-            margin-left: 8px;
-            vertical-align: middle;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .whale-badge:hover {
-            transform: scale(1.1);
-        }
-        .whale-badge.low { background-color: #6c757d; opacity: 0; pointer-events: none; }
-        .whale-badge.medium { background-color: #17a2b8; }
-        .whale-badge.high { background-color: #ffc107; color: #000; }
-        .whale-badge.extreme { background-color: #dc3545; }
 
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        /* The Intelligent Card */
+        .market-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .modal-close {
+
+        .market-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        /* The colored strip on the left */
+        .anomaly-indicator {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #999;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
         }
-        .modal-title {
-            font-size: 1.25rem;
+
+        /* Content */
+        .market-question {
+            font-size: 1.1rem;
             font-weight: 700;
+            line-height: 1.4;
             margin-bottom: 15px;
-            color: #333;
+            color: #1a1a1a;
         }
-        .modal-body p {
-            margin-bottom: 10px;
-            color: #555;
-            line-height: 1.5;
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
         }
-        .modal-stat-box {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 15px;
+
+        .price-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-sub);
+            font-weight: 600;
+            margin-bottom: 15px;
         }
-        .modal-stat-row {
+
+        /* Signal Bar (The "Seismograph") */
+        .signal-container {
+            margin-bottom: 15px;
+        }
+        .signal-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-        .modal-stat-val { font-weight: 700; color: #333; }
-        .whale-explain { font-size: 0.85rem; color: #666; font-style: italic; margin-top: 10px; }
-
-        .prediction-section {
-            margin-top: 10px;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 8px;
-        }
-        .prediction-title {
             font-size: 0.8rem;
-            font-weight: 600;
             margin-bottom: 5px;
-            color: #555;
+            font-weight: 600;
+        }
+        .progress-track {
+            background: #e9ecef;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Reason Tags */
+        .analysis-tags {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
         }
-        .prediction-title::before {
-            content: "🧠";
-            margin-right: 5px;
-        }
-        .prediction-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 4px;
-            text-align: center;
-        }
-        .prediction-item {
-            background: #f1f8ff;
-            padding: 4px;
+        .tag {
+            font-size: 0.7rem;
+            padding: 4px 8px;
             border-radius: 4px;
-            border: 1px solid #cce5ff;
-        }
-        .prediction-label {
-            font-size: 0.65rem;
-            color: #666;
-            display: block;
+            font-weight: 600;
             text-transform: uppercase;
+            background: #f1f3f5;
+            color: #495057;
         }
-        .prediction-value {
+
+        /* Action Button */
+        .trade-btn {
+            text-align: center;
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #212529;
+            font-weight: 600;
             font-size: 0.9rem;
-            font-weight: bold;
-            color: #0366d6;
+            transition: background 0.2s;
         }
+        .trade-btn:hover { background: #e9ecef; }
+
+        /* Pulse Animation for High Anomalies */
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 82, 82, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+        }
+        .pulsing {
+            animation: pulse-red 2s infinite;
+        }
+
+        /* Loading State */
+        #status-msg { text-align: center; color: #888; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <h1>Middle East Market Dashboard</h1>
-    <p id="last-updated">Loading data...</p>
-    <div id="market-container" class="market-container">
-    </div>
+    <header>
+        <h1>Middle East Market Seismograph 📡</h1>
+        <div class="subtitle" id="last-updated">Connecting to AI Neural Net...</div>
+    </header>
 
-    <!-- Whale Modal -->
-    <div id="whale-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div class="modal-title">Whale Alert Details 🐋</div>
-            <div class="modal-body" id="modal-body-content">
-                <!-- Content injected via JS -->
-            </div>
+    <div id="market-container" class="market-container">
         </div>
-    </div>
+    <p id="status-msg">Loading market data...</p>
 
     <script>
-        // Modal Functions
-        function closeModal() {
-            document.getElementById('whale-modal').style.display = 'none';
-        }
-        
-        // Close on outside click
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('whale-modal')) {
-                closeModal();
-            }
-        }
+        // Formatter for currency/numbers
+        const fmtPrice = (p) => (parseFloat(p) * 100).toFixed(1) + "¢";
 
-        function showWhaleDetails(marketQuestion, stats, index) {
-            const modal = document.getElementById('whale-modal');
-            const content = document.getElementById('modal-body-content');
-            
-            const volume = stats.volume || 0;
-            const liquidity = stats.liquidity || 0;
-            const ratio = stats.ratio || 0;
-            
-            let threatLevel = "Moderate";
-            let desc = "Some larger-than-average trades detected.";
-            if(ratio > 30) {
-                threatLevel = "EXTREME";
-                desc = "Massive capital rotation detected! Volume is 30x+ higher than available liquidity. This often indicates insiders positioning before major news.";
-            } else if (ratio > 10) {
-                 threatLevel = "High";
-                 desc = "Significant whale activity. Large players are aggressively buying/selling despite thin order books.";
-            }
-
-            content.innerHTML = `
-                <p><strong>Market:</strong> ${marketQuestion}</p>
-                <div class="modal-stat-box">
-                    <div class="modal-stat-row">
-                        <span>Whale Activity Level:</span>
-                        <span class="modal-stat-val" style="color: #dc3545">${threatLevel}</span>
-                    </div>
-                    <div class="modal-stat-row">
-                        <span>Volume / Liquidity Ratio:</span>
-                        <span class="modal-stat-val">${ratio.toFixed(1)}x</span>
-                    </div>
-                    <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
-                    <div class="modal-stat-row">
-                        <span>24h Volume:</span>
-                        <span class="modal-stat-val">$${Math.round(volume).toLocaleString()}</span>
-                    </div>
-                    <div class="modal-stat-row">
-                        <span>Market Depth (Liq):</span>
-                        <span class="modal-stat-val">$${Math.round(liquidity).toLocaleString()}</span>
-                    </div>
-                </div>
-                <p class="whale-explain">
-                    "${desc}"
-                </p>
-                <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">
-                    * "Whales" are identified by checking the ratio of capital flow vs market depth. 
-                    We leverage this signal to adjust our AI price forecasts.
-                </p>
-            `;
-            
-            modal.style.display = 'flex';
-        }
-
-        // Function to fetch and display the market data
-        async function fetchAndDisplayMarkets() {
+        async function fetchMarkets() {
             const container = document.getElementById('market-container');
-            const lastUpdatedElem = document.getElementById('last-updated');
-            
+            const statusMsg = document.getElementById('status-msg');
+            const dateDisplay = document.getElementById('last-updated');
+
             try {
-                // Add a cache-busting query parameter
-                const cacheBuster = new Date().getTime();
-                const response = await fetch(`data.json?t=${cacheBuster}`);
+                // Cache buster to ensure fresh data
+                const res = await fetch(`data.json?t=${new Date().getTime()}`);
+                if (!res.ok) throw new Error("Data file not found");
                 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+                const markets = await res.json();
                 
-                const markets = await response.json();
-                
-                // Clear old data
-                container.innerHTML = ''; 
-                
+                container.innerHTML = '';
+                statusMsg.style.display = 'none';
+                dateDisplay.textContent = `Last AI Scan: ${new Date().toLocaleString()}`;
+
                 if (markets.length === 0) {
-                    container.innerHTML = "<p>No matching markets found.</p>";
+                    statusMsg.style.display = 'block';
+                    statusMsg.textContent = "No active anomalies detected.";
+                    return;
                 }
 
-                // Loop through the sorted markets and create HTML
-                markets.forEach((market, index) => {
-                    const marketCard = document.createElement('div');
-                    marketCard.className = 'market-card';
-
-                    // Format answers
-                    let answersHtml = '';
-                    if (market.answers && market.answers.length > 0) {
-                        market.answers.forEach(answer => {
-                            answersHtml += `<li>${answer}</li>`;
-                        });
-                    } else {
-                        answersHtml = '<li>Prices not available.</li>';
-                    }
-
-                    // Whale Logic
-                    const whaleIndex = parseFloat(market.whale_index || 0);
-                    let whaleClass = 'low';
-                    let whaleText = '';
-                    if (whaleIndex > 2.0) { whaleClass = 'extreme'; whaleText = 'WHALE ALERT 🐋'; }
-                    else if (whaleIndex > 1.0) { whaleClass = 'high'; whaleText = 'High Volume'; }
-                    else if (whaleIndex > 0.5) { whaleClass = 'medium'; whaleText = 'Active'; }
+                markets.forEach(m => {
+                    // Extract data from the new ML structure
+                    const score = m.score_float || 0; // 0.0 to 1.0
+                    const color = m.color || "hsl(120, 50%, 50%)"; // Fallback green
+                    const percent = (score * 100).toFixed(0);
                     
-                    // Prepare data for click
-                    const safeStats = JSON.stringify(market.whale_stats || {}).replace(/"/g, '&quot;');
-                    const safeQuestion = (market.question || '').replace(/"/g, '&quot;');
+                    // Parse "Reasoning" string into tags
+                    // Backend sends: "Whale Activity + Sector Trend"
+                    const reasons = (m.analysis || "Stable").split(' + ');
+                    const tagsHtml = reasons.map(r => `<span class="tag">${r}</span>`).join('');
+
+                    // Logic for visual urgency
+                    const isUrgent = score > 0.8;
+                    const pulseClass = isUrgent ? 'pulsing' : '';
                     
-                    const whaleBadge = whaleText 
-                        ? `<span class="whale-badge ${whaleClass}" title="Click for details" onclick="showWhaleDetails('${safeQuestion}', ${safeStats}, ${index})">${whaleText}</span>` 
-                        : '';
+                    const card = document.createElement('div');
+                    card.className = `market-card ${pulseClass}`;
+                    
+                    // Apply dynamic styling based on ML color
+                    card.innerHTML = `
+                        <div class="anomaly-indicator" style="background-color: ${color};"></div>
+                        
+                        <div>
+                            <div class="market-question">${m.question}</div>
+                            
+                            <div class="price-tag" style="color: ${color}">
+                                $${m.price}
+                            </div>
+                            <div class="price-label">Current Price</div>
 
-                    // AI Predictions Logic
-                    let predictionHtml = '';
-                    if (market.predictions) {
-                        const p15m = (parseFloat(market.predictions['15m']) * 100).toFixed(0);
-                        const p1h = (parseFloat(market.predictions['1h']) * 100).toFixed(0);
-                        const p24h = (parseFloat(market.predictions['24h']) * 100).toFixed(0);
-                        const p1w = (parseFloat(market.predictions['1w']) * 100).toFixed(0);
-
-                        predictionHtml = `
-                            <div class="prediction-section">
-                                <div class="prediction-title">AI Forecast (Price Probability)</div>
-                                <div class="prediction-grid">
-                                    <div class="prediction-item">
-                                        <span class="prediction-label">15m</span>
-                                        <div class="prediction-value">${p15m}%</div>
-                                    </div>
-                                    <div class="prediction-item">
-                                        <span class="prediction-label">1h</span>
-                                        <div class="prediction-value">${p1h}%</div>
-                                    </div>
-                                    <div class="prediction-item">
-                                        <span class="prediction-label">24h</span>
-                                        <div class="prediction-value">${p24h}%</div>
-                                    </div>
-                                    <div class="prediction-item">
-                                        <span class="prediction-label">1w</span>
-                                        <div class="prediction-value">${p1w}%</div>
-                                    </div>
+                            <div class="signal-container">
+                                <div class="signal-header">
+                                    <span>Signal Strength</span>
+                                    <span style="color:${color}">${percent}%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="width: ${percent}%; background-color: ${color};"></div>
                                 </div>
                             </div>
-                        `;
-                    }
 
-                    marketCard.innerHTML = `
-                        <div class="market-question">#${index + 1}: ${market.question}</div>
-                        <div class="market-stats">
-                            Vol: <span>$${Math.round(market.volume_24hr).toLocaleString()}</span>
-                            ${whaleBadge}
+                            <div class="analysis-tags">
+                                ${tagsHtml}
+                            </div>
                         </div>
-                        <ul class="market-answers">
-                            ${answersHtml}
-                        </ul>
-                        ${predictionHtml}
-                        <a href="${market.url}" target="_blank" rel="noopener noreferrer" class="market-link">Trade on Polymarket &rarr;</a>
+
+                        <a href="${m.url}" target="_blank" class="trade-btn">View on Polymarket</a>
                     `;
-                    container.appendChild(marketCard);
+
+                    container.appendChild(card);
                 });
 
-                // Update timestamp
-                lastUpdatedElem.textContent = `Last updated: ${new Date().toLocaleString()}`;
-                
-            } catch (error) {
-                console.error("Failed to fetch market data:", error);
-                container.innerHTML = "<p>Error loading market data. Please try refreshing.</p>";
-                lastUpdatedElem.textContent = "Error loading data.";
+            } catch (err) {
+                console.error(err);
+                statusMsg.textContent = "System Offline (Check GitHub Actions)";
             }
         }
 
-        // --- Main execution ---
+        // Run on load
+        fetchMarkets();
         
-        // 1. Fetch data immediately on page load
-        fetchAndDisplayMarkets();
-
-        // 2. Set an interval to auto-refresh the data every 15 minutes
-        // (This matches the GitHub Action schedule)
-        setInterval(fetchAndDisplayMarkets, 15 * 60 * 1000); 
+        // Refresh every 5 minutes
+        setInterval(fetchMarkets, 5 * 60 * 1000);
     </script>
-
 </body>
 </html>
