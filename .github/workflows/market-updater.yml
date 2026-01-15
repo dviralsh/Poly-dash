@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Dependencies
         # UPDATED: Added pandas, scikit-learn, and numpy for the ML model
-        run: pip install requests pandas scikit-learn numpy
+        run: pip install requests pandas scikit-learn numpy textblob
 
       - name: Run AI Analysis
         # UPDATED: Pointing to the new ML script
