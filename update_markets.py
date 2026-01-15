@@ -20,25 +20,105 @@ DATA_FILE = 'data.json'
 
 class MarketPredictor:
     def __init__(self):
-        self.state = {
-            "weights": {
+        # We need separate models for each timeframe because the "rules" of prediction change
+        # e.g., momentum might matter more for 15m, but fundamentals matter for 1w.
+        self.timeframes = ["15m", "1h", "24h", "1w"]
+        
+        # Initialize default weights for each timeframe
+        # UPDATED: Added 'trend_strength' (EMA) and 'rsi' (Relative Strength)
+        self.models = {
+            tf: {
                 "bias": 0.0,
-                "price": 0.5,
-                "whale_index": 0.1,
-                "one_day_change": 0.2,
-                "spread": -0.1
-            },
+                "price": 0.0,
+                "whale_index": 0.0,
+                "one_day_change": 0.0,
+                "spread": 0.0,
+                "trend_strength": 0.1, # New: EMA Gap
+                "rsi": -0.1            # New: RSI (Mean Reversion)
+            } for tf in self.timeframes
+        }
+        
+        self.state = {
+            "models": self.models,
+            "market_memory": {}, # Stores EMA/RSI state for each market
             "pending_predictions": [],
-            "learning_rate": 0.01,
-            "last_run": 0
+            "learning_rate": 0.01
         }
         self.load_state()
+
+    def update_technical_indicators(self, market_id, current_price):
+        """
+        Updates EMA and RSI state for a specific market without needing full history.
+        """
+        mem = self.state.get("market_memory", {})
+        if market_id not in mem:
+            mem[market_id] = {
+                "ema_short": current_price, # e.g. 12-period
+                "ema_long": current_price,  # e.g. 26-period
+                "rsi_avg_gain": 0.0,
+                "rsi_avg_loss": 0.0,
+                "last_price": current_price
+            }
+        
+        m = mem[market_id]
+        
+        # 1. Update EMAs (Alpha ~ 2/(N+1))
+        alpha_short = 2 / (12 + 1)
+        alpha_long = 2 / (26 + 1)
+        
+        m["ema_short"] = (current_price * alpha_short) + (m["ema_short"] * (1 - alpha_short))
+        m["ema_long"] = (current_price * alpha_long) + (m["ema_long"] * (1 - alpha_long))
+        
+        # 2. Update RSI (Wilder's Smoothing)
+        change = current_price - m["last_price"]
+        gain = max(0, change)
+        loss = max(0, -change)
+        
+        # Alpha for RSI ~ 1/14
+        alpha_rsi = 1 / 14
+        m["rsi_avg_gain"] = (gain * alpha_rsi) + (m["rsi_avg_gain"] * (1 - alpha_rsi))
+        m["rsi_avg_loss"] = (loss * alpha_rsi) + (m["rsi_avg_loss"] * (1 - alpha_rsi))
+        
+        m["last_price"] = current_price
+        
+        # Calculate derived features
+        # Trend Strength: % difference between Short and Long EMA (MACD-ish)
+        trend_strength = 0
+        if m["ema_long"] > 0:
+            trend_strength = (m["ema_short"] - m["ema_long"]) / m["ema_long"] * 100
+            
+        # RSI Value
+        rsi = 50 # Default neutral
+        if m["rsi_avg_loss"] > 0:
+            rs = m["rsi_avg_gain"] / m["rsi_avg_loss"]
+            rsi = 100 - (100 / (1 + rs))
+        elif m["rsi_avg_gain"] > 0:
+            rsi = 100
+        
+        # Save back to state
+        self.state["market_memory"][market_id] = m
+        
+        return trend_strength, rsi
 
     def load_state(self):
         if os.path.exists(STATE_FILE):
             try:
                 with open(STATE_FILE, 'r') as f:
-                    self.state = json.load(f)
+                    loaded = json.load(f)
+                    
+                    # Migration Logic
+                    if "market_memory" not in loaded:
+                        print("Migrating state: Adding Technical Analysis memory...")
+                        loaded["market_memory"] = {}
+                        
+                    # Check if weights need updating (adding new feature keys)
+                    for tf, weights in loaded.get("models", {}).items():
+                        if "trend_strength" not in weights:
+                            print(f"Migrating weights for {tf}...")
+                            weights["trend_strength"] = 0.1
+                            weights["rsi"] = -0.1
+                    
+                    self.state = loaded
                     print("Loaded model state.")
             except Exception as e:
                 print(f"Could not load state: {e}. Starting fresh.")
@@ -51,33 +131,56 @@ class MarketPredictor:
         except Exception as e:
             print(f"Error saving state: {e}")
 
-    def predict(self, features):
-        w = self.state["weights"]
-        # Simple linear regression: y = w*x + b
-        # Ensure result is between 0 and 1 (probability)
-        raw_pred = (
+    def sigmoid(self, x):
+        return 1 / (1 + math.exp(-x))
+
+    def predict(self, features, timeframe):
+        w = self.state["models"].get(timeframe)
+        if not w: return 0.5
+
+        # Linear combination
+        z = (
             w["bias"] +
             w["price"] * features["price"] +
             w["whale_index"] * features["whale_index"] +
             w["one_day_change"] * features["one_day_change"] +
-            w["spread"] * features["spread"]
+            w["spread"] * features["spread"] +
+            w.get("trend_strength", 0) * features["trend_strength"] + 
+            w.get("rsi", 0) * (features["rsi"] / 100.0) # Normalize RSI 0-1
         )
-        return max(0.0, min(1.0, raw_pred))
+        
+        # Apply Sigmoid to squash output between 0 and 1
+        return self.sigmoid(z)
 
-    def update_weights(self, features, predicted, actual):
-        # Gradient Descent: w = w + lr * (error) * input
+    def update_weights(self, features, predicted, actual, timeframe):
+        # Gradient Descent with Sigmoid derivative
+        # Error = 0.5 * (target - output)^2
+        # Derivative w.r.t weight = -(target - output) * output * (1 - output) * input
+        
         error = actual - predicted
         lr = self.state["learning_rate"]
-        w = self.state["weights"]
+        w = self.state["models"][timeframe]
         
-        w["bias"] += lr * error * 1.0
-        w["price"] += lr * error * features["price"]
-        w["whale_index"] += lr * error * features["whale_index"]
-        w["one_day_change"] += lr * error * features["one_day_change"]
-        w["spread"] += lr * error * features["spread"]
+        # Sigmoid derivative: p * (1 - p)
+        d_sigmoid = predicted * (1 - predicted)
         
-        self.state["weights"] = w
-        print(f"  [Learning] Error: {error:.4f} -> Weights updated.")
+        # Gradient term
+        grad = error * d_sigmoid
+        
+        w["bias"] += lr * grad * 1.0
+        w["price"] += lr * grad * features["price"]
+        w["whale_index"] += lr * grad * features["whale_index"]
+        w["one_day_change"] += lr * grad * features["one_day_change"]
+        w["spread"] += lr * grad * features["spread"]
+        
+        # Update new technical weights
+        if "trend_strength" in w:
+            w["trend_strength"] += lr * grad * features["trend_strength"]
+        if "rsi" in w:
+            w["rsi"] += lr * grad * (features["rsi"] / 100.0)
+        
+        self.state["models"][timeframe] = w
+        # print(f"  [Learning {timeframe}] Error: {error:.4f} -> Weights updated.")
 
     def process_market(self, market_id, current_price, features):
         current_time = time.time()
@@ -87,8 +190,8 @@ class MarketPredictor:
         for p in self.state["pending_predictions"]:
             if p["market_id"] == market_id and p["target_time"] <= current_time:
                 # This prediction has matured!
-                print(f"  Validating prediction for {market_id}...")
-                self.update_weights(p["features"], p["predicted_price"], current_price)
+                timeframe = p.get("label", "24h") # Default for backwards compatibility
+                self.update_weights(p["features"], p["predicted_price"], current_price, timeframe)
             else:
                 remaining_predictions.append(p)
         
@@ -105,7 +208,7 @@ class MarketPredictor:
         new_preds = {}
         for label, seconds in times.items():
             target_time = current_time + seconds
-            pred_price = self.predict(features)
+            pred_price = self.predict(features, label)
             
             # Record it for future validation
             self.state["pending_predictions"].append({
@@ -203,11 +306,16 @@ def fetch_all_markets():
                     
                     whale_idx = calculate_whale_index(market)
                     
+                    # Trend Strength calculation (New!)
+                    trend_strength, rsi_val = predictor.update_technical_indicators(market.get('id'), current_price)
+
                     features = {
                         "price": current_price,
                         "whale_index": whale_idx,
                         "one_day_change": change_24h,
-                        "spread": spread
+                        "spread": spread,
+                        "trend_strength": trend_strength,
+                        "rsi": rsi_val
                     }
                     
                     # --- ML & Prediction ---
@@ -245,6 +353,11 @@ def fetch_all_markets():
                     "volume_24hr": vol_24hr,
                     "liquidity": liquidity,
                     "whale_index": f"{whale_idx:.2f}",
+                    "whale_stats": {
+                        "volume": vol_24hr,
+                        "liquidity": liquidity,
+                        "ratio": vol_24hr / liquidity if liquidity > 0 else 0
+                    },
                     "answers": answers,
                     "predictions": {k: f"{v:.2f}" for k,v in predictions.items()},
                     "url": f"https://polymarket.com/market/{market.get('slug', '')}"
