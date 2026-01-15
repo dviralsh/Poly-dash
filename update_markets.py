@@ -87,30 +87,38 @@ class ContinuousLearner:
     def detect_anomalies(self, df):
         """
         The ML Core: Isolation Forest.
-        It doesn't use "IF price > 5". It looks at the 5D space of:
-        [PriceChange, Volume, LiquidityRatio, Spread, ClusterMomentum]
-        and finds points that are "mathematically distant" from normal.
         """
-        if len(df) < 10: return df # Not enough data to learn
+        # FIX: Initialize the column with 0.0 (Normal) first. 
+        # This prevents the KeyError if we return early.
+        df['anomaly_score'] = 0.0
+
+        # We need at least 2 points to compare things.
+        if len(df) < 2: return df 
         
-        # Features for the ML model
-        features = ['change_abs', 'whale_index', 'spread', 'cluster_momentum']
-        X = df[features].fillna(0)
-        
-        # Train the model on THIS snapshot (Adaptive)
-        # We assume 10% of markets might be "news" (outliers)
-        iso_forest = IsolationForest(contamination=0.1, random_state=42)
-        iso_forest.fit(X)
-        
-        # decision_function returns a continuous score.
-        # Lower = More Anomalous (News). Higher = Normal.
-        raw_scores = iso_forest.decision_function(X)
-        
-        # Invert and Normalize to 0-1 scale (1.0 = HUGE NEWS, 0.0 = Boring)
-        # We use MinMax scaling on the negative scores to flip them
-        anomaly_score = self.scaler.fit_transform(raw_scores.reshape(-1, 1) * -1).flatten()
-        
-        df['anomaly_score'] = anomaly_score
+        try:
+            # Features for the ML model
+            features = ['change_abs', 'whale_index', 'spread', 'cluster_momentum']
+            X = df[features].fillna(0)
+            
+            # Train the model on THIS snapshot
+            # Contamination is how "sensitive" it is. 0.1 = Top 10% are alerts.
+            iso_forest = IsolationForest(contamination=0.1, random_state=42)
+            iso_forest.fit(X)
+            
+            # decision_function returns a continuous score.
+            raw_scores = iso_forest.decision_function(X)
+            
+            # Invert and Normalize to 0-1 scale
+            # Reshape is needed because scaler expects a 2D array
+            scores_reshaped = raw_scores.reshape(-1, 1) * -1
+            anomaly_score = self.scaler.fit_transform(scores_reshaped).flatten()
+            
+            df['anomaly_score'] = anomaly_score
+            
+        except Exception as e:
+            print(f"ML Calculation skipped: {e}")
+            # We keep the default 0.0 scores we set at the start
+            
         return df
 
     def get_color(self, score):
