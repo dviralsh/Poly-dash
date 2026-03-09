@@ -1351,14 +1351,6 @@
     },
     "predicted_delta": -0.0014958524369807226
   },
-  "1385748": {
-    "timestamp": 1772880844.1400013,
-    "price_at_prediction": 0.195,
-    "features": {
-      "signal": -0.15
-    },
-    "predicted_delta": 0.002033723218386084
-  },
   "1090199": {
     "timestamp": 1772884672.7436233,
     "price_at_prediction": 0.195,
@@ -1607,190 +1599,6 @@
     },
     "predicted_delta": 0.005802523669549068
   },
-  "559656": {
-    "timestamp": 1773020629.9499333,
-    "price_at_prediction": 0.015,
-    "features": {
-      "signal": -0.02876802025026244
-    },
-    "predicted_delta": 0.004402446962552686
-  },
-  "693291": {
-    "timestamp": 1773028961.8958461,
-    "price_at_prediction": 0.0355,
-    "features": {
-      "signal": 0.14977607847781832
-    },
-    "predicted_delta": 0.012715027660037799
-  },
-  "1227361": {
-    "timestamp": 1773028962.0903206,
-    "price_at_prediction": 0.981,
-    "features": {
-      "signal": 0.14997539789308545
-    },
-    "predicted_delta": 0.012716644582992279
-  },
-  "958442": {
-    "timestamp": 1773028962.3935742,
-    "price_at_prediction": 0.0945,
-    "features": {
-      "signal": 0.14987992121240137
-    },
-    "predicted_delta": 0.012715870055150076
-  },
-  "693288": {
-    "timestamp": 1773028962.5875707,
-    "price_at_prediction": 0.957,
-    "features": {
-      "signal": 0.14999161710465764
-    },
-    "predicted_delta": 0.012716776156805392
-  },
-  "1162940": {
-    "timestamp": 1773028962.8026142,
-    "price_at_prediction": 0.395,
-    "features": {
-      "signal": 0.14999558928692716
-    },
-    "predicted_delta": 0.012716808380021994
-  },
-  "1466036": {
-    "timestamp": 1773028963.2587004,
-    "price_at_prediction": 0.185,
-    "features": {
-      "signal": 0.14929746819508175
-    },
-    "predicted_delta": 0.012711145068111822
-  },
-  "958443": {
-    "timestamp": 1773028963.5280087,
-    "price_at_prediction": 0.315,
-    "features": {
-      "signal": 0.14943354811582346
-    },
-    "predicted_delta": 0.012712248978371622
-  },
-  "1472010": {
-    "timestamp": 1773028963.7213726,
-    "price_at_prediction": 0.405,
-    "features": {
-      "signal": 0.14942878780863394
-    },
-    "predicted_delta": 0.012712210361712254
-  },
-  "1472026": {
-    "timestamp": 1773028963.934586,
-    "price_at_prediction": 0.555,
-    "features": {
-      "signal": 0.149811844911875
-    },
-    "predicted_delta": 0.012715317805220838
-  },
-  "1467137": {
-    "timestamp": 1773028964.122112,
-    "price_at_prediction": 0.9995,
-    "features": {
-      "signal": 0.1499591422177803
-    },
-    "predicted_delta": 0.012716512713377337
-  },
-  "1466014": {
-    "timestamp": 1773028964.3940039,
-    "price_at_prediction": 0.075,
-    "features": {
-      "signal": 0.14977048183224162
-    },
-    "predicted_delta": 0.012714982258817406
-  },
-  "1486156": {
-    "timestamp": 1773028964.5803866,
-    "price_at_prediction": 0.026,
-    "features": {
-      "signal": 0.14932896825853484
-    },
-    "predicted_delta": 0.012711400603557762
-  },
-  "1507751": {
-    "timestamp": 1773028964.9980931,
-    "price_at_prediction": 0.205,
-    "features": {
-      "signal": 0.14944529688700622
-    },
-    "predicted_delta": 0.012712344286988633
-  },
-  "1466015": {
-    "timestamp": 1773028965.2491512,
-    "price_at_prediction": 0.225,
-    "features": {
-      "signal": 0.14942736635119008
-    },
-    "predicted_delta": 0.012712198830536694
-  },
-  "1454424": {
-    "timestamp": 1773028965.6791825,
-    "price_at_prediction": 0.9995,
-    "features": {
-      "signal": 0.14995951170919142
-    },
-    "predicted_delta": 0.012716515710772966
-  },
-  "561237": {
-    "timestamp": 1773028965.869665,
-    "price_at_prediction": 0.0185,
-    "features": {
-      "signal": 0.14982739051620197
-    },
-    "predicted_delta": 0.012715443914583761
-  },
-  "1467139": {
-    "timestamp": 1773028966.0993743,
-    "price_at_prediction": 0.06,
-    "features": {
-      "signal": 0.14931261744222957
-    },
-    "predicted_delta": 0.012711267962138093
-  },
-  "1466016": {
-    "timestamp": 1773028966.5329945,
-    "price_at_prediction": 0.45,
-    "features": {
-      "signal": 0.1493923280279378
-    },
-    "predicted_delta": 0.012711914591948712
-  },
-  "1363893": {
-    "timestamp": 1773028966.7180734,
-    "price_at_prediction": 0.9925,
-    "features": {
-      "signal": 0.14996551756371077
-    },
-    "predicted_delta": 0.012716564431586343
-  },
-  "1394368": {
-    "timestamp": 1773028966.9152553,
-    "price_at_prediction": 0.165,
-    "features": {
-      "signal": 0.14993335940769403
-    },
-    "predicted_delta": 0.01271630355754872
-  },
-  "1529737": {
-    "timestamp": 1773028967.1166987,
-    "price_at_prediction": 0.275,
-    "features": {
-      "signal": 0.14953735848736574
-    },
-    "predicted_delta": 0.012713091110947794
-  },
-  "629031": {
-    "timestamp": 1773028967.3463051,
-    "price_at_prediction": 0.025,
-    "features": {
-      "signal": 0.1493222081669455
-    },
-    "predicted_delta": 0.012711345764207313
-  },
   "677397": {
     "timestamp": 1773028967.5688343,
     "price_at_prediction": 0.655,
@@ -1798,5 +1606,189 @@
       "signal": 0.14991165967578834
     },
     "predicted_delta": 0.012716127524548738
+  },
+  "693291": {
+    "timestamp": 1773033819.4982142,
+    "price_at_prediction": 0.0185,
+    "features": {
+      "signal": 0.1499999999999889
+    },
+    "predicted_delta": -0.004452210184435441
+  },
+  "1227361": {
+    "timestamp": 1773033819.6758225,
+    "price_at_prediction": 0.9805,
+    "features": {
+      "signal": 0.15
+    },
+    "predicted_delta": -0.004452210184435382
+  },
+  "958442": {
+    "timestamp": 1773033820.1500351,
+    "price_at_prediction": 0.093,
+    "features": {
+      "signal": 0.1499999999999979
+    },
+    "predicted_delta": -0.004452210184435393
+  },
+  "1162940": {
+    "timestamp": 1773033820.3939455,
+    "price_at_prediction": 0.405,
+    "features": {
+      "signal": 0.14999999999999158
+    },
+    "predicted_delta": -0.004452210184435427
+  },
+  "693288": {
+    "timestamp": 1773033820.577026,
+    "price_at_prediction": 0.972,
+    "features": {
+      "signal": 0.15
+    },
+    "predicted_delta": -0.004452210184435382
+  },
+  "1466036": {
+    "timestamp": 1773033820.853112,
+    "price_at_prediction": 0.165,
+    "features": {
+      "signal": 0.14999999999998906
+    },
+    "predicted_delta": -0.00445221018443544
+  },
+  "1472010": {
+    "timestamp": 1773033821.034226,
+    "price_at_prediction": 0.38,
+    "features": {
+      "signal": 0.14999999999999156
+    },
+    "predicted_delta": -0.004452210184435427
+  },
+  "958443": {
+    "timestamp": 1773033821.4787164,
+    "price_at_prediction": 0.315,
+    "features": {
+      "signal": 0.14999999999999156
+    },
+    "predicted_delta": -0.004452210184435427
+  },
+  "1472026": {
+    "timestamp": 1773033821.6798363,
+    "price_at_prediction": 0.56,
+    "features": {
+      "signal": 0.14999999999999178
+    },
+    "predicted_delta": -0.004452210184435425
+  },
+  "1466014": {
+    "timestamp": 1773033821.9762099,
+    "price_at_prediction": 0.075,
+    "features": {
+      "signal": 0.14999999999999122
+    },
+    "predicted_delta": -0.004452210184435429
+  },
+  "1467137": {
+    "timestamp": 1773033822.164666,
+    "price_at_prediction": 0.9995,
+    "features": {
+      "signal": 0.15
+    },
+    "predicted_delta": -0.004452210184435382
+  },
+  "1466015": {
+    "timestamp": 1773033822.3541434,
+    "price_at_prediction": 0.245,
+    "features": {
+      "signal": 0.149999999999999
+    },
+    "predicted_delta": -0.004452210184435387
+  },
+  "1507751": {
+    "timestamp": 1773033822.768478,
+    "price_at_prediction": 0.205,
+    "features": {
+      "signal": 0.14999999999999147
+    },
+    "predicted_delta": -0.004452210184435427
+  },
+  "561237": {
+    "timestamp": 1773033822.990219,
+    "price_at_prediction": 0.018,
+    "features": {
+      "signal": 0.1499999999999902
+    },
+    "predicted_delta": -0.004452210184435434
+  },
+  "1454424": {
+    "timestamp": 1773033823.4016008,
+    "price_at_prediction": 0.9995,
+    "features": {
+      "signal": 0.15
+    },
+    "predicted_delta": -0.004452210184435382
+  },
+  "1467139": {
+    "timestamp": 1773033823.5730686,
+    "price_at_prediction": 0.045,
+    "features": {
+      "signal": 0.14999999999999902
+    },
+    "predicted_delta": -0.004452210184435387
+  },
+  "559656": {
+    "timestamp": 1773033823.986191,
+    "price_at_prediction": 0.015,
+    "features": {
+      "signal": 0.1499999999999902
+    },
+    "predicted_delta": -0.004452210184435434
+  },
+  "1466016": {
+    "timestamp": 1773033824.399116,
+    "price_at_prediction": 0.455,
+    "features": {
+      "signal": 0.14999999999999167
+    },
+    "predicted_delta": -0.004452210184435426
+  },
+  "1363893": {
+    "timestamp": 1773033824.5997057,
+    "price_at_prediction": 0.9885,
+    "features": {
+      "signal": 0.15
+    },
+    "predicted_delta": -0.004452210184435382
+  },
+  "1385748": {
+    "timestamp": 1773033824.779163,
+    "price_at_prediction": 0.2155,
+    "features": {
+      "signal": 0.1499999999999962
+    },
+    "predicted_delta": -0.004452210184435402
+  },
+  "1394368": {
+    "timestamp": 1773033824.972098,
+    "price_at_prediction": 0.155,
+    "features": {
+      "signal": 0.14999999999999145
+    },
+    "predicted_delta": -0.004452210184435428
+  },
+  "1529737": {
+    "timestamp": 1773033825.1726787,
+    "price_at_prediction": 0.265,
+    "features": {
+      "signal": 0.1499999999999915
+    },
+    "predicted_delta": -0.004452210184435427
+  },
+  "629031": {
+    "timestamp": 1773033825.3641162,
+    "price_at_prediction": 0.025,
+    "features": {
+      "signal": 0.14999999999999022
+    },
+    "predicted_delta": -0.004452210184435434
   }
 }
